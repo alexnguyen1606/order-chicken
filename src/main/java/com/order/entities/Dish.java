@@ -24,4 +24,9 @@ public class Dish {
     @Column(name = "trang_thai")
     private String status;
 
+    @Column
+    private String urlImg;
+
+    @Column
+    private String content;
 }
