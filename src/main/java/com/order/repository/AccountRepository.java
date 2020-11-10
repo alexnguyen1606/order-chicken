@@ -2,8 +2,9 @@ package com.order.repository;
 
 import com.order.entities.Account;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 
 
 public interface AccountRepository
-        extends JpaRepository<Account, Long> {
+        extends JpaRepository<Account, Long>, QuerydslPredicateExecutor<Account> {
 }

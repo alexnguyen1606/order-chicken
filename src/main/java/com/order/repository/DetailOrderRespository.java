@@ -2,6 +2,7 @@ package com.order.repository;
 
 import com.order.entities.DetailOrder;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 
-public interface DetailOrderRespository extends JpaRepository<DetailOrder,Long> {
+public interface DetailOrderRespository extends JpaRepository<DetailOrder,Long>, QuerydslPredicateExecutor<DetailOrder> {
 }
