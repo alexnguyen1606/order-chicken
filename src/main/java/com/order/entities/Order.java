@@ -5,6 +5,8 @@ import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 
 @Entity
 @Table(name = "dondathang")
@@ -44,4 +46,5 @@ public class Order {
 
     @Column(name = "phuong_thuc_thanh_toan")
     private String payment;
+    
 }
