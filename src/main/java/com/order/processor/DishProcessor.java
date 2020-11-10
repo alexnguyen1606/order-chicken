@@ -36,10 +36,10 @@ public class DishProcessor {
     }
 
     public DishDTO getDish(DishDTO dishDTO) {
-        return dishMapper.toDTO(dishService.findById(dishDTO.getId()));
+        return dishMapper.toDTO(dishService.findById(dishDTO.getId()).get());
     }
     public DishDTO getDish(Long id) {
-        return dishMapper.toDTO(dishService.findById(id));
+        return dishMapper.toDTO(dishService.findById(id).get());
     }
 
     public List<DishDTO> getListDish(DishDTO dishDTO, Pageable pageable) {

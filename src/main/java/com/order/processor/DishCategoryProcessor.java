@@ -28,7 +28,7 @@ public class DishCategoryProcessor {
     }
 
     public DishCategoryDTO getCategoryDish(DishCategoryDTO dishCategoryDTO) {
-        return dishCategoryMapper.toDTO(dishCategoryService.findById(dishCategoryDTO.getId()));
+        return dishCategoryMapper.toDTO(dishCategoryService.findById(dishCategoryDTO.getId()).get());
     }
 
     public List<DishCategoryDTO> getListDish(DishCategoryDTO dishCategoryDTO, Pageable pageable) {

@@ -20,8 +20,14 @@ public class OrderDetailApi {
     private DetailOrderProcessor detailOrderProcessor;
     @PostMapping
     public ResponseEntity<ServiceResult> create(@RequestBody DetailOrderDTO detailOrderDTO){
-        detailOrderProcessor.create(detailOrderDTO);
-        return null;
+        ServiceResult serviceResult = new ServiceResult();
+        try {
+            detailOrderProcessor.create(detailOrderDTO);
+            serviceResult.setMessage("Thêm thành công");
+        } catch (Exception e) {
+            serviceResult.setMessage(e.getMessage());
+        }
+        return ResponseEntity.ok(serviceResult);
     }
   
 }

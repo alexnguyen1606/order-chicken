@@ -26,5 +26,5 @@ public class DetailOrderDTO {
   private Long totalPrice;
 
   private List<Long> idsDish = new ArrayList<>();
-  private List<Integer> listItem = new ArrayList<>();
+  private List<Integer> listNumberItem = new ArrayList<>();
 }
