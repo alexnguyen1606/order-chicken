@@ -46,5 +46,4 @@ public class Order {
 
     @Column(name = "phuong_thuc_thanh_toan")
     private String payment;
-    
 }

@@ -2,6 +2,7 @@ package com.order.dto;
 
 import lombok.Data;
 
+import javax.validation.constraints.NotBlank;
 import java.time.LocalDateTime;
 
 /**
@@ -15,9 +16,9 @@ public class OrderDTO {
   private Long idAccount;
 
   private Long idVoucher;
-
+  
   private Long customerPhone;
-
+  @NotBlank(message = "Địa chỉ giao hàng không được bỏ trống")
   private String customerAddress;
 
   private LocalDateTime createdDate;
@@ -32,5 +33,8 @@ public class OrderDTO {
 
   private String payment;
   
+  private String voucherCode;
+  
+  private Integer useCurrentInfo;
   
 }
