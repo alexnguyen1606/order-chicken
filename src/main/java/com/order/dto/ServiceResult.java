@@ -30,5 +30,6 @@ public class ServiceResult {
     public ServiceResult(Object data,String message,String status) {
         this.status = status;
         this.message = message;
+        this.data= data;
     }
 }
