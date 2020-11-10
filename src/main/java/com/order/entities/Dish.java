@@ -29,4 +29,7 @@ public class Dish {
 
     @Column
     private String content;
+
+    @Column(name="id_danhmuc")
+    private Long idCategory;
 }

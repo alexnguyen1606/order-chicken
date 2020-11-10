@@ -13,6 +13,7 @@ public class ServiceResult {
     private Object data;
     private Integer totalPage;
     private Integer currentPage;
+    private String status;
     
     public ServiceResult() {
     }
@@ -21,5 +22,14 @@ public class ServiceResult {
         this.data = data;
         this.totalPage = totalPage;
         this.currentPage = currentPage;
+    }
+    public ServiceResult(String message,String status) {
+        this.status = status;
+        this.message = message;
+    }
+    public ServiceResult(Object data,String message,String status) {
+        this.status = status;
+        this.message = message;
+        this.data= data;
     }
 }

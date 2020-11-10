@@ -46,4 +46,8 @@ public class Order {
 
     @Column(name = "phuong_thuc_thanh_toan")
     private String payment;
+    
+    @Column(name = "ten_kh")
+    private String customerName;
+
 }
