@@ -31,8 +31,15 @@ public class DishProcessor {
         dishService.save(dishMapper.toEntity(dishDTO));
     }
 
+    public void deleteDish(Long dishId) {
+        dishService.deleteById(dishId);
+    }
+
     public DishDTO getDish(DishDTO dishDTO) {
         return dishMapper.toDTO(dishService.findById(dishDTO.getId()));
+    }
+    public DishDTO getDish(Long id) {
+        return dishMapper.toDTO(dishService.findById(id));
     }
 
     public List<DishDTO> getListDish(DishDTO dishDTO, Pageable pageable) {

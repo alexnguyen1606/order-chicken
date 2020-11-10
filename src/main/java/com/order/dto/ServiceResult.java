@@ -27,4 +27,8 @@ public class ServiceResult {
         this.status = status;
         this.message = message;
     }
+    public ServiceResult(Object data,String message,String status) {
+        this.status = status;
+        this.message = message;
+    }
 }

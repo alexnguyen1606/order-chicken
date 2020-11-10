@@ -6,9 +6,7 @@ import com.order.processor.DishProcessor;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController("/api/dish")
 @AllArgsConstructor
@@ -19,5 +17,19 @@ public class DishApi {
     public ResponseEntity<ServiceResult> createDish(@RequestBody DishDTO dishDTO) {
         dishProcessor.createDish(dishDTO);
         return new ResponseEntity<>(new ServiceResult("success","200"), HttpStatus.OK);
+    }
+    @PutMapping
+    public ResponseEntity<ServiceResult> updateDish(@RequestBody DishDTO dishDTO) {
+        dishProcessor.changeDis(dishDTO);
+        return new ResponseEntity<>(new ServiceResult("success","200"), HttpStatus.OK);
+    }
+    @DeleteMapping
+    public ResponseEntity<ServiceResult> deleteDish(@RequestParam(name = "id") Long id) {
+        dishProcessor.deleteDish(id);
+        return new ResponseEntity<>(new ServiceResult("success","200"), HttpStatus.OK);
+    }
+    @GetMapping
+    public ResponseEntity<ServiceResult> getDish(@RequestParam(name = "id") Long id) {
+        return new ResponseEntity<>(new ServiceResult(dishProcessor.getDish(id),"success","200"),HttpStatus.OK);
     }
 }
