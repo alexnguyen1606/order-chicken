@@ -1,11 +1,14 @@
 package com.order.service;
 
+import com.order.entities.Order;
 import com.order.repository.OrderRepository;
-import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
-@AllArgsConstructor
-public class OrderService {
-    private OrderRepository orderRepository;
+public class OrderService extends CommonRepository<Order, OrderRepository> {
+  private OrderRepository orderRepository;
+
+  public OrderService(OrderRepository repo) {
+    super(repo);
+  }
 }

@@ -13,7 +13,7 @@ public class Voucher {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "ma_khuyen_mai")
+    @Column(name = "ma_khuyen_mai",unique = true)
     private String code;
 
     @Column(name = "ten_khuyen_mai")

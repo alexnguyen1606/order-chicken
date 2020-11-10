@@ -14,7 +14,7 @@ public class Account {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "ten_tai_khoan")
+    @Column(name = "ten_tai_khoan",unique = true)
     private String userName;
 
     @Column(name = "mat_khau")
