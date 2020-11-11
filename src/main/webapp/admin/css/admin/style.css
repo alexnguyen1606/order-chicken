@@ -1,0 +1,2103 @@
+
+body {
+    overflow-x:hidden;
+}
+ li > a{
+ color: #f6821f !important;
+}
+.row{
+	background:#F3F3F3;
+}
+div.container{
+	max-width: 1000px !important;
+}
+div .list{
+	width: 40%;
+}
+#userDropdownMenu{
+	margin-top: 4px;
+	margin-right: 380px;
+	
+}
+@media screen and (max-width: 480px) {
+  #userDropdownMenu {
+  	margin-left: 300px;
+  }
+}
+a.navbar-brand > img{
+	max-width: 60px;
+	max-height: 80px;
+}
+a.carousel-control-next{
+	margin-right: 300px;
+}
+.courses_search_container_home {
+    padding-left: 20px;
+    padding-right: 20px;
+    background: #ffffff;
+    
+}
+.courses_search_button {
+    width: 100px;
+    height: 30px;
+    background: #0060aa;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin:25px;
+    font-size: 10px;
+    
+}
+input #courses_search_form{
+	height: 60px;
+	margin-right: 30px;
+	
+}
+div.cards{
+	margin-top:20px;
+
+}
+div.card{
+	margin-bottom:20px;
+	    max-height: 300px;
+	
+}
+div.card  img{
+  max-width: 100%px;
+	width: 100%;
+    height: 140px;
+   
+}
+div.card-header{
+	padding :0px;
+}
+.course_teacher {
+    font-size: 13px;
+    font-weight: 400;
+    color: #666;
+    margin-top: 1px;
+}
+a {
+    color: #f6821f;
+}
+div.card-body{
+	height: 100px;
+}
+h1 {
+    font-size: 10px;
+}
+span{
+	font-size: 15px;
+	 color: #f6821f;
+}
+div.bodys{
+	background: white !important;
+}
+div.rows{
+	background:  #f6821f;
+}
+div.a{
+	font-size: 20px;
+	color: blue;
+}
+div.b{
+	font-size: 15px;
+	color: red;
+}
+div.footer{
+	background: blue;
+	margin-top: -23px;
+	padding:80px;
+	}
+ul{
+	list-style: none;
+	
+}
+
+
+h2{
+	color: #F6821F;
+}
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 768px)
+{
+    .container {
+        max-width: 720px;
+    }
+}
+@media (min-width: 576px)
+{
+    .container {
+        max-width: 540px;
+    }
+}
+div.card-img img{
+	min-height: 160px;
+	max-width: 100%;
+}
+div.date{
+	display: inline;
+	float: left;
+	margin: 0px;
+		padding: 0px;
+}
+div.datebody{
+	width: 230px;
+	float: right;
+	margin: 0px;
+	padding: 0px;
+}
+div.hed{
+	font-size: 12px;
+	color: #f6821f;
+	
+}
+div.date{
+width: 60px;
+    height: 60px;
+
+
+}
+div.cardbody{
+	background:  #f6821f;
+	border-radius: 2px;
+	max-height: 300px;
+}
+div.root{
+	font-size: 15px;
+}
+
+
+#FOOTER_1 {
+    bottom: 0px;
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    height: 362px;
+    left: 0px;
+    position: relative;
+    right: 0px;
+    text-align: left;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    top: 0px;
+    width: 1519.2px;
+    column-rule-color: rgb(33, 37, 41);
+    perspective-origin: 759.6px 181px;
+    transform-origin: 759.6px 181px;
+    caret-color: rgb(33, 37, 41);
+    background: rgb(20, 78, 140) none repeat scroll 0% 0% / auto padding-box border-box;
+    border: 0px none rgb(33, 37, 41);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(33, 37, 41) none 0px;
+    padding: 94px 0px 0px;
+}/*#FOOTER_1*/
+
+#FOOTER_1:after {
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    text-align: left;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(33, 37, 41);
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(33, 37, 41) none 0px;
+}/*#FOOTER_1:after*/
+
+#FOOTER_1:before {
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    text-align: left;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(33, 37, 41);
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(33, 37, 41) none 0px;
+}/*#FOOTER_1:before*/
+
+#DIV_2 {
+    background-position: 50% 50%;
+    bottom: 0px;
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    height: 362px;
+    left: 0px;
+    position: absolute;
+    right: 0px;
+    text-align: left;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    top: 0px;
+    width: 1519.2px;
+    column-rule-color: rgb(33, 37, 41);
+    perspective-origin: 759.6px 181px;
+    transform-origin: 759.6px 181px;
+    caret-color: rgb(33, 37, 41);
+    background: rgba(0, 0, 0, 0) url("https://vnpost.vnpt.edu.vn/theme/unicat/images/footer_background.png") no-repeat scroll 50% 50% / cover padding-box border-box;
+    border: 0px none rgb(33, 37, 41);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(33, 37, 41) none 0px;
+}/*#DIV_2*/
+
+#DIV_2:after {
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    text-align: left;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(33, 37, 41);
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(33, 37, 41) none 0px;
+}/*#DIV_2:after*/
+
+#DIV_2:before {
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    text-align: left;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(33, 37, 41);
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(33, 37, 41) none 0px;
+}/*#DIV_2:before*/
+
+#DIV_3 {
+    bottom: 0px;
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    height: 268px;
+    left: 0px;
+    max-width: 1140px;
+    position: relative;
+    right: 0px;
+    text-align: left;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    top: 0px;
+    width: 1140px;
+    column-rule-color: rgb(33, 37, 41);
+    perspective-origin: 570px 134px;
+    transform-origin: 570px 134px;
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    margin: 0px 189.6px;
+    outline: rgb(33, 37, 41) none 0px;
+    padding: 0px 15px;
+}/*#DIV_3*/
+
+#DIV_3:after {
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    text-align: left;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(33, 37, 41);
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(33, 37, 41) none 0px;
+}/*#DIV_3:after*/
+
+#DIV_3:before {
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    text-align: left;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(33, 37, 41);
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(33, 37, 41) none 0px;
+}/*#DIV_3:before*/
+
+#DIV_4 {
+    bottom: 0px;
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    display: flex;
+    height: 268px;
+    left: 0px;
+    position: relative;
+    right: 0px;
+    text-align: left;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    top: 0px;
+    width: 1140px;
+    column-rule-color: rgb(33, 37, 41);
+    perspective-origin: 570px 134px;
+    transform-origin: 570px 134px;
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    flex-flow: row wrap;
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    margin: 0px -15px;
+    outline: rgb(33, 37, 41) none 0px;
+}/*#DIV_4*/
+
+#DIV_4:after {
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    display: block;
+    text-align: left;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(33, 37, 41);
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(33, 37, 41) none 0px;
+}/*#DIV_4:after*/
+
+#DIV_4:before {
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    display: block;
+    text-align: left;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(33, 37, 41);
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(33, 37, 41) none 0px;
+}/*#DIV_4:before*/
+
+#DIV_5 {
+    bottom: 0px;
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    height: 268px;
+    left: 0px;
+    max-width: 100%;
+    min-height: 1px;
+    min-width: auto;
+    position: relative;
+    right: 0px;
+    text-align: left;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    top: 0px;
+    width: 1140px;
+    column-rule-color: rgb(33, 37, 41);
+    perspective-origin: 570px 134px;
+    transform-origin: 570px 134px;
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    flex: 1 1 0px;
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(33, 37, 41) none 0px;
+    padding: 0px 15px;
+}/*#DIV_5*/
+
+#DIV_5:after {
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    text-align: left;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(33, 37, 41);
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(33, 37, 41) none 0px;
+}/*#DIV_5:after*/
+
+#DIV_5:before {
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    text-align: left;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(33, 37, 41);
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(33, 37, 41) none 0px;
+}/*#DIV_5:before*/
+
+#DIV_6 {
+    bottom: 0px;
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    height: 268px;
+    left: 0px;
+    position: relative;
+    right: 0px;
+    text-align: left;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    top: 0px;
+    width: 1110px;
+    column-rule-color: rgb(33, 37, 41);
+    perspective-origin: 555px 134px;
+    transform-origin: 555px 134px;
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(33, 37, 41) none 0px;
+    padding: 0px 0px 53px;
+}/*#DIV_6*/
+
+#DIV_6:after {
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    text-align: left;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(33, 37, 41);
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(33, 37, 41) none 0px;
+}/*#DIV_6:after*/
+
+#DIV_6:before {
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    text-align: left;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(33, 37, 41);
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(33, 37, 41) none 0px;
+}/*#DIV_6:before*/
+
+#DIV_7 {
+    bottom: 0px;
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    display: flex;
+    height: 215px;
+    left: 0px;
+    position: relative;
+    right: 0px;
+    text-align: left;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    top: 0px;
+    width: 1140px;
+    column-rule-color: rgb(33, 37, 41);
+    perspective-origin: 570px 107.5px;
+    transform-origin: 570px 107.5px;
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    flex-flow: row wrap;
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    margin: 0px -15px;
+    outline: rgb(33, 37, 41) none 0px;
+}/*#DIV_7*/
+
+#DIV_7:after {
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    display: block;
+    text-align: left;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(33, 37, 41);
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(33, 37, 41) none 0px;
+}/*#DIV_7:after*/
+
+#DIV_7:before {
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    display: block;
+    text-align: left;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(33, 37, 41);
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(33, 37, 41) none 0px;
+}/*#DIV_7:before*/
+
+#DIV_8, #DIV_21, #DIV_29 {
+    bottom: 0px;
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    height: 215px;
+    left: 0px;
+    max-width: 33.3333%;
+    min-height: 1px;
+    min-width: auto;
+    position: relative;
+    right: 0px;
+    text-align: left;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    top: 0px;
+    width: 380px;
+    column-rule-color: rgb(33, 37, 41);
+    perspective-origin: 190px 107.5px;
+    transform-origin: 190px 107.5px;
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    flex: 0 0 33.3333%;
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(33, 37, 41) none 0px;
+    padding: 0px 15px;
+}/*#DIV_8, #DIV_21, #DIV_29*/
+
+#DIV_8:after, #DIV_21:after, #DIV_29:after {
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    text-align: left;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(33, 37, 41);
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(33, 37, 41) none 0px;
+}/*#DIV_8:after, #DIV_21:after, #DIV_29:after*/
+
+#DIV_8:before, #DIV_21:before, #DIV_29:before {
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    text-align: left;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(33, 37, 41);
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(33, 37, 41) none 0px;
+}/*#DIV_8:before, #DIV_21:before, #DIV_29:before*/
+
+#DIV_9 {
+    bottom: 0px;
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    height: 229px;
+    left: 0px;
+    position: relative;
+    right: 0px;
+    text-align: left;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    top: 0px;
+    width: 350px;
+    column-rule-color: rgb(33, 37, 41);
+    perspective-origin: 175px 114.5px;
+    transform-origin: 175px 114.5px;
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(33, 37, 41) none 0px;
+}/*#DIV_9*/
+
+#DIV_9:after {
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    text-align: left;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(33, 37, 41);
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(33, 37, 41) none 0px;
+}/*#DIV_9:after*/
+
+#DIV_9:before {
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    text-align: left;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(33, 37, 41);
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(33, 37, 41) none 0px;
+}/*#DIV_9:before*/
+
+#DIV_10 {
+    bottom: 0px;
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    height: 26.4px;
+    left: 0px;
+    position: relative;
+    right: 0px;
+    text-align: left;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    top: 0px;
+    width: 350px;
+    column-rule-color: rgb(33, 37, 41);
+    perspective-origin: 175px 13.2px;
+    transform-origin: 175px 13.2px;
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    margin: -14px 0px 0px;
+    outline: rgb(33, 37, 41) none 0px;
+}/*#DIV_10*/
+
+#DIV_10:after {
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    text-align: left;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(33, 37, 41);
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(33, 37, 41) none 0px;
+}/*#DIV_10:after*/
+
+#DIV_10:before {
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    text-align: left;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(33, 37, 41);
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(33, 37, 41) none 0px;
+}/*#DIV_10:before*/
+
+#A_11 {
+    box-sizing: border-box;
+    color: rgb(246, 130, 31);
+    text-align: left;
+    text-decoration: none solid rgb(246, 130, 31);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(246, 130, 31);
+    perspective-origin: 0px 0px;
+    transform-origin: 0px 0px;
+    caret-color: rgb(246, 130, 31);
+    border: 0px none rgb(246, 130, 31);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(246, 130, 31) none 0px;
+}/*#A_11*/
+
+#A_11:after {
+    box-sizing: border-box;
+    color: rgb(246, 130, 31);
+    text-align: left;
+    text-decoration: none solid rgb(246, 130, 31);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(246, 130, 31);
+    caret-color: rgb(246, 130, 31);
+    border: 0px none rgb(246, 130, 31);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(246, 130, 31) none 0px;
+}/*#A_11:after*/
+
+#A_11:before {
+    box-sizing: border-box;
+    color: rgb(246, 130, 31);
+    text-align: left;
+    text-decoration: none solid rgb(246, 130, 31);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(246, 130, 31);
+    caret-color: rgb(246, 130, 31);
+    border: 0px none rgb(246, 130, 31);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(246, 130, 31) none 0px;
+}/*#A_11:before*/
+
+#DIV_12 {
+    bottom: 0px;
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    height: 26.4px;
+    left: 0px;
+    position: relative;
+    right: 0px;
+    text-align: left;
+    text-decoration: none solid rgb(255, 255, 255);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    top: 0px;
+    width: 350px;
+    column-rule-color: rgb(255, 255, 255);
+    perspective-origin: 175px 13.2px;
+    transform-origin: 175px 13.2px;
+    caret-color: rgb(255, 255, 255);
+    border: 0px none rgb(255, 255, 255);
+    font: 700 36px / 27px Roboto, serif;
+    outline: rgb(255, 255, 255) none 0px;
+    transition: all 0.2s ease 0s;
+}/*#DIV_12*/
+
+#DIV_12:after {
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    text-align: left;
+    text-decoration: none solid rgb(255, 255, 255);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(255, 255, 255);
+    caret-color: rgb(255, 255, 255);
+    border: 0px none rgb(255, 255, 255);
+    font: 700 36px / 27px Roboto, serif;
+    outline: rgb(255, 255, 255) none 0px;
+}/*#DIV_12:after*/
+
+#DIV_12:before {
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    text-align: left;
+    text-decoration: none solid rgb(255, 255, 255);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(255, 255, 255);
+    caret-color: rgb(255, 255, 255);
+    border: 0px none rgb(255, 255, 255);
+    font: 700 36px / 27px Roboto, serif;
+    outline: rgb(255, 255, 255) none 0px;
+}/*#DIV_12:before*/
+
+#SMALL_13 {
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    text-align: left;
+    text-decoration: none solid rgb(255, 255, 255);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(255, 255, 255);
+    perspective-origin: 0px 0px;
+    transform-origin: 0px 0px;
+    caret-color: rgb(255, 255, 255);
+    border: 0px none rgb(255, 255, 255);
+    font: 28.8px / 21.6px Roboto, serif;
+    outline: rgb(255, 255, 255) none 0px;
+}/*#SMALL_13*/
+
+#SMALL_13:after {
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    text-align: left;
+    text-decoration: none solid rgb(255, 255, 255);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(255, 255, 255);
+    caret-color: rgb(255, 255, 255);
+    border: 0px none rgb(255, 255, 255);
+    font: 28.8px / 21.6px Roboto, serif;
+    outline: rgb(255, 255, 255) none 0px;
+}/*#SMALL_13:after*/
+
+#SMALL_13:before {
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    text-align: left;
+    text-decoration: none solid rgb(255, 255, 255);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(255, 255, 255);
+    caret-color: rgb(255, 255, 255);
+    border: 0px none rgb(255, 255, 255);
+    font: 28.8px / 21.6px Roboto, serif;
+    outline: rgb(255, 255, 255) none 0px;
+}/*#SMALL_13:before*/
+
+#SPAN_14 {
+    box-sizing: border-box;
+    color: rgb(246, 130, 31);
+    cursor: pointer;
+    text-align: left;
+    text-decoration: none solid rgb(246, 130, 31);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(246, 130, 31);
+    perspective-origin: 0px 0px;
+    transform-origin: 0px 0px;
+    caret-color: rgb(246, 130, 31);
+    border: 0px none rgb(246, 130, 31);
+    font: 28.8px / 21.6px Roboto, serif;
+    outline: rgb(246, 130, 31) none 0px;
+}/*#SPAN_14*/
+
+#SPAN_14:after {
+    box-sizing: border-box;
+    color: rgb(246, 130, 31);
+    cursor: pointer;
+    text-align: left;
+    text-decoration: none solid rgb(246, 130, 31);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(246, 130, 31);
+    caret-color: rgb(246, 130, 31);
+    border: 0px none rgb(246, 130, 31);
+    font: 28.8px / 21.6px Roboto, serif;
+    outline: rgb(246, 130, 31) none 0px;
+}/*#SPAN_14:after*/
+
+#SPAN_14:before {
+    box-sizing: border-box;
+    color: rgb(246, 130, 31);
+    cursor: pointer;
+    text-align: left;
+    text-decoration: none solid rgb(246, 130, 31);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(246, 130, 31);
+    caret-color: rgb(246, 130, 31);
+    border: 0px none rgb(246, 130, 31);
+    font: 28.8px / 21.6px Roboto, serif;
+    outline: rgb(246, 130, 31) none 0px;
+}/*#SPAN_14:before*/
+
+#DIV_15 {
+    bottom: 0px;
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    height: 25.6px;
+    left: 0px;
+    position: relative;
+    right: 0px;
+    text-align: left;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    top: 0px;
+    width: 350px;
+    column-rule-color: rgb(33, 37, 41);
+    perspective-origin: 175px 12.8px;
+    transform-origin: 175px 12.8px;
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    margin: 31px 0px 0px;
+    outline: rgb(33, 37, 41) none 0px;
+}/*#DIV_15*/
+
+#DIV_15:after {
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    text-align: left;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(33, 37, 41);
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(33, 37, 41) none 0px;
+}/*#DIV_15:after*/
+
+#DIV_15:before {
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    text-align: left;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(33, 37, 41);
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(33, 37, 41) none 0px;
+}/*#DIV_15:before*/
+
+#P_16 {
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    height: 25.6px;
+    text-align: left;
+    text-decoration: none solid rgb(255, 255, 255);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    width: 350px;
+    column-rule-color: rgb(255, 255, 255);
+    perspective-origin: 175px 12.8px;
+    transform-origin: 175px 12.8px;
+    caret-color: rgb(255, 255, 255);
+    border: 0px none rgb(255, 255, 255);
+    font: 14px / 25.9px Roboto, sans-serif;
+    margin: 0px;
+    outline: rgb(255, 255, 255) none 0px;
+}/*#P_16*/
+
+#P_16:after {
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    text-align: left;
+    text-decoration: none solid rgb(255, 255, 255);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(255, 255, 255);
+    caret-color: rgb(255, 255, 255);
+    border: 0px none rgb(255, 255, 255);
+    font: 14px / 25.9px Roboto, sans-serif;
+    outline: rgb(255, 255, 255) none 0px;
+}/*#P_16:after*/
+
+#P_16:before {
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    text-align: left;
+    text-decoration: none solid rgb(255, 255, 255);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(255, 255, 255);
+    caret-color: rgb(255, 255, 255);
+    border: 0px none rgb(255, 255, 255);
+    font: 14px / 25.9px Roboto, sans-serif;
+    outline: rgb(255, 255, 255) none 0px;
+}/*#P_16:before*/
+
+#A_17 {
+    box-sizing: border-box;
+    color: rgb(246, 130, 31);
+    display: block;
+    height: 69px;
+    text-align: left;
+    text-decoration: none solid rgb(246, 130, 31);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    width: 350px;
+    column-rule-color: rgb(246, 130, 31);
+    perspective-origin: 175px 34.5px;
+    transform-origin: 175px 34.5px;
+    caret-color: rgb(246, 130, 31);
+    border: 0px none rgb(246, 130, 31);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(246, 130, 31) none 0px;
+}/*#A_17*/
+
+#A_17:after {
+    box-sizing: border-box;
+    color: rgb(246, 130, 31);
+    text-align: left;
+    text-decoration: none solid rgb(246, 130, 31);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(246, 130, 31);
+    caret-color: rgb(246, 130, 31);
+    border: 0px none rgb(246, 130, 31);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(246, 130, 31) none 0px;
+}/*#A_17:after*/
+
+#A_17:before {
+    box-sizing: border-box;
+    color: rgb(246, 130, 31);
+    text-align: left;
+    text-decoration: none solid rgb(246, 130, 31);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(246, 130, 31);
+    caret-color: rgb(246, 130, 31);
+    border: 0px none rgb(246, 130, 31);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(246, 130, 31) none 0px;
+}/*#A_17:before*/
+
+#IMG_18 {
+    box-sizing: border-box;
+    color: rgb(246, 130, 31);
+    cursor: pointer;
+    height: 69px;
+    text-align: left;
+    text-decoration: none solid rgb(246, 130, 31);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    vertical-align: middle;
+    width: 210px;
+    column-rule-color: rgb(246, 130, 31);
+    perspective-origin: 105px 34.5px;
+    transform-origin: 105px 34.5px;
+    caret-color: rgb(246, 130, 31);
+    border: 0px none rgb(246, 130, 31);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(246, 130, 31) none 0px;
+}/*#IMG_18*/
+
+#IMG_18:after {
+    box-sizing: border-box;
+    color: rgb(246, 130, 31);
+    cursor: pointer;
+    text-align: left;
+    text-decoration: none solid rgb(246, 130, 31);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(246, 130, 31);
+    caret-color: rgb(246, 130, 31);
+    border: 0px none rgb(246, 130, 31);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(246, 130, 31) none 0px;
+}/*#IMG_18:after*/
+
+#IMG_18:before {
+    box-sizing: border-box;
+    color: rgb(246, 130, 31);
+    cursor: pointer;
+    text-align: left;
+    text-decoration: none solid rgb(246, 130, 31);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(246, 130, 31);
+    caret-color: rgb(246, 130, 31);
+    border: 0px none rgb(246, 130, 31);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(246, 130, 31) none 0px;
+}/*#IMG_18:before*/
+
+#A_19 {
+    box-sizing: border-box;
+    color: rgb(246, 130, 31);
+    display: block;
+    height: 73px;
+    text-align: left;
+    text-decoration: none solid rgb(246, 130, 31);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    width: 350px;
+    column-rule-color: rgb(246, 130, 31);
+    perspective-origin: 175px 36.5px;
+    transform-origin: 175px 36.5px;
+    caret-color: rgb(246, 130, 31);
+    border: 0px none rgb(246, 130, 31);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    margin: 4px 0px 0px;
+    outline: rgb(246, 130, 31) none 0px;
+}/*#A_19*/
+
+#A_19:after {
+    box-sizing: border-box;
+    color: rgb(246, 130, 31);
+    text-align: left;
+    text-decoration: none solid rgb(246, 130, 31);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(246, 130, 31);
+    caret-color: rgb(246, 130, 31);
+    border: 0px none rgb(246, 130, 31);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(246, 130, 31) none 0px;
+}/*#A_19:after*/
+
+#A_19:before {
+    box-sizing: border-box;
+    color: rgb(246, 130, 31);
+    text-align: left;
+    text-decoration: none solid rgb(246, 130, 31);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(246, 130, 31);
+    caret-color: rgb(246, 130, 31);
+    border: 0px none rgb(246, 130, 31);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(246, 130, 31) none 0px;
+}/*#A_19:before*/
+
+#IMG_20 {
+    box-sizing: border-box;
+    color: rgb(246, 130, 31);
+    cursor: pointer;
+    height: 73px;
+    text-align: left;
+    text-decoration: none solid rgb(246, 130, 31);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    vertical-align: middle;
+    width: 210px;
+    column-rule-color: rgb(246, 130, 31);
+    perspective-origin: 105px 36.5px;
+    transform-origin: 105px 36.5px;
+    caret-color: rgb(246, 130, 31);
+    border: 0px none rgb(246, 130, 31);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(246, 130, 31) none 0px;
+}/*#IMG_20*/
+
+#IMG_20:after {
+    box-sizing: border-box;
+    color: rgb(246, 130, 31);
+    cursor: pointer;
+    text-align: left;
+    text-decoration: none solid rgb(246, 130, 31);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(246, 130, 31);
+    caret-color: rgb(246, 130, 31);
+    border: 0px none rgb(246, 130, 31);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(246, 130, 31) none 0px;
+}/*#IMG_20:after*/
+
+#IMG_20:before {
+    box-sizing: border-box;
+    color: rgb(246, 130, 31);
+    cursor: pointer;
+    text-align: left;
+    text-decoration: none solid rgb(246, 130, 31);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(246, 130, 31);
+    caret-color: rgb(246, 130, 31);
+    border: 0px none rgb(246, 130, 31);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(246, 130, 31) none 0px;
+}/*#IMG_20:before*/
+
+#DIV_22 {
+    bottom: 0px;
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    height: 152.6px;
+    left: 0px;
+    position: relative;
+    right: 0px;
+    text-align: left;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    top: 0px;
+    width: 350px;
+    column-rule-color: rgb(33, 37, 41);
+    perspective-origin: 175px 76.3px;
+    transform-origin: 175px 76.3px;
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(33, 37, 41) none 0px;
+    padding: 0px 0px 0px 36px;
+}/*#DIV_22*/
+
+#DIV_22:after {
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    text-align: left;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(33, 37, 41);
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(33, 37, 41) none 0px;
+}/*#DIV_22:after*/
+
+#DIV_22:before {
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    text-align: left;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(33, 37, 41);
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(33, 37, 41) none 0px;
+}/*#DIV_22:before*/
+
+#DIV_23 {
+    bottom: 0px;
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    height: 12.8px;
+    left: 0px;
+    position: relative;
+    right: 0px;
+    text-align: left;
+    text-decoration: none solid rgb(255, 255, 255);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    top: 0px;
+    width: 314px;
+    column-rule-color: rgb(255, 255, 255);
+    perspective-origin: 157px 6.4px;
+    transform-origin: 157px 6.4px;
+    caret-color: rgb(255, 255, 255);
+    border: 0px none rgb(255, 255, 255);
+    font: 700 18px / 13.5px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(255, 255, 255) none 0px;
+}/*#DIV_23*/
+
+#DIV_23:after {
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    text-align: left;
+    text-decoration: none solid rgb(255, 255, 255);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(255, 255, 255);
+    caret-color: rgb(255, 255, 255);
+    border: 0px none rgb(255, 255, 255);
+    font: 700 18px / 13.5px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(255, 255, 255) none 0px;
+}/*#DIV_23:after*/
+
+#DIV_23:before {
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    text-align: left;
+    text-decoration: none solid rgb(255, 255, 255);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(255, 255, 255);
+    caret-color: rgb(255, 255, 255);
+    border: 0px none rgb(255, 255, 255);
+    font: 700 18px / 13.5px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(255, 255, 255) none 0px;
+}/*#DIV_23:before*/
+
+#DIV_24 {
+    bottom: 0px;
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    height: 106.8px;
+    left: 0px;
+    position: relative;
+    right: 0px;
+    text-align: left;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    top: 0px;
+    width: 314px;
+    column-rule-color: rgb(33, 37, 41);
+    perspective-origin: 157px 53.4px;
+    transform-origin: 157px 53.4px;
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    margin: 33px 0px 0px;
+    outline: rgb(33, 37, 41) none 0px;
+}/*#DIV_24*/
+
+#DIV_24:after {
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    text-align: left;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(33, 37, 41);
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(33, 37, 41) none 0px;
+}/*#DIV_24:after*/
+
+#DIV_24:before {
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    text-align: left;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(33, 37, 41);
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(33, 37, 41) none 0px;
+}/*#DIV_24:before*/
+
+#UL_25 {
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    height: 106.8px;
+    text-align: left;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    width: 314px;
+    column-rule-color: rgb(33, 37, 41);
+    perspective-origin: 157px 53.4px;
+    transform-origin: 157px 53.4px;
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    list-style: outside none none;
+    margin: 0px 0px 16px;
+    outline: rgb(33, 37, 41) none 0px;
+    padding: 0px;
+}/*#UL_25*/
+
+#UL_25:after {
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    text-align: left;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(33, 37, 41);
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    list-style: outside none none;
+    outline: rgb(33, 37, 41) none 0px;
+}/*#UL_25:after*/
+
+#UL_25:before {
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    text-align: left;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(33, 37, 41);
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    list-style: outside none none;
+    outline: rgb(33, 37, 41) none 0px;
+}/*#UL_25:before*/
+
+#LI_26, #LI_27 {
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    height: 19.2px;
+    text-decoration: none solid rgb(255, 255, 255);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    width: 314px;
+    column-rule-color: rgb(255, 255, 255);
+    perspective-origin: 157px 9.6px;
+    transform-origin: 157px 9.6px;
+    caret-color: rgb(255, 255, 255);
+    border: 0px none rgb(255, 255, 255);
+    font: 13px / 19.5px Roboto-Regular, Arial, Tahoma, Veranda;
+    list-style: outside none none;
+    margin: 0px 0px 15px;
+    outline: rgb(255, 255, 255) none 0px;
+}/*#LI_26, #LI_27*/
+
+#LI_26:after, #LI_27:after {
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    text-decoration: none solid rgb(255, 255, 255);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(255, 255, 255);
+    caret-color: rgb(255, 255, 255);
+    border: 0px none rgb(255, 255, 255);
+    font: 13px / 19.5px Roboto-Regular, Arial, Tahoma, Veranda;
+    list-style: outside none none;
+    outline: rgb(255, 255, 255) none 0px;
+}/*#LI_26:after, #LI_27:after*/
+
+#LI_26:before, #LI_27:before {
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    text-decoration: none solid rgb(255, 255, 255);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(255, 255, 255);
+    caret-color: rgb(255, 255, 255);
+    border: 0px none rgb(255, 255, 255);
+    font: 13px / 19.5px Roboto-Regular, Arial, Tahoma, Veranda;
+    list-style: outside none none;
+    outline: rgb(255, 255, 255) none 0px;
+}/*#LI_26:before, #LI_27:before*/
+
+#LI_28 {
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    height: 38.4px;
+    text-decoration: none solid rgb(255, 255, 255);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    width: 314px;
+    column-rule-color: rgb(255, 255, 255);
+    perspective-origin: 157px 19.2px;
+    transform-origin: 157px 19.2px;
+    caret-color: rgb(255, 255, 255);
+    border: 0px none rgb(255, 255, 255);
+    font: 13px / 19.5px Roboto-Regular, Arial, Tahoma, Veranda;
+    list-style: outside none none;
+    outline: rgb(255, 255, 255) none 0px;
+}/*#LI_28*/
+
+#LI_28:after {
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    text-decoration: none solid rgb(255, 255, 255);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(255, 255, 255);
+    caret-color: rgb(255, 255, 255);
+    border: 0px none rgb(255, 255, 255);
+    font: 13px / 19.5px Roboto-Regular, Arial, Tahoma, Veranda;
+    list-style: outside none none;
+    outline: rgb(255, 255, 255) none 0px;
+}/*#LI_28:after*/
+
+#LI_28:before {
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    text-decoration: none solid rgb(255, 255, 255);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(255, 255, 255);
+    caret-color: rgb(255, 255, 255);
+    border: 0px none rgb(255, 255, 255);
+    font: 13px / 19.5px Roboto-Regular, Arial, Tahoma, Veranda;
+    list-style: outside none none;
+    outline: rgb(255, 255, 255) none 0px;
+}/*#LI_28:before*/
+
+#DIV_30 {
+    bottom: 0px;
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    height: 147.8px;
+    left: 0px;
+    position: relative;
+    right: 0px;
+    text-align: left;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    top: 0px;
+    width: 350px;
+    column-rule-color: rgb(33, 37, 41);
+    perspective-origin: 175px 73.9px;
+    transform-origin: 175px 73.9px;
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(33, 37, 41) none 0px;
+    padding: 0px 0px 0px 80px;
+}/*#DIV_30*/
+
+#DIV_30:after {
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    text-align: left;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(33, 37, 41);
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(33, 37, 41) none 0px;
+}/*#DIV_30:after*/
+
+#DIV_30:before {
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    text-align: left;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(33, 37, 41);
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(33, 37, 41) none 0px;
+}/*#DIV_30:before*/
+
+#DIV_31 {
+    bottom: 0px;
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    height: 12.8px;
+    left: 0px;
+    position: relative;
+    right: 0px;
+    text-align: left;
+    text-decoration: none solid rgb(255, 255, 255);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    top: 0px;
+    width: 270px;
+    column-rule-color: rgb(255, 255, 255);
+    perspective-origin: 135px 6.4px;
+    transform-origin: 135px 6.4px;
+    caret-color: rgb(255, 255, 255);
+    border: 0px none rgb(255, 255, 255);
+    font: 700 18px / 13.5px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(255, 255, 255) none 0px;
+}/*#DIV_31*/
+
+#DIV_31:after {
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    text-align: left;
+    text-decoration: none solid rgb(255, 255, 255);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(255, 255, 255);
+    caret-color: rgb(255, 255, 255);
+    border: 0px none rgb(255, 255, 255);
+    font: 700 18px / 13.5px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(255, 255, 255) none 0px;
+}/*#DIV_31:after*/
+
+#DIV_31:before {
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    text-align: left;
+    text-decoration: none solid rgb(255, 255, 255);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(255, 255, 255);
+    caret-color: rgb(255, 255, 255);
+    border: 0px none rgb(255, 255, 255);
+    font: 700 18px / 13.5px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(255, 255, 255) none 0px;
+}/*#DIV_31:before*/
+
+#DIV_32 {
+    bottom: 0px;
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    height: 102px;
+    left: 0px;
+    position: relative;
+    right: 0px;
+    text-align: left;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    top: 0px;
+    width: 270px;
+    column-rule-color: rgb(33, 37, 41);
+    perspective-origin: 135px 51px;
+    transform-origin: 135px 51px;
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    margin: 33px 0px 0px;
+    outline: rgb(33, 37, 41) none 0px;
+}/*#DIV_32*/
+
+#DIV_32:after {
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    text-align: left;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(33, 37, 41);
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(33, 37, 41) none 0px;
+}/*#DIV_32:after*/
+
+#DIV_32:before {
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    text-align: left;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(33, 37, 41);
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(33, 37, 41) none 0px;
+}/*#DIV_32:before*/
+
+#UL_33 {
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    height: 102px;
+    text-align: left;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    width: 270px;
+    column-count: 2;
+    column-rule-color: rgb(33, 37, 41);
+    perspective-origin: 135px 51px;
+    transform-origin: 135px 51px;
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    list-style: outside none none;
+    margin: 0px 0px 16px;
+    outline: rgb(33, 37, 41) none 0px;
+    padding: 0px;
+}/*#UL_33*/
+
+#UL_33:after {
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    text-align: left;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(33, 37, 41);
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    list-style: outside none none;
+    outline: rgb(33, 37, 41) none 0px;
+}/*#UL_33:after*/
+
+#UL_33:before {
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    text-align: left;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(33, 37, 41);
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    list-style: outside none none;
+    outline: rgb(33, 37, 41) none 0px;
+}/*#UL_33:before*/
+
+#LI_34, #LI_36, #LI_38, #LI_40 {
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    height: 24px;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    width: 127px;
+    column-rule-color: rgb(33, 37, 41);
+    perspective-origin: 63.5px 12px;
+    transform-origin: 63.5px 12px;
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    list-style: outside none none;
+    margin: 0px 0px 15px;
+    outline: rgb(33, 37, 41) none 0px;
+}/*#LI_34, #LI_36, #LI_38, #LI_40*/
+
+#LI_34:after, #LI_36:after, #LI_38:after, #LI_40:after {
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(33, 37, 41);
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    list-style: outside none none;
+    outline: rgb(33, 37, 41) none 0px;
+}/*#LI_34:after, #LI_36:after, #LI_38:after, #LI_40:after*/
+
+#LI_34:before, #LI_36:before, #LI_38:before, #LI_40:before {
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(33, 37, 41);
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    list-style: outside none none;
+    outline: rgb(33, 37, 41) none 0px;
+}/*#LI_34:before, #LI_36:before, #LI_38:before, #LI_40:before*/
+
+#A_35, #A_37, #A_41, #A_43 {
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    text-align: left;
+    text-decoration: none solid rgb(255, 255, 255);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(255, 255, 255);
+    perspective-origin: 0px 0px;
+    transform-origin: 0px 0px;
+    caret-color: rgb(255, 255, 255);
+    border: 0px none rgb(255, 255, 255);
+    font: 13px / 19.5px Roboto-Regular, Arial, Tahoma, Veranda;
+    list-style: outside none none;
+    outline: rgb(255, 255, 255) none 0px;
+    transition: all 0.2s ease 0s;
+}/*#A_35, #A_37, #A_41, #A_43*/
+
+#A_35:after, #A_37:after, #A_41:after, #A_43:after {
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    text-align: left;
+    text-decoration: none solid rgb(255, 255, 255);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(255, 255, 255);
+    caret-color: rgb(255, 255, 255);
+    border: 0px none rgb(255, 255, 255);
+    font: 13px / 19.5px Roboto-Regular, Arial, Tahoma, Veranda;
+    list-style: outside none none;
+    outline: rgb(255, 255, 255) none 0px;
+}/*#A_35:after, #A_37:after, #A_41:after, #A_43:after*/
+
+#A_35:before, #A_37:before, #A_41:before, #A_43:before {
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    text-align: left;
+    text-decoration: none solid rgb(255, 255, 255);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(255, 255, 255);
+    caret-color: rgb(255, 255, 255);
+    border: 0px none rgb(255, 255, 255);
+    font: 13px / 19.5px Roboto-Regular, Arial, Tahoma, Veranda;
+    list-style: outside none none;
+    outline: rgb(255, 255, 255) none 0px;
+}/*#A_35:before, #A_37:before, #A_41:before, #A_43:before*/
+
+#A_39 {
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    text-align: left;
+    text-decoration: none solid rgb(255, 255, 255);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(255, 255, 255);
+    perspective-origin: 0px 0px;
+    transform-origin: 0px 0px;
+    caret-color: rgb(255, 255, 255);
+    border: 0px none rgb(255, 255, 255);
+    font: 13px / 19.5px Roboto-Regular, Arial, Tahoma, Veranda;
+    list-style: outside none none;
+    outline: rgb(255, 255, 255) none 0px;
+    transition: all 0.2s ease 0s;
+}/*#A_39*/
+
+#A_39:after {
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    text-align: left;
+    text-decoration: none solid rgb(255, 255, 255);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(255, 255, 255);
+    caret-color: rgb(255, 255, 255);
+    border: 0px none rgb(255, 255, 255);
+    font: 13px / 19.5px Roboto-Regular, Arial, Tahoma, Veranda;
+    list-style: outside none none;
+    outline: rgb(255, 255, 255) none 0px;
+}/*#A_39:after*/
+
+#A_39:before {
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    text-align: left;
+    text-decoration: none solid rgb(255, 255, 255);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(255, 255, 255);
+    caret-color: rgb(255, 255, 255);
+    border: 0px none rgb(255, 255, 255);
+    font: 13px / 19.5px Roboto-Regular, Arial, Tahoma, Veranda;
+    list-style: outside none none;
+    outline: rgb(255, 255, 255) none 0px;
+}/*#A_39:before*/
+
+#LI_42 {
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    height: 24px;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    width: 127px;
+    column-rule-color: rgb(33, 37, 41);
+    perspective-origin: 63.5px 12px;
+    transform-origin: 63.5px 12px;
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    list-style: outside none none;
+    outline: rgb(33, 37, 41) none 0px;
+}/*#LI_42*/
+
+#LI_42:after {
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(33, 37, 41);
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    list-style: outside none none;
+    outline: rgb(33, 37, 41) none 0px;
+}/*#LI_42:after*/
+
+#LI_42:before {
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(33, 37, 41);
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    list-style: outside none none;
+    outline: rgb(33, 37, 41) none 0px;
+}/*#LI_42:before*/
+
+#DIV_44 {
+    bottom: 0px;
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    display: flex;
+    height: 0px;
+    left: 0px;
+    position: relative;
+    right: 0px;
+    text-align: left;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    top: 0px;
+    width: 1549.2px;
+    column-rule-color: rgb(33, 37, 41);
+    perspective-origin: 774.6px 0px;
+    transform-origin: 774.6px 0px;
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    flex-flow: row wrap;
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    margin: 0px -15px;
+    outline: rgb(33, 37, 41) none 0px;
+}/*#DIV_44*/
+
+#DIV_44:after {
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    display: block;
+    text-align: left;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(33, 37, 41);
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(33, 37, 41) none 0px;
+}/*#DIV_44:after*/
+
+#DIV_44:before {
+    box-sizing: border-box;
+    color: rgb(33, 37, 41);
+    display: block;
+    text-align: left;
+    text-decoration: none solid rgb(33, 37, 41);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(33, 37, 41);
+    caret-color: rgb(33, 37, 41);
+    border: 0px none rgb(33, 37, 41);
+    font: 16px / 24px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(33, 37, 41) none 0px;
+}/*#DIV_44:before*/
+
+#SMALL_45 {
+    bottom: 0px;
+    box-sizing: border-box;
+    color: rgb(7, 85, 169);
+    display: block;
+    height: 19.2px;
+    left: 1243.45px;
+    position: absolute;
+    right: 15px;
+    text-align: left;
+    text-decoration: none solid rgb(7, 85, 169);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    top: -19.2px;
+    width: 290.75px;
+    column-rule-color: rgb(7, 85, 169);
+    perspective-origin: 145.375px 9.6px;
+    transform-origin: 145.375px 9.6px;
+    caret-color: rgb(7, 85, 169);
+    border: 0px none rgb(7, 85, 169);
+    font: 12.8px / 19.2px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(7, 85, 169) none 0px;
+}/*#SMALL_45*/
+
+#SMALL_45:after {
+    box-sizing: border-box;
+    color: rgb(7, 85, 169);
+    text-align: left;
+    text-decoration: none solid rgb(7, 85, 169);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(7, 85, 169);
+    caret-color: rgb(7, 85, 169);
+    border: 0px none rgb(7, 85, 169);
+    font: 12.8px / 19.2px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(7, 85, 169) none 0px;
+}/*#SMALL_45:after*/
+
+#SMALL_45:before {
+    box-sizing: border-box;
+    color: rgb(7, 85, 169);
+    text-align: left;
+    text-decoration: none solid rgb(7, 85, 169);
+    text-shadow: rgba(0, 0, 0, 0.01) 0px 0px 1px;
+    text-size-adjust: 100%;
+    column-rule-color: rgb(7, 85, 169);
+    caret-color: rgb(7, 85, 169);
+    border: 0px none rgb(7, 85, 169);
+    font: 12.8px / 19.2px Roboto-Regular, Arial, Tahoma, Veranda;
+    outline: rgb(7, 85, 169) none 0px;
+}/*#SMALL_45:before*/
+
+b, strong {
+    font-weight: 600;
+
+    margin-left: 3px ;
+}
+div.contact_forget_password{
+    margin-top: 20px;
+}
+.contact_info_text > p{
+    font-size: 15px;
+    color: #384158;
+}
+div.contact_info_title{
+     color: #384158;
+}
+.contact_info_title {
+    font-size: 32px;
+}
+.contact_info_title {
+    /* font-family: 'Roboto Slab', serif; */
+    font-size: 30px;
+    font-weight: 700;
+    color: #384158;
+}
+.rowsss{
+    margin-top: -20px;
+    height: 300px;
+    margin-left: 100px;
+}
+
+h4{
+    color: #f6821f;
+    font-size:20px;
+}
+#fo{
+    margin-bottom: 20px;
+}
+.buttons{
+
+    background: #0060aa;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+    color: #FFFFFF;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    margin-top: 15px;
+}
+div.content{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    display: block;
+    padding: 0px;
+}
+
+.vips ul{
+                width: 100%;
+ }
+
+.vips ul li{
+                height: 30px;           /*Cao 30px*/
+                line-height: 30px;      /*Cho chữ canh giữa 30px*/    
+                list-style: none;       /*Không hiển thị dấu chấm đầu menu*/
+                padding: 0px 10px;      /*đẩy nôi dung menu vào 10cm (trái + phải)*/
+                background: white;       /*màu nèn màu hồng*/
+                border: solid 1px gray;  /*đường viền màu đỏ*/
+                border-bottom: none;    /*vì menu liền kề nhau nên border-bottom không cần*/
+                position: relative;     /*chọn làm khung*/
+ }
+
+          .vips  ul li:last-child{
+                border-bottom: solid 1px red;
+            }
+
+          .vips  ul li ul{
+                width: 250px;
+                position: absolute;     
+                top: -1px;          /*cho ngang hàng với menu cha, vì menu cha có border - 1 nên ta phải trừ đi 1*/
+                right: -211px;      /*vì nàm ngoài khung và dài 250px nên là số âm 250px */
+                display: none; 
+                z-index: 99;     /*Ban đầu sẽ không hiển thị*/
+            }
+
+          .vips  ul li:hover ul{
+                display: block;
+            }

@@ -1,0 +1,38 @@
+.scorm{
+    background: url("/e-learning/image/scorm.png");
+    background-size: 100% auto;
+
+}
+.homework{
+    background: url("/e-learning/image/lesson_free.png");
+    background-size: 100% auto;
+}
+.powerpoint{
+    background: url("/e-learning/image/lesson_presentation.png");
+    background-size: 100% auto;
+}
+.video{
+    background: url("/e-learning/image/lesson_video.png");
+    background-size: 100% auto;
+}
+.interactive{
+    background: url("/e-learning/image/lesson_canvas.png");
+    background-size: 100% auto;
+}
+.freedom{
+    background: url("/e-learning/image/lesson_canvas.png");
+    background-size: 100% auto;
+}
+.lesson{
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-repeat: no-repeat;
+}
+.info_text{
+    color: #525e64;
+    font-size: 13px !important;
+}
+.font-grey-mint{
+    color: #525e64!important;
+}

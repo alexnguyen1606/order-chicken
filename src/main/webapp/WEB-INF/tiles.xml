@@ -8,20 +8,20 @@
     <!-- template admin -->
     <definition name="admin.definition"
                 template="/WEB-INF/layouts/admin/layout.jsp">
-<!--        <put-attribute name="head"-->
-<!--                       value="/WEB-INF/layouts/admin/layout/head.jsp"/>-->
-<!--        <put-attribute name="menu"-->
-<!--                       value="/WEB-INF/layouts/admin/layout/menu.jsp"/>-->
-<!--        <put-attribute name="side"-->
-<!--                       value="/WEB-INF/layouts/admin/layout/footer.jsp"/>-->
+        <put-attribute name="head"
+                       value="/WEB-INF/layouts/admin/layout/head.jsp"/>
+        <put-attribute name="menu"
+                       value="/WEB-INF/layouts/admin/layout/menu.jsp"/>
+        <put-attribute name="side"
+                       value="/WEB-INF/layouts/admin/layout/footer.jsp"/>
         <put-attribute name="body" value=""/>
     </definition>
 
 
 
-    <definition name="/*" extends="admin.definition">
+    <definition name="admin/*" extends="admin.definition">
         <put-attribute name="body"
-                       value="/WEB-INF/views/{1}.jsp"/>
+                       value="/WEB-INF/views/admin/{1}.jsp"/>
     </definition>
 
 

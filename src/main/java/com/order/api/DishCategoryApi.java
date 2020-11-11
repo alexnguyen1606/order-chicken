@@ -12,7 +12,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController("/api/dish/category")
+@RestController
+@RequestMapping("/api/dish/category")
 @AllArgsConstructor
 public class DishCategoryApi {
     private DishCategoryProcessor dishCategoryProcessor;
@@ -41,7 +42,7 @@ public class DishCategoryApi {
     }
 
     @PostMapping("/list")
-    public ResponseEntity<ServiceResult> getListDish(@RequestBody DishCategoryDTO dishCategoryDTO,
+    public ResponseEntity<ServiceResult> getListDishCategory(@RequestBody DishCategoryDTO dishCategoryDTO,
                                                      @RequestParam(name = "page", defaultValue = "1", required = false) Integer currentPage,
                                                      @RequestParam(name = "size", defaultValue = "10", required = false) Integer size) {
         Pageable pageable = PageRequest.of(currentPage > 0 ? currentPage - 1 : currentPage, size);

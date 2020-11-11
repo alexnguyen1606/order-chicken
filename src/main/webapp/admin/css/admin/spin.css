@@ -1,0 +1,55 @@
+.position-cover {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.position-center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.display-none {
+    display: none;
+
+}
+.spin {
+    background: rgba(84, 84, 84, 0.35);
+}
+.disabled-checkbox {
+    pointer-events: none;
+    position: relative;
+}
+.disabled-checkbox:after {
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(128, 128, 128, 0.52);;
+}
+#param-table tbody tr td:last-child {
+    text-align: center;
+}
+.disabled {
+    pointer-events: none;
+    background-color: rgba(128, 128, 128, 0.46);
+}
+.user-btn {
+    margin-left: -15px;
+    z-index: -1;
+    padding-left: 18px !important;
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
+}
+.user-btn-right {
+    margin-right: -15px;
+    z-index: -1;
+    padding-right: 18px;
+    border-bottom-left-radius: 25px;
+    border-top-left-radius: 25px;
+}
+.overflow-visible {
+    overflow: visible !important;
+}
