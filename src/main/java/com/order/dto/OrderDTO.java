@@ -41,4 +41,6 @@ public class OrderDTO {
   
   private Integer status;
   
+  private String statusString;
+  
 }
