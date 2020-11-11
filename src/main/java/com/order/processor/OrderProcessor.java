@@ -32,6 +32,7 @@ public class OrderProcessor {
     validVoucher(orderDTO);
     Order order = orderMapper.toEntity(orderDTO);
     orderService.save(order);
+    orderDTO.setId(order.getId());
   }
   
   public void create(OrderDTO orderDTO) throws Exception {
@@ -44,6 +45,7 @@ public class OrderProcessor {
       User user = userService.findByAccountId(myUser.getId());
       order.setCustomerAddress(user.getAddress());
       order.setCustomerPhone(user.getPhone());
+      order.setCustomerName(user.getName());
     }
     orderService.save(order);
   }

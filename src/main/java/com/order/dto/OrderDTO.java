@@ -35,6 +35,8 @@ public class OrderDTO {
   
   private String voucherCode;
   
+  private String customerName;
+  
   private Integer useCurrentInfo;
   
 }

@@ -26,10 +26,11 @@ public class DetailOrderProcessor {
   private DetailOrderService detailOrderService;
   private DishService dishService;
   private OrderService orderService;
-  private QDetailOrder Q = QDetailOrder.detailOrder;
+  private final QDetailOrder Q = QDetailOrder.detailOrder;
 
   @Transactional
-  public void create(DetailOrderDTO detailOrderDTO) throws Exception {
+  public void createOrUpdate(DetailOrderDTO detailOrderDTO) throws Exception {
+    detailOrderService.deleteByIdOrder(detailOrderDTO.getIdOrder());
     List<Long> idsProduct = detailOrderDTO.getIdsDish();
     List<Integer> listNumberItem = detailOrderDTO.getListNumberItem();
     List<DetailOrder> list = new ArrayList<>(idsProduct.size());

@@ -23,7 +23,7 @@ public  class ExceptionHandlerApi {
                 .getAllErrors()
                 .forEach(
                         (error) -> {
-                            errors.append(error.getDefaultMessage()).append(" ");
+                            errors.append(error.getDefaultMessage()).append("; ");
                         });
         serviceResult.setMessage(errors.toString());
         return new ResponseEntity<>(serviceResult, HttpStatus.BAD_REQUEST);

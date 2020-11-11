@@ -29,6 +29,7 @@ public class OrderApi extends ExceptionHandlerApi {
         ServiceResult serviceResult = new ServiceResult();
         try {
             orderProcessor.createByAdmin(orderDTO);
+            serviceResult.setData(orderDTO);
             serviceResult.setMessage("Đặt thành công");
         } catch (Exception e) {
             serviceResult.setMessage(e.getMessage());
