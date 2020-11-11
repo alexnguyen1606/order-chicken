@@ -23,5 +23,7 @@ public class Account {
     @CreatedDate
     @Column(name = "ngay_dang_ky")
     private LocalDateTime createdDate;
+    
+    private Integer status;
 
 }

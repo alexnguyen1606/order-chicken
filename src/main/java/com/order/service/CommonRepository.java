@@ -49,8 +49,8 @@ public abstract class CommonRepository<
     return repo.count(predicate);
   }
 
-  public T findById(Long id) {
-    return repo.findById(id).get();
+  public Optional<T> findById(Long id) {
+    return repo.findById(id);
   }
 
   public Optional<T> findOne(Predicate predicate) {
@@ -71,9 +71,7 @@ public abstract class CommonRepository<
 
   public void delete(Predicate predicate) {
     Optional<T> t = repo.findOne(predicate);
-    if (t.isPresent()) {
-      repo.delete(t.get());
-    }
+    t.ifPresent(t1 -> repo.delete(t1));
   }
 
   public Long count() {
@@ -81,8 +79,8 @@ public abstract class CommonRepository<
   }
 
   public boolean exist(Predicate predicate) {
-    Long count = repo.count(predicate);
-    return count == 0 ? false : true;
+    long count = repo.count(predicate);
+    return count != 0;
   }
 
   public List<T> saveAll(List<T> list) {

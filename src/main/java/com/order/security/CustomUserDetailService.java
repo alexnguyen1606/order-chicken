@@ -1,5 +1,8 @@
 package com.order.security;
 
+import com.order.entities.Account;
+import com.order.repository.AccountRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -12,29 +15,20 @@ import java.util.List;
 
 
 @Service
+@AllArgsConstructor
 public class CustomUserDetailService implements UserDetailsService {
 
-
-
-    protected UserModel loadUserByApi(String userName, Integer status) {
-        UserModel userModel = new UserModel();
-        return userModel;
-    }
-
+    private AccountRepository accountRepository;
+    
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        UserModel userEntity = loadUserByApi(username, 1);
-
+        Account account  = accountRepository.findByUserNameAndStatus(username,1);
         List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
-        for (String userPermistion : userEntity.getPermissionNames()) {
-
-            authorities.add(new SimpleGrantedAuthority(userPermistion));
-        }
-
-        MyUser myUser = new MyUser(userEntity.getUsername(), userEntity.getPassword(), true, true, true, true,
+       
+        MyUser myUser = new MyUser(account.getUserName(), account.getPassword(), true, true, true, true,
                 authorities);
-        myUser.setFullName(userEntity.getFullName());
-        myUser.setId(userEntity.getId() + "");
+   
+        myUser.setId(account.getId());
 
         return myUser;
 

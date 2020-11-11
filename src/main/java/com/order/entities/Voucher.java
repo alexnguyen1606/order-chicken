@@ -24,5 +24,6 @@ public class Voucher {
 
     @Column(name = "thoi_gian_kt")
     private LocalDateTime endTime;
+    
 
 }

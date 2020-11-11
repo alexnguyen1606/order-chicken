@@ -7,28 +7,41 @@ import java.util.Collection;
 
 public class MyUser extends User {
 
-    private String fullName;
-    private String id;
-    private String code;
+  private String fullName;
+  private Long id;
+  private String code;
 
-    public MyUser(String username, String password, boolean enabled, boolean accountNonExpired,
-                  boolean credentialsNonExpired, boolean accountNonLocked,
-                  Collection<? extends GrantedAuthority> authorities) {
-        super(username, password, enabled, accountNonExpired, credentialsNonExpired, accountNonLocked, authorities);
+  public MyUser(
+      String username,
+      String password,
+      boolean enabled,
+      boolean accountNonExpired,
+      boolean credentialsNonExpired,
+      boolean accountNonLocked,
+      Collection<? extends GrantedAuthority> authorities) {
+    super(
+        username,
+        password,
+        enabled,
+        accountNonExpired,
+        credentialsNonExpired,
+        accountNonLocked,
+        authorities);
+  }
 
-    }
-    public String getFullName() {
-        return fullName;
-    }
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
-    }
+  public String getFullName() {
+    return fullName;
+  }
 
-    public String getId() {
-        return id;
-    }
+  public void setFullName(String fullName) {
+    this.fullName = fullName;
+  }
 
-    public void setId(String id) {
-        this.id = id;
-    }
+  public Long getId() {
+    return id;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
+  }
 }

@@ -11,4 +11,9 @@ public class DetailOrderService extends CommonRepository<DetailOrder,DetailOrder
     public DetailOrderService(DetailOrderRespository repo) {
         super(repo);
     }
+    
+    
+    public void deleteByIdOrder(Long idOrder){
+        repo.deleteByIdOrder(idOrder);
+    }
 }
