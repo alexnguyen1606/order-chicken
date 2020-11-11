@@ -49,5 +49,7 @@ public class Order {
     
     @Column(name = "ten_kh")
     private String customerName;
+    
+    private Integer status;
 
 }

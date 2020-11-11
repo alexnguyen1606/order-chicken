@@ -39,4 +39,6 @@ public class OrderDTO {
   
   private Integer useCurrentInfo;
   
+  private Integer status;
+  
 }
