@@ -4,13 +4,13 @@
 <html lang="en">
 <head>
   
-<%--   <tiles:insertAttribute name="head" />--%>
+   <tiles:insertAttribute name="head" />
  
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 
  
-<%--  <tiles:insertAttribute name="menu" />--%>
+  <tiles:insertAttribute name="menu" />
 
  
   
@@ -18,7 +18,7 @@
 
   
 
-<%--  <tiles:insertAttribute name="side" />--%>
+  <tiles:insertAttribute name="side" />
 
 
 

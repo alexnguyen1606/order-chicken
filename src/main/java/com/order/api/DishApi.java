@@ -12,7 +12,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController("/api/dish")
+@RestController
+@RequestMapping("/api/dish")
 @AllArgsConstructor
 public class DishApi {
     private DishProcessor dishProcessor;

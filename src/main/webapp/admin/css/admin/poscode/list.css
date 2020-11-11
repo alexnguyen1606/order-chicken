@@ -1,0 +1,45 @@
+.tree-poscode li {
+    margin: 0 ;
+}
+.tree-poscode {
+    padding: 10px;
+}
+.tree-poscode ul {
+    margin-bottom: 0;
+}
+.detail-parent {
+    margin-top: 10px;
+}
+.card {
+    height:100%;
+}
+.disable-input {
+    position: relative;
+    background: rgba(128, 128, 128, 0.6);
+    pointer-events: none;
+}
+.disable-input:after {
+    position:absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(128, 128, 128, 0.6);
+}
+.update {
+    position: absolute;
+    width: 100%;
+    background: white;
+    transition: all 0.3s;
+}
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+.edit-item {
+    min-width: 100px;
+}
+.card {
+    overflow-y: auto;
+}
