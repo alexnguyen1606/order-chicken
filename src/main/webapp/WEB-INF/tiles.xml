@@ -23,6 +23,8 @@
         <put-attribute name="body"
                        value="/WEB-INF/views/admin/{1}.jsp"/>
     </definition>
-
+    <definition name="admin/order/*" extends="admin.definition">
+        <put-attribute name="body" value="/WEB-INF/views/admin/order/{1}.jsp"></put-attribute>
+    </definition>
 
 </tiles-definitions>

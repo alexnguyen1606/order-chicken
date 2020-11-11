@@ -29,7 +29,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/admin" class="nav-link">
+                    <a href="/admin/order/waiting" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Đơn đặt
@@ -38,7 +38,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/admin" class="nav-link">
+                    <a href="/admin/order/accept" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                            Xử lý đơn
@@ -47,7 +47,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/admin" class="nav-link">
+                    <a href="/admin/order/completed" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Hoàn thành
@@ -56,7 +56,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/admin" class="nav-link">
+                    <a href="/admin/order/cancel" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Đã hủy
