@@ -123,8 +123,7 @@ public class OrderProcessor {
   @Transactional
   public void updateCompleted(Long id) throws Exception {
     validOrderExits(id);
-    Optional<Order> optionalOrder = orderService.findById(id);
-    Order order = optionalOrder.get();
+    Order order = orderService.findById(id).get();
     validComplete(order.getStatus());
     orderService.updateStatusOrder(id,OrderStatus.COMPLETED);
     
