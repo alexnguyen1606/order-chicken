@@ -1,8 +1,8 @@
 package com.order.api;
 
-import com.order.dto.DishDTO;
+import com.order.dto.DishCategoryDTO;
 import com.order.dto.ServiceResult;
-import com.order.processor.DishProcessor;
+import com.order.processor.DishCategoryProcessor;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -12,42 +12,42 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController("/api/dish")
+@RestController("/api/dish/category")
 @AllArgsConstructor
-public class DishApi {
-    private DishProcessor dishProcessor;
+public class DishCategoryApi {
+    private DishCategoryProcessor dishCategoryProcessor;
 
     @PostMapping
-    public ResponseEntity<ServiceResult> createDish(@RequestBody DishDTO dishDTO) {
-        dishProcessor.createDish(dishDTO);
+    public ResponseEntity<ServiceResult> createDishCategory(@RequestBody DishCategoryDTO dishCategoryDTO) {
+        dishCategoryProcessor.createDishCategory(dishCategoryDTO);
         return new ResponseEntity<>(new ServiceResult("success", "200"), HttpStatus.OK);
     }
 
     @PutMapping
-    public ResponseEntity<ServiceResult> updateDish(@RequestBody DishDTO dishDTO) {
-        dishProcessor.changeDish(dishDTO);
+    public ResponseEntity<ServiceResult> updateDishCategory(@RequestBody DishCategoryDTO dishCategoryDTO) {
+        dishCategoryProcessor.changeDishCategory(dishCategoryDTO);
         return new ResponseEntity<>(new ServiceResult("success", "200"), HttpStatus.OK);
     }
 
     @DeleteMapping
-    public ResponseEntity<ServiceResult> deleteDish(@RequestParam(name = "id") Long id) {
-        dishProcessor.deleteDish(id);
+    public ResponseEntity<ServiceResult> deleteDishCategory(@RequestParam(name = "id") Long id) {
+        dishCategoryProcessor.deleteDishCategory(id);
         return new ResponseEntity<>(new ServiceResult("success", "200"), HttpStatus.OK);
     }
 
     @GetMapping
-    public ResponseEntity<ServiceResult> getDish(@RequestParam(name = "id") Long id) {
-        return new ResponseEntity<>(new ServiceResult(dishProcessor.getDish(id), "success", "200"), HttpStatus.OK);
+    public ResponseEntity<ServiceResult> getDishCategory(@RequestParam(name = "id") Long id) {
+        return new ResponseEntity<>(new ServiceResult(dishCategoryProcessor.getCategoryDish(id), "success", "200"), HttpStatus.OK);
     }
 
     @PostMapping("/list")
-    public ResponseEntity<ServiceResult> getListDish(@RequestBody DishDTO dishDTO,
+    public ResponseEntity<ServiceResult> getListDish(@RequestBody DishCategoryDTO dishCategoryDTO,
                                                      @RequestParam(name = "page", defaultValue = "1", required = false) Integer currentPage,
                                                      @RequestParam(name = "size", defaultValue = "10", required = false) Integer size) {
         Pageable pageable = PageRequest.of(currentPage > 0 ? currentPage - 1 : currentPage, size);
-        Long totalItem = dishProcessor.countListDish(dishDTO);
+        Long totalItem = dishCategoryProcessor.countListDishCategory(dishCategoryDTO);
         Integer totalPage = (int) Math.ceil((double) totalItem / size);
-        List<DishDTO> listData = dishProcessor.getListDish(dishDTO, pageable);
+        List<DishCategoryDTO> listData = dishCategoryProcessor.getListDish(dishCategoryDTO, pageable);
         ServiceResult serviceResult = new ServiceResult(listData, totalPage, currentPage);
         return ResponseEntity.ok(serviceResult);
     }

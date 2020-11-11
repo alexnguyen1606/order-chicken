@@ -1,6 +1,7 @@
 package com.order.processor;
 
 import com.order.dto.DishDTO;
+import com.order.entities.Dish;
 import com.order.entities.QDish;
 import com.order.entities.QDishCategory;
 import com.order.mapper.DishCategoryMapper;
@@ -27,7 +28,7 @@ public class DishProcessor {
         dishService.save(dishMapper.toEntity(dishDTO));
     }
 
-    public void changeDis(DishDTO dishDTO) {
+    public void changeDish(DishDTO dishDTO) {
         dishService.save(dishMapper.toEntity(dishDTO));
     }
 
@@ -45,6 +46,11 @@ public class DishProcessor {
     public List<DishDTO> getListDish(DishDTO dishDTO, Pageable pageable) {
         BooleanBuilder builder = commonBuilder(dishDTO);
         return dishService.findAll(builder, pageable).stream().map(dishMapper::toDTO).collect(Collectors.toList());
+    }
+
+    public Long countListDish(DishDTO dishDTO) {
+        BooleanBuilder builder = commonBuilder(dishDTO);
+        return dishService.count(builder);
     }
 
     private BooleanBuilder commonBuilder(DishDTO dishDTO) {

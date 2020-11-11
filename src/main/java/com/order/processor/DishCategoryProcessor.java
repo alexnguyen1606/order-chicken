@@ -23,7 +23,7 @@ public class DishCategoryProcessor {
         dishCategoryService.save(dishCategoryMapper.toEntity(dishCategoryDTO));
     }
 
-    public void changeDisCategory(DishCategoryDTO dishCategoryDTO) {
+    public void changeDishCategory(DishCategoryDTO dishCategoryDTO) {
         dishCategoryService.save(dishCategoryMapper.toEntity(dishCategoryDTO));
     }
 
@@ -31,9 +31,22 @@ public class DishCategoryProcessor {
         return dishCategoryMapper.toDTO(dishCategoryService.findById(dishCategoryDTO.getId()));
     }
 
+    public DishCategoryDTO getCategoryDish(Long id) {
+        return dishCategoryMapper.toDTO(dishCategoryService.findById(id));
+    }
+
     public List<DishCategoryDTO> getListDish(DishCategoryDTO dishCategoryDTO, Pageable pageable) {
         BooleanBuilder builder = commonBuilder(dishCategoryDTO);
         return dishCategoryService.findAll(builder, pageable).stream().map(dishCategoryMapper::toDTO).collect(Collectors.toList());
+    }
+
+    public Long countListDishCategory(DishCategoryDTO dishCategoryDTO) {
+        BooleanBuilder builder = commonBuilder(dishCategoryDTO);
+        return dishCategoryService.count(builder);
+    }
+
+    public void deleteDishCategory(Long dishCategoryId) {
+        dishCategoryService.deleteById(dishCategoryId);
     }
 
     private BooleanBuilder commonBuilder(DishCategoryDTO dishCategoryDTO) {
