@@ -91,6 +91,11 @@ public abstract class CommonRepository<
   public void deleteAll(List<T> list) {
     repo.deleteAll(list);
   }
-
-
+  
+  
+  public Boolean exitsById(Long id){
+    return repo.existsById(id);
+  }
+  
+  
 }
