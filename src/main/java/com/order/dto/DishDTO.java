@@ -21,5 +21,7 @@ public class DishDTO {
     private String content;
 
     private Long idCategory;
+    
+    private String priceString;
 
 }

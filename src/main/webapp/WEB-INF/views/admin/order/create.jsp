@@ -20,7 +20,7 @@
                 <table class="table table-striped table-hover" id="">
                     <thead>
                     <tr role="row" class="heading">
-                        <th witdth="10px">#</th>
+                        <%--<th witdth="10px"></th>--%>
                         <th width="30%" class="text-center">Mã sản phẩm</th>
                         <th class="text-center">Tên sản phẩm</th>
                         <th class="text-center">Đơn giá</th>
@@ -34,9 +34,23 @@
                 </div>
             </div>
             <div class="col-md-6">
-            <div id="itemInSession">
+                <table class="w-100" id="tableItem">
+                    <thead>
+                    <tr>
+                        <th></th>
+                        <th style="text-align: center">Số lượng</th>
+                        <th style="text-align: center" class="d-sm-block d-none">Thành tiền</th>
+                        <th class=""></th>
+                    </tr>
+                    </thead>
 
-            </div>
+                    <tbody>
+
+
+
+                    </tbody>
+
+                </table>
             </div>
         </div>
     </section>
