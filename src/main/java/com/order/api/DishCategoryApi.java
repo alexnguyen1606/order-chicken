@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/dish/category")
+@RequestMapping("/api/dish-category")
 @AllArgsConstructor
 public class DishCategoryApi {
     private DishCategoryProcessor dishCategoryProcessor;

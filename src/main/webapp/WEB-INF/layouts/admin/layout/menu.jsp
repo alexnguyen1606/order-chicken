@@ -15,7 +15,10 @@
         <!-- SEARCH FORM -->
         <form class="form-inline ml-3">
         <div class="input-group ">
-        <span class="input-group-addon"><i class="fas fa-search"></i></span>
+        <span class="input-group-addon"><i class="fas fa-search" style="    width: 38px;
+            height: 100%;
+            text-align: center;
+            line-height: 38px;background-color: #CCCCCC"></i></span>
         <input type="search" class="form-control" name="search" >
         </div>
         <%--        <div class="input-group-append">--%>
