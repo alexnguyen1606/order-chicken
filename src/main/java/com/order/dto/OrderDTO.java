@@ -4,6 +4,8 @@ import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author:Nguyen Anh Tuan
@@ -16,8 +18,9 @@ public class OrderDTO {
   private Long idAccount;
 
   private Long idVoucher;
-  
+
   private Long customerPhone;
+
   @NotBlank(message = "Địa chỉ giao hàng không được bỏ trống")
   private String customerAddress;
 
@@ -32,15 +35,17 @@ public class OrderDTO {
   private Long totalPrice;
 
   private String payment;
-  
+
   private String voucherCode;
-  
+
   private String customerName;
-  
+
   private Integer useCurrentInfo;
-  
+
   private Integer status;
-  
+
   private String statusString;
-  
+
+  private List<Long> idsDish = new ArrayList<>();
+  private List<Integer> listNumberItem = new ArrayList<>();
 }

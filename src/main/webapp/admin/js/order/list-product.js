@@ -22,14 +22,12 @@ jQuery(function ($) {
                     if (response.totalPage != 0) {
                         paging(response.totalPage, response.currentPage);
                     }
-
-
                     $('.loader').css("display", "none");
                 }, error: function (jqXHR) {
                     $('.loader').css("display", "none");
                     // getCourse();
                 }
-            })
+            });
         }
         function loadProduct(data) {
             $('#products').empty();
@@ -40,7 +38,7 @@ jQuery(function ($) {
                 row+='<td class="text-center">'+v.id+'</td>';
                 row+='<td class="text-center">'+v.name+'</td>';
                 row+='<td class="text-center">'+priceString+'</td>';
-                row+='<td></td>';
+                row+='<td class="text-center"><a class="addProduct" data-id='+v.id+' data-price="'+v.price+'" data-name="'+v.name+'"><i class="fa fa-plus"></i></a></td>';
                 row+='</tr>';
             });
             $('#products').append(row);
