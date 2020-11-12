@@ -23,6 +23,10 @@
         <put-attribute name="body"
                        value="/WEB-INF/views/admin/{1}.jsp"/>
     </definition>
+    <definition name="admin/*/*" extends="admin.definition">
+        <put-attribute name="body"
+                       value="/WEB-INF/views/admin/{1}/{2}.jsp"/>
+    </definition>
 
 
 </tiles-definitions>
