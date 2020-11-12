@@ -8,7 +8,7 @@ jQuery(function ($) {
                 type: "POST",
                 url: url,
                 // headers: {"Authorization": "Bearer " + localStorage.getItem('eln_token')},
-                data: JSON.stringify({}),
+                data: JSON.stringify({'status':"ACTIVE"}),
                 dataType: "json",
                 contentType: "application/json",
                 beforeSend: function () {
@@ -18,7 +18,7 @@ jQuery(function ($) {
                     $('#pagination-test').unbind("page");
                 },
                 success: function (response) {
-                    // loadCourse(response.data);
+                    loadProduct(response.data);
                     if (response.totalPage != 0) {
                         paging(response.totalPage, response.currentPage);
                     }
@@ -30,6 +30,20 @@ jQuery(function ($) {
                     // getCourse();
                 }
             })
+        }
+        function loadProduct(data) {
+            $('#products').empty();
+            var row = "";
+            $.each(data,function (i,v) {
+                var priceString =  v.price.toLocaleString('it-IT', {style : 'currency', currency : 'VND'});
+                row+='<tr>';
+                row+='<td class="text-center">'+v.id+'</td>';
+                row+='<td class="text-center">'+v.name+'</td>';
+                row+='<td class="text-center">'+priceString+'</td>';
+                row+='<td></td>';
+                row+='</tr>';
+            });
+            $('#products').append(row);
         }
         function paging(totalPage,currentPages){
             $('#pagination-test').twbsPagination({
