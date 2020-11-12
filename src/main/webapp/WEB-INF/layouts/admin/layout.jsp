@@ -12,10 +12,11 @@
  
   <tiles:insertAttribute name="menu" />
 
- 
-  
-  <tiles:insertAttribute name="body" />
 
+  <div class="content-wrapper">
+
+  <tiles:insertAttribute name="body" />
+  </div>
   
 
   <tiles:insertAttribute name="side" />
