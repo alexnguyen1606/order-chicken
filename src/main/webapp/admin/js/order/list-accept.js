@@ -61,7 +61,8 @@ jQuery(function ($) {
                 row+='<td class="text-center">'+v.deliveryTime+'</td>';
                 row+='<td class="text-center">'+totalPriceString+'</td>';
                 row+='<td class="text-center">'+v.statusString+'</td>';
-                row+='<td class="text-center"><button type="button" class="btn btn-info"><i class="fa fa-info"></i></button></td>';
+                row+='<td class="text-center"><button type="button" data-id="'+v.id+'" class="btn btn-info order-info" data-toggle="modal"' +
+                    '                           data-target="#modalInfo"><i class="fa fa-info"></i></button></td>';
                 row+='</tr>';
             });
             $('#orders').empty();
@@ -109,6 +110,33 @@ jQuery(function ($) {
                     alert(response.responseJSON.message);
                 }
             });
+        });
+        $(document).on('click','#completed',function () {
+           var id = $('#id').val();
+           if (id!=""){
+               $.ajax({
+                   type: "PUT",
+                   url: "/api/admin/order/completed/"+id,
+                   // headers: {"Authorization": "Bearer " + localStorage.getItem('eln_token')},
+                   // data: JSON.stringify(data),
+                   dataType: "json",
+                   contentType: "application/json",
+                   beforeSend: function () {
+                       $('.loader').css("display", "block");
+                       $('#pagination-test').empty();
+                       $('#pagination-test').removeData("twbs-pagination");
+                       $('#pagination-test').unbind("page");
+                   },
+                   success: function (response) {
+                       alert(response.message);
+                       $('.loader').css("display", "none");
+                       window.location.reload();
+                   }, error: function (response) {
+                       $('.loader').css("display", "none");
+                       alert(response.responseJSON.message);
+                   }
+               });
+           }
         });
     });
 });

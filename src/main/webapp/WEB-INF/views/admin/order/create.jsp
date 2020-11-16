@@ -81,7 +81,7 @@
         <div class="modal-content">
             <div class="modal-header color-theme-bg">
 
-                <h4 class="modal-title">Thêm mói hộp lưu trữ</h4>
+                <h4 class="modal-title">Thêm mói đơn hàng</h4>
                 <button type="button" class="close position-relative  btnClose" style="z-index: 15"
                         data-dismiss="modal">&times;
                 </button>

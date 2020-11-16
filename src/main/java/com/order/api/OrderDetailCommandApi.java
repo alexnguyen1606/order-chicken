@@ -2,7 +2,8 @@ package com.order.api;
 
 import com.order.dto.DetailOrderDTO;
 import com.order.dto.ServiceResult;
-import com.order.processor.DetailOrderProcessor;
+import com.order.processor.order.DetailOrderCommandProcessor;
+import com.order.processor.order.DetailOrderProcessor;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,8 +19,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/admin/order-detail")
 @AllArgsConstructor
-public class OrderDetailApi {
-    private DetailOrderProcessor detailOrderProcessor;
+public class OrderDetailCommandApi {
+    private DetailOrderCommandProcessor detailOrderProcessor;
     @PostMapping
     public ResponseEntity<ServiceResult> create(@RequestBody DetailOrderDTO detailOrderDTO){
         ServiceResult serviceResult = new ServiceResult();
@@ -31,5 +32,5 @@ public class OrderDetailApi {
         }
         return ResponseEntity.ok(serviceResult);
     }
-  
+    
 }

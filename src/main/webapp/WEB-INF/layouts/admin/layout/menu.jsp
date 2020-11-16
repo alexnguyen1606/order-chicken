@@ -13,7 +13,7 @@
         </ul>
 
         <!-- SEARCH FORM -->
-        <form class="form-inline ml-3">
+        <form class="form-inline ml-3" id="formSearch">
         <div class="input-group ">
         <span class="input-group-addon"><i class="fas fa-search" style="    width: 38px;
             height: 100%;
