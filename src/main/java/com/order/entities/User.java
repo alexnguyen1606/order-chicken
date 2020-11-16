@@ -15,7 +15,7 @@ public class User {
     @Column(name = "id_tai_khoan")
     private Long idAccount;
 
-    @Column(name = "ten_khach_hang")
+    @Column(name = "ten_khach_hang",columnDefinition = "nvarchar(500)")
     private String name;
 
     @Column(name = "sdt")
@@ -24,9 +24,9 @@ public class User {
     @Column(name = "email")
     private String email;
 
-    @Column(name = "dia_chi")
+    @Column(name = "dia_chi",columnDefinition = "nvarchar(500)")
     private String address;
 
-    @Column(name = "gioi_tinh")
+    @Column(name = "gioi_tinh",columnDefinition = "nvarchar(255)")
     private String gender;
 }

@@ -32,11 +32,11 @@
                     <div class="portlet-body">
                         <div class="form-normal">
                             <form class="form-horizontal" id="formEdit">
-                                <input name="id" id="id2" type="hidden">
+                                <input type="hidden" name="id">
+
                                 <div class="">
                                     <label for="" class="form-label">Tên danh mục <span class="required" style="color: #e02222;">*</span></label>
                                     <input type="text" name="name" id="name" class="form-control">
-                                    <input type="hidden" name="id">
                                 </div>
                                 <div class="d-flex justify-content-between mt-2">
                                     <button type="button" id="btnReset"  class="btn btn-default m-0">
@@ -68,6 +68,7 @@
 
                         </tbody>
                     </table>
+                    <ul id="pagination" class="pagination justify-content-center"></ul>
                 </div>
 
             </div>
@@ -75,5 +76,7 @@
 
     </div>
 </div>
+<script src="<c:url value='/admin/template/paging/jquery.twbsPagination.js'/>"></script>
+<script src="/admin/template/paging/jquery.twbsPagination.min.js"></script>
 <script src="<c:url value="/admin/js/dish-cat/list.js"/>"></script>
 <script src="<c:url value="/admin/js/dish-cat/edit.js"/>"></script>

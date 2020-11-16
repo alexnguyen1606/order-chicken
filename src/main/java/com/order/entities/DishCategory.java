@@ -12,6 +12,6 @@ public class DishCategory {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "ten_dm")
+    @Column(name = "ten_dm",columnDefinition = "nvarchar(255)")
     private String name;
 }
