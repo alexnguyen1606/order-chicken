@@ -25,7 +25,7 @@ public class Order {
     private Long idVoucher;
 
     @Column(name = "sdt_kh",columnDefinition = "nvarchar(255)")
-    private Long customerPhone;
+    private String customerPhone;
 
     @Column(name = "dia_chi",columnDefinition = "nvarchar(500)")
     private String customerAddress;
