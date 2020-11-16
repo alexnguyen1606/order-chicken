@@ -17,5 +17,20 @@
             <a href="/admin/dish/edit" class="btn btn-primary" style="color:#fff">Thêm mới</a>
         </div>
     </div>
+    <div class="my-2">
+        <table class="table table-borderless table-hover w-100">
+            <thead>
+            <tr>
+                <td>
+                    <input type="checkbox" class="form-control">
+                </td>
+                <td>Tên sản phẩm</td>
+                <td>Tên danh mục</td>
+                <td>Đơn giá</td>
+                <td>Trạng thái</td>
+            </tr>
+            </thead>
+        </table>
+    </div>
 </div>
 <script src="<c:url value="/admin/js/dish/list.js"/>"></script>

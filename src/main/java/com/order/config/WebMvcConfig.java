@@ -30,6 +30,7 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
 		registry.addResourceHandler("/admin/css/**").addResourceLocations("/admin/css/");
 		registry.addResourceHandler("/admin/js/**").addResourceLocations("/admin/js/");
 		registry.addResourceHandler("/admin/images/**").addResourceLocations(uploadImageFolder);
+		registry.addResourceHandler("/order/**").addResourceLocations(uploadImageFolder);
 
 		registry.addResourceHandler("/public/image/**").addResourceLocations(uploadImageFolder2);
 

@@ -13,7 +13,7 @@ import java.util.UUID;
 
 @Component
 public class UploadUtils {
-  @Value("${uploadimage.folder}")
+  @Value("${uploadImg}")
   private String imageUploadFolder;
 
 
@@ -29,13 +29,9 @@ public class UploadUtils {
 
     StringBuilder nameFileRoot =
         new StringBuilder(imageUploadFolder + UUID.randomUUID() + originName);
-    StringBuilder nameFile = new StringBuilder(imageUploadFolder + originName);
-    File file = new File(nameFile.toString());
+    File file = new File(nameFileRoot.toString());
     try {
       multipartFile.transferTo(file);
-      String typeImage = StringUtils.substringAfterLast(originName, ".");
-      ImageUtils.compressImage(nameFile.toString(), nameFileRoot.toString(), 0.3f, typeImage);
-      file.delete();
       String src = nameFileRoot.toString();
       src = src.replace("//", "/");
       src = src.replace(diskPart, "");
