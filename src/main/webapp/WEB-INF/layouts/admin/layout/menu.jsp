@@ -19,7 +19,7 @@
             height: 100%;
             text-align: center;
             line-height: 38px;background-color: #CCCCCC"></i></span>
-        <input type="search" class="form-control" name="search" >
+        <input type="search" id="search" class="form-control" name="search" >
         </div>
         <%--        <div class="input-group-append">--%>
         <%--          <button class="btn btn-navbar" type="submit">--%>
@@ -36,7 +36,7 @@
         <!-- Notifications Dropdown Menu -->
         <li class="nav-item dropdown">
 
-        <a href="/admin/dish" class="btn btn-primary float-left" >Tạo đơn </a>
+        <a href="/admin/order/create" class="btn btn-primary float-left" >Tạo đơn </a>
         <a href="/admin/logout" class="delete btn btn-danger float-left" data-confirm="Bạn có muốn đăng xuất khỏi hệ
         thống ? ">Đăng Xuất </a>
 
