@@ -1,16 +1,36 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Alex
-  Date: 11/11/2020
-  Time: 10:39 AM
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Title</title>
-</head>
-<body>
+<%@ page pageEncoding="utf-8" %>
+<!-- Chart code -->
 
-</body>
-</html>
+
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0 text-dark">Đã hủy</h1>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+
+<section class="content">
+    <div class="row">
+        <div class="col-md-12 row">
+
+
+        </div>
+    </div>
+</section>
+<!-- /.content -->
+<div class="position-absolute loader " style="">
+    <div class="spinner-border " style="position:fixed;width: 3rem; height: 3rem;top: 50%;left: 50%"
+         role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+
+
+<script src='/admin/template/paging/jquery.twbsPagination.js'></script>
+<script src="/admin/template/paging/jquery.twbsPagination.min.js"></script>
+<%--<script src="/admin/js/order/list-product.js"></script>--%>
+<%--<script src="/admin/js/order/create.js"></script>--%>

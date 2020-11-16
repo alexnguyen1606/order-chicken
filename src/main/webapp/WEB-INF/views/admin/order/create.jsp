@@ -107,7 +107,7 @@
                                 </div>
                                 <div class="col-sm-12 mt-3 form-group">
                                     <label class="ward input-label col-md-6 text-right">Thời gian nhận hàng:</label>
-                                    <input type="date" class="form-control col-md-8 " required name="deliveryTime" id="deliveryTime">
+                                    <input type="datetime-local" class="form-control col-md-8 " required name="deliveryTime" id="deliveryTime">
                                 </div>
                                 <div class="col-sm-12 mt-3 form-group">
                                     <label class="ward input-label col-md-6 text-right">Phương thức thanh toán:</label>

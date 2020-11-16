@@ -2,6 +2,7 @@ package com.order.entities;
 
 import lombok.Data;
 import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -11,6 +12,7 @@ import java.time.ZonedDateTime;
 @Entity
 @Table(name = "dondathang")
 @Data
+@EntityListeners(AuditingEntityListener.class)
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,7 +24,7 @@ public class Order {
     @Column(name = "id_km")
     private Long idVoucher;
 
-    @Column(name = "sdt_kh")
+    @Column(name = "sdt_kh",columnDefinition = "nvarchar(255)")
     private Long customerPhone;
 
     @Column(name = "dia_chi")

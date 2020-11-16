@@ -1,4 +1,4 @@
-package com.order.processor;
+package com.order.processor.order;
 
 import com.order.constant.EntityConstant;
 import com.order.constant.OrderStatus;
@@ -19,13 +19,12 @@ import java.util.Optional;
 
 /**
  * @author:Nguyen Anh Tuan
- *     <p>November 10,2020
+ *     <p>10:26 AM ,November 13,2020
  */
-@Service
 @AllArgsConstructor
-public class OrderProcessor {
+@Service
+public class OrderCommadProcessor {
   private OrderService orderService;
-  private AccountService accountService;
   private DishService dishService;
   private DetailOrderService detailOrderService;
   private UserService userService;
@@ -40,14 +39,23 @@ public class OrderProcessor {
     Order order = orderMapper.toEntity(orderDTO);
     order.setStatus(OrderStatus.ACCEPT);
     orderService.save(order);
-    orderDTO.setId(order.getId());
-    List<Long> idsProduct = orderDTO.getIdsDish();
-    List<Integer> listNumberItem = orderDTO.getListNumberItem();
-    List<DetailOrder> list = new ArrayList<>(idsProduct.size());
+    processDetailOrderAndUpdateOrder(
+        order.getId(), orderDTO.getIdsDish(), orderDTO.getListNumberItem());
+  }
+
+  private void processDetailOrderAndUpdateOrder(
+      Long orderId, List<Long> idsDish, List<Integer> numsItem) throws Exception {
+    if (idsDish.size() != numsItem.size()) {
+      throw new Exception("Đơn hàng không hợp lệ");
+    }
+    if (idsDish.size() == 0) {
+      throw new Exception("Chưa có sản phẩm nào được chọn");
+    }
+    List<DetailOrder> list = new ArrayList<>(idsDish.size());
     long totalPrice = 0;
     Integer totalItem = 0;
-    for (int i = 0; i < idsProduct.size(); i++) {
-      Optional<Dish> dishOptional = dishService.findById(idsProduct.get(i));
+    for (int i = 0; i < idsDish.size(); i++) {
+      Optional<Dish> dishOptional = dishService.findById(idsDish.get(i));
       if (!dishOptional.isPresent()) {
         throw new Exception("Không tìm thấy sản phẩm");
       }
@@ -55,18 +63,18 @@ public class OrderProcessor {
       if (dish.getStatus().equals(EntityConstant.INACTIVE_STATUS_DISH)) {
         throw new Exception("Sản phẩm không còn kinh doanh");
       }
-      Integer number = listNumberItem.get(i);
+      Integer number = numsItem.get(i);
       if (number <= 0) {
         throw new Exception("Số lượng sản phẩm không hợp lệ");
       }
       totalItem += number;
       DetailOrder detailOrder = setDetailOrder(dish, number);
-      detailOrder.setIdOrder(order.getId());
+      detailOrder.setIdOrder(orderId);
       totalPrice += detailOrder.getTotalPrice();
       list.add(detailOrder);
     }
     detailOrderService.saveAll(list);
-    orderService.updateTotalPriceAndTotalItem(order.getId(), totalPrice, totalItem);
+    orderService.updateTotalPriceAndTotalItem(orderId, totalPrice, totalItem);
   }
 
   private DetailOrder setDetailOrder(Dish dish, Integer number) {
@@ -78,6 +86,7 @@ public class OrderProcessor {
     return detailOrder;
   }
 
+  @Transactional
   public void create(OrderDTO orderDTO) throws Exception {
     validCreate(orderDTO);
     validVoucher(orderDTO);
@@ -92,6 +101,8 @@ public class OrderProcessor {
       order.setCustomerName(user.getName());
     }
     orderService.save(order);
+    processDetailOrderAndUpdateOrder(
+        order.getId(), orderDTO.getIdsDish(), orderDTO.getListNumberItem());
   }
 
   private void validCreate(OrderDTO orderDTO) throws Exception {
@@ -121,6 +132,14 @@ public class OrderProcessor {
     orderService.updateStatusOrder(id, OrderStatus.ACCEPT);
   }
 
+  @Transactional
+  public void acceptOrder(List<Long> ids) throws Exception {
+    for (Long id : ids) {
+      validAcceptOrder(id);
+      orderService.updateStatusOrder(id, OrderStatus.ACCEPT);
+    }
+  }
+
   private void validAcceptOrder(Long id) throws Exception {
     Optional<Order> optionalOrder = orderService.findById(id);
     if (!optionalOrder.isPresent()) {
@@ -147,7 +166,7 @@ public class OrderProcessor {
   }
 
   @Transactional
-  public void cencelOrder(Long id) throws Exception {
+  public void cancelOrder(Long id) throws Exception {
     validOrderExits(id);
     validCancelOrder(id);
     orderService.updateStatusOrder(id, OrderStatus.CANCEL);
@@ -168,6 +187,25 @@ public class OrderProcessor {
   private void validComplete(Integer status) throws Exception {
     if (!status.equals(OrderStatus.ACCEPT)) {
       throw new Exception("Trạng thái đơn hàng không hợp lệ");
+    }
+  }
+
+  @Transactional
+  public void updateCompleted(List<Long> ids) throws Exception {
+    for (Long id : ids) {
+      validOrderExits(id);
+      Order order = orderService.findById(id).get();
+      validComplete(order.getStatus());
+      orderService.updateStatusOrder(id, OrderStatus.COMPLETED);
+    }
+  }
+
+  @Transactional
+  public void cancelOrder(List<Long> ids) throws Exception {
+    for (Long id : ids) {
+      validOrderExits(id);
+      validCancelOrder(id);
+      orderService.updateStatusOrder(id, OrderStatus.CANCEL);
     }
   }
 }

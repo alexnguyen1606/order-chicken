@@ -19,7 +19,7 @@
             height: 100%;
             text-align: center;
             line-height: 38px;background-color: #CCCCCC"></i></span>
-        <input type="search" class="form-control" name="search" >
+        <input type="search" id="search" class="form-control" name="search" >
         </div>
         <%--        <div class="input-group-append">--%>
         <%--          <button class="btn btn-navbar" type="submit">--%>

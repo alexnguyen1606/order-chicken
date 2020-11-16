@@ -5,6 +5,7 @@ import lombok.Data;
 import javax.validation.constraints.NotBlank;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -48,4 +49,8 @@ public class OrderDTO {
 
   private List<Long> idsDish = new ArrayList<>();
   private List<Integer> listNumberItem = new ArrayList<>();
+
+  private List<Long> ids = new LinkedList<>();
+
+  private String search;
 }
