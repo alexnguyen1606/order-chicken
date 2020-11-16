@@ -25,7 +25,7 @@ public class Order {
     @Column(name = "sdt_kh")
     private Long customerPhone;
 
-    @Column(name = "dia_chi")
+    @Column(name = "dia_chi",columnDefinition = "nvarchar(500)")
     private String customerAddress;
 
     @CreatedDate
@@ -44,7 +44,7 @@ public class Order {
     @Column(name = "tong_tien")
     private Long totalPrice;
 
-    @Column(name = "phuong_thuc_thanh_toan")
+    @Column(name = "phuong_thuc_thanh_toan",columnDefinition = "nvarchar(500)")
     private String payment;
     
     @Column(name = "ten_kh")

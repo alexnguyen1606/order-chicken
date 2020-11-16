@@ -16,7 +16,7 @@ public class Voucher {
     @Column(name = "ma_khuyen_mai",unique = true)
     private String code;
 
-    @Column(name = "ten_khuyen_mai")
+    @Column(name = "ten_khuyen_mai",columnDefinition = "nvarchar(500)")
     private String name;
 
     @Column(name = "thoi_gian_bd")

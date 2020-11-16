@@ -2,8 +2,6 @@ package com.order.dto;
 
 import lombok.Data;
 
-import javax.persistence.Column;
-
 @Data
 public class DishDTO {
     private Long id;
@@ -21,7 +19,7 @@ public class DishDTO {
     private String content;
 
     private Long idCategory;
-    
+
     private String priceString;
 
 }

@@ -24,10 +24,10 @@ public class Dish {
     @Column(name = "trang_thai")
     private String status;
 
-    @Column
+    @Column(columnDefinition = "nvarchar(500)")
     private String urlImg;
 
-    @Column
+    @Column(columnDefinition = "nvarchar(255)")
     private String content;
 
     @Column(name="id_danhmuc")
