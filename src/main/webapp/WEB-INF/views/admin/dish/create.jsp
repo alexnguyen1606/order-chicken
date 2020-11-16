@@ -39,6 +39,12 @@
                             </div>
                         </div>
                         <div class="my-2">
+                            <label for="" class="form-label">Hình ảnh</label>
+                            <input type="hidden" id="urlImg" name="urlImg">
+                            <input type="file" name="img" id="img" class="form-control">
+                            <img src="" id="imgExam" class="d-none">
+                        </div>
+                        <div class="my-2">
                             <label for="" class="form-label">Mô tả <span class="required" style="color: #e02222;">*</span></label>
                             <textarea type="text" name="content" id="content" class="form-control">
                             </textarea>
@@ -67,4 +73,5 @@
         </div>
     </div>
 </div>
+<script src="<c:url value="/admin/js/uploadImg.js"/>"></script>
 <script src="<c:url value="/admin/js/dish/edit.js"/>"></script>

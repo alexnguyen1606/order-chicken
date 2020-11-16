@@ -42,7 +42,8 @@ jQuery(function ($) {
                 data: JSON.stringify(data),
                 dataType: 'json',
                 success: function (result) {
-                    window.location.reload();
+                    alert('Thêm món ăn thành công')
+                    window.location.href="/admin/dish/list";
                     // console.log(result);
                 },
                 error: function (error) {
@@ -91,6 +92,8 @@ jQuery(function ($) {
         $('#btnReset').click(function () {
             $('#formEdit input').val("");
         })
+
+
         //call function
         initEditDish();
     })
