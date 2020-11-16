@@ -7,6 +7,7 @@ import com.order.processor.order.OrderProcessor;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,7 +22,7 @@ import java.util.List;
 @RequestMapping("/api/admin/order")
 public class OrderQueryApi extends ExceptionHandlerApi {
   private OrderProcessor orderProcessor;
-  
+
   @PutMapping("/list/waiting")
   public ResponseEntity<ServiceResult> listWaiting(
       @RequestBody OrderDTO orderDTO,
@@ -75,6 +76,18 @@ public class OrderQueryApi extends ExceptionHandlerApi {
     Integer totalPage = (int) Math.ceil((double) totalItem / size);
     List<OrderDTO> data = orderProcessor.findAll(orderDTO, pageable);
     ServiceResult serviceResult = new ServiceResult(data, totalPage, currentPage);
+    return ResponseEntity.ok(serviceResult);
+  }
+
+  @GetMapping("/{id}")
+  public ResponseEntity<ServiceResult> getInfoDetail(@PathVariable Long id) {
+    ServiceResult serviceResult = new ServiceResult();
+    try {
+      serviceResult.setData(orderProcessor.findById(id));
+    } catch (Exception e) {
+      serviceResult.setMessage(e.getMessage());
+      return new ResponseEntity<>(serviceResult, HttpStatus.BAD_REQUEST);
+    }
     return ResponseEntity.ok(serviceResult);
   }
 }

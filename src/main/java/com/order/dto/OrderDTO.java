@@ -53,4 +53,6 @@ public class OrderDTO {
   private List<Long> ids = new LinkedList<>();
 
   private String search;
+  
+  private List<DetailOrderDTO> orderDetails = new ArrayList<>();
 }

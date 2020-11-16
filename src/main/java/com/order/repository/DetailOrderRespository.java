@@ -6,8 +6,12 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 public interface DetailOrderRespository extends JpaRepository<DetailOrder,Long>, QuerydslPredicateExecutor<DetailOrder> {
     @Transactional
     @Modifying
     void deleteByIdOrder(Long idOrder);
+    
+    public List<DetailOrder> findByIdOrder(Long orderId);
 }
