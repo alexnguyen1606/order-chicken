@@ -40,6 +40,14 @@ public class DishApi {
     public ResponseEntity<ServiceResult> getDish(@RequestParam(name = "id") Long id) {
         return new ResponseEntity<>(new ServiceResult(dishProcessor.getDish(id), "success", "200"), HttpStatus.OK);
     }
+    @PostMapping("/delete")
+    public ResponseEntity<ServiceResult> deleteDish(@RequestBody DishDTO dishDTO) {
+        if (dishDTO.getIds() != null) {
+            dishProcessor.deleteDishes(dishDTO.getIds());
+
+        }
+        return new ResponseEntity<>(new ServiceResult("success", "200"), HttpStatus.OK);
+    }
 
     @PostMapping("/list")
     public ResponseEntity<ServiceResult> getListDish(@RequestBody DishDTO dishDTO,

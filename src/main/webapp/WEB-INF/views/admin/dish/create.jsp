@@ -46,8 +46,7 @@
                         </div>
                         <div class="my-2">
                             <label for="" class="form-label">Mô tả <span class="required" style="color: #e02222;">*</span></label>
-                            <textarea type="text" name="content" id="content" class="form-control">
-                            </textarea>
+                            <textarea type="text" name="content" id="content" class="form-control"></textarea>
                         </div>
                         <div class="my-2">
                             <label for="" class="form-label">Danh mục <span class="required" style="color: #e02222;">*</span></label>

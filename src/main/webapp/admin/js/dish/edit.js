@@ -51,6 +51,22 @@ jQuery(function ($) {
                 }
             });
         }
+        function loadDishData(id) {
+            let url = "/api/dish?id="+id;
+
+            return $.ajax({
+                url: url,
+                type: 'GET',
+                contentType: 'application/json',
+                dataType: 'json',
+                success: function (result) {
+                    // console.log(result);
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
+        }
 
         //etc
         function buildCreateDataDish() {
@@ -70,6 +86,13 @@ jQuery(function ($) {
         async function initEditDish() {
             let dishCatData = await loadListDishCatData();
             mapCatToForm(dishCatData.data);
+            let urlString = window.location.href
+            let curUrl = new URL(urlString);
+            let id = curUrl.searchParams.get("id");
+            if (id) {
+                let dishData = await loadDishData(id);
+                mapDishToForm(dishData.data)
+            }
         }
 
         //map function
@@ -81,6 +104,20 @@ jQuery(function ($) {
                 appendData += `<option value="${v.id}">${v.name}</option>`
             })
             $('#idCategory').html(appendData)
+        }
+        function mapDishToForm(data) {
+            $('#name').val(data.name);
+            $('#price').val(data.price);
+            $('#unit').val(data.unit);
+            if(data.urlImg) {
+                $('#urlImg').val(data.urlImg);
+                $('#imgExam').attr('src',data.urlImg);
+                $('#imgExam').removeClass('d-none');
+            }
+            $('#content').val(data.content);
+            $('#idCategory option[value='+data.dishCategory.id+']').attr('selected',true);
+            $('input[name=status]:checked').attr('checked',false)
+            $('input[value='+data.status+']').attr('checked',true)
         }
 
         //add handler

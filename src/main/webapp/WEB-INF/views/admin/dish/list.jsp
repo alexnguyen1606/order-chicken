@@ -14,23 +14,38 @@
             <h4>Danh sách thực đơn</h4>
         </div>
         <div class="col-auto">
-            <a href="/admin/dish/edit" class="btn btn-primary" style="color:#fff">Thêm mới</a>
+            <div class="row">
+                <div class="col-auto">
+                    <a href="/admin/dish/edit" class="btn btn-primary" style="color:#fff">Thêm mới</a>
+                </div>
+                <div class="col-auto">
+                    <a id="delete-btn" ><i class="fas fa-trash-alt" style="font-size:20px;"></i></a>
+
+                </div>
+            </div>
         </div>
     </div>
     <div class="my-2">
-        <table class="table table-borderless table-hover w-100">
+        <table class="table table-striped table-hover w-100" id="listTable">
             <thead>
             <tr>
                 <td>
-                    <input type="checkbox" class="form-control">
+                    <input type="checkbox" class="">
                 </td>
                 <td>Tên sản phẩm</td>
                 <td>Tên danh mục</td>
                 <td>Đơn giá</td>
                 <td>Trạng thái</td>
+                <td></td>
             </tr>
             </thead>
+            <tbody></tbody>
         </table>
+        <ul id="pagination" class="pagination justify-content-center"></ul>
+
     </div>
 </div>
+
+<script src="<c:url value='/admin/template/paging/jquery.twbsPagination.js'/>"></script>
+<script src="/admin/template/paging/jquery.twbsPagination.min.js"></script>
 <script src="<c:url value="/admin/js/dish/list.js"/>"></script>
