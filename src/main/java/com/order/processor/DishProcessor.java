@@ -60,4 +60,10 @@ public class DishProcessor {
         if (dishDTO.getStatus() != null) result.and(qDish.status.eq(dishDTO.getStatus()));
         return result;
     }
+
+    public void deleteDishes(List<Long> ids) {
+        for (Long id: ids) {
+            dishService.deleteById(id);
+        }
+    }
 }
