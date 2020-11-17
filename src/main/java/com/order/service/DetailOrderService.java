@@ -22,4 +22,5 @@ public class DetailOrderService extends CommonRepository<DetailOrder,DetailOrder
     public List<DetailOrder> findByOrderId(Long orderId){
         return repo.findByIdOrder(orderId);
     }
+    
 }
