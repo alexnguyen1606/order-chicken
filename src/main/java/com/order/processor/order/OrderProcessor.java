@@ -59,6 +59,7 @@ public class OrderProcessor {
     }
     if (StringUtils.isNotBlank(orderDTO.getSearch())) {
       String textSearch = orderDTO.getSearch();
+      builder.and(Q.customerPhone.containsIgnoreCase(textSearch).or(Q.customerName.containsIgnoreCase(textSearch)));
     }
     return builder;
   }

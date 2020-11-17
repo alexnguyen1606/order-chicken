@@ -20,7 +20,7 @@ public class OrderDTO {
 
   private Long idVoucher;
 
-  private Long customerPhone;
+  private String customerPhone;
 
   @NotBlank(message = "Địa chỉ giao hàng không được bỏ trống")
   private String customerAddress;

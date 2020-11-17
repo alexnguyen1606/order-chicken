@@ -4,8 +4,7 @@ jQuery(function ($) {
             if (url=="" || url==null){
                 url = "/api/admin/order/list/cancel"
             }
-            var search = $('#search').val();
-            var data = {'search':search};
+            var data = getDataSearch();
             $.ajax({
                 type: "PUT",
                 url: url,
@@ -69,5 +68,13 @@ jQuery(function ($) {
             $('#orders').append(row);
         }
         fetchOrder("");
+        function getDataSearch() {
+            var search = $('#search').val();
+            return {'search': search};
+        }
+        $('#formSearch').on('submit',function (e) {
+            e.preventDefault();
+            fetchOrder("");
+        })
     })
 });

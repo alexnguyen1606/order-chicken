@@ -5,7 +5,7 @@ jQuery(function ($) {
                 url = "/api/admin/order/list/accept"
             }
             var search = $('#search').val();
-            var data = {'search':search};
+            var data = getDataSearch();
             $.ajax({
                 type: "PUT",
                 url: url,
@@ -31,6 +31,14 @@ jQuery(function ($) {
                 }
             });
         }
+        function getDataSearch() {
+            var search = $('#search').val();
+            return {'search': search};
+        }
+        $('#formSearch').on('submit',function (e) {
+            e.preventDefault();
+            fetchOrder("");
+        })
         function paging(totalPage,currentPages){
             $('#pagination-test').twbsPagination({
                 totalPages: totalPage,

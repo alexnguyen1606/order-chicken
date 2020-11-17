@@ -4,8 +4,7 @@ jQuery(function ($) {
             if (url == "" || url == null) {
                 url = "/api/admin/order/list/waiting"
             }
-            var search = $('#search').val();
-            var data = {'search': search};
+            var data = getDataSearch();
             $.ajax({
                 type: "PUT",
                 url: url,
@@ -113,6 +112,13 @@ jQuery(function ($) {
                 }
             });
         });
-
+        function getDataSearch() {
+            var search = $('#search').val();
+            return {'search': search};
+        }
+        $('#formSearch').on('submit',function (e) {
+            e.preventDefault();
+            fetchOrder("");
+        })
     });
 });

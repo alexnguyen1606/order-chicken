@@ -19,7 +19,7 @@ public class User {
     private String name;
 
     @Column(name = "sdt")
-    private Long phone;
+    private String phone;
 
     @Column(name = "email")
     private String email;
