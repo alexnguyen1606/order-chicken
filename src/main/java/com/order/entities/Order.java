@@ -55,5 +55,7 @@ public class Order {
     private Integer status;
     
     private Integer discount;
+    
+    private Long totalPriceAfterDiscount;
 
 }

@@ -21,6 +21,7 @@ public class OrderService extends CommonRepository<Order, OrderRepository> {
   public void updateTotalPriceAndTotalItem(Long orderId, Long totalPrice, Integer totalItem) {
     JPAUpdateClause update = new JPAUpdateClause(em, Q);
     update.set(Q.totalPrice, totalPrice);
+    update.set(Q.totalPriceAfterDiscount,totalPrice);
     update.set(Q.totalNumber, totalItem);
     update.where(Q.id.eq(orderId));
     update.execute();

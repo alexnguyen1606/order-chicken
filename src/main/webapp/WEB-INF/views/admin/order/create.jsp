@@ -76,7 +76,7 @@
     </div>
 </div>
 <div class="modal " id="modalSubmit" role="dialog" style="pointer-events: none">
-    <div class="modal-dialog modal-m font-label " style="border-radius: 30px">
+    <div class="modal-dialog modal-xl font-label " style="border-radius: 30px">
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header color-theme-bg">
@@ -93,31 +93,53 @@
                             <form id="formEdit">
                                 <input type="hidden" name="id" id="id">
                                 <div class="col-sm-12 mt-3 form-group">
-                                    <label class="ward input-label col-md-6 text-right">Tên khách hàng:</label>
+                                    <label class="ward input-label col-md-4 text-right">Tên khách hàng:</label>
                                     <input class="form-control col-md-8" type="" required name="customerName"
                                            id="customerName">
                                 </div>
                                 <div class="col-sm-12 mt-3 form-group">
-                                    <label class="ward input-label col-md-6 text-right">Số điện thoại:</label>
+                                    <label class="ward input-label col-md-4 text-right">Số điện thoại:</label>
                                     <input class="form-control col-md-8 " required name="customerPhone" id="customerPhone">
                                 </div>
                                 <div class="col-sm-12 mt-3 form-group">
-                                    <label class="ward input-label col-md-6 text-right">Địa chỉ nhận hàng:</label>
+                                    <label class="ward input-label col-md-4 text-right">Địa chỉ nhận hàng:</label>
                                     <textarea class="form-control col-md-8" required name="customerAddress" id="customerAddress"></textarea>
                                 </div>
                                 <div class="col-sm-12 mt-3 form-group">
-                                    <label class="ward input-label col-md-6 text-right">Thời gian nhận hàng:</label>
+                                    <label class="ward input-label col-md-4 text-right">Thời gian nhận hàng:</label>
                                     <input type="datetime-local" class="form-control col-md-8 " required name="deliveryTime" id="deliveryTime">
                                 </div>
                                 <div class="col-sm-12 mt-3 form-group">
-                                    <label class="ward input-label col-md-6 text-right">Phương thức thanh toán:</label>
+                                    <label class="ward input-label col-md-4 text-right">Phương thức thanh toán:</label>
                                     <select class="form-control col-md-8" name="payment" id="payment">
                                         <option value="COD" selected>Thanh toán khi nhận hàng</option>
                                         <option value="TRANSFER">Chuyển khoản</option>
                                     </select>
                                 </div>
                                 <div class="col-sm-12 mt-3 form-group">
-                                    <label class="ward input-label col-md-6 text-right">Ghi chú:</label>
+                                    <label class="ward input-label col-md-4 text-right">Mã khuyến mại:</label>
+                                    <input type="text" class="form-control col-md-3 " required name="voucherCode" id="voucherCode">
+                                    <div class="col-md-5 row">
+                                        <div class="col-md-8">
+                                            <span id="alertVoucher"></span>
+                                        </div>
+                                       <div class="col-md-4 text-left">
+                                           <button type="button"  class=" btn m-0" id="checkVoucher"
+                                                   style="border:1px solid black;width: 130px">Kiểm tra mã
+                                           </button>
+                                       </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 mt-3 form-group">
+                                    <label class="ward input-label col-md-4 text-right">Tổng tiền:</label>
+                                    <input type="text" class="form-control col-md-8 " required name="" disabled id="totalPrice2">
+                                </div>
+                                <div class="col-sm-12 mt-3 form-group">
+                                    <label class="ward input-label col-md-4 text-right">Tổng tiền thanh toán:</label>
+                                    <input type="text" class="form-control col-md-8 " required name="" disabled id="totalPricePaid">
+                                </div>
+                                <div class="col-sm-12 mt-3 form-group">
+                                    <label class="ward input-label col-md-4 text-right">Ghi chú:</label>
                                     <textarea class="form-control col-md-8 "  name="note" id="note"></textarea>
                                 </div>
                                 <div class="col-sm-12 mt-3 form-group text-center" style="height: 46px">

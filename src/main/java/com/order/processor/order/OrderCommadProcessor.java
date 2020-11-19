@@ -7,6 +7,7 @@ import com.order.entities.*;
 import com.order.mapper.OrderMapper;
 import com.order.security.MyUser;
 import com.order.service.*;
+import com.querydsl.jpa.impl.JPAUpdateClause;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
@@ -41,6 +42,30 @@ public class OrderCommadProcessor {
     orderService.save(order);
     processDetailOrderAndUpdateOrder(
         order.getId(), orderDTO.getIdsDish(), orderDTO.getListNumberItem());
+    updateDiscount(order);
+  }
+
+  @Transactional
+  public void updateDiscount(Long orderId, Long voucherId) {
+    Order order = orderService.findById(orderId).get();
+    Voucher voucher = voucherService.findById(voucherId).get();
+    JPAUpdateClause update = new JPAUpdateClause(voucherService.getEm(), Q);
+    update.set(Q.discount, voucher.getDiscount());
+    Long totalPriceAfterDiscount = order.getTotalPrice() * (voucher.getDiscount() / 100);
+    update.set(Q.totalPriceAfterDiscount, totalPriceAfterDiscount);
+    update.where(Q.id.eq(orderId)).execute();
+  }
+
+  @Transactional
+  public void updateDiscount(Order order) {
+    if (order.getIdVoucher() != null) {
+      Voucher voucher = voucherService.findById(order.getIdVoucher()).get();
+      JPAUpdateClause update = new JPAUpdateClause(voucherService.getEm(), Q);
+      update.set(Q.discount, voucher.getDiscount());
+      Long totalPriceAfterDiscount = order.getTotalPrice() * (voucher.getDiscount() / 100);
+      update.set(Q.totalPriceAfterDiscount, totalPriceAfterDiscount);
+      update.where(Q.id.eq(order.getId())).execute();
+    }
   }
 
   private void processDetailOrderAndUpdateOrder(
@@ -103,6 +128,7 @@ public class OrderCommadProcessor {
     orderService.save(order);
     processDetailOrderAndUpdateOrder(
         order.getId(), orderDTO.getIdsDish(), orderDTO.getListNumberItem());
+    updateDiscount(order);
   }
 
   private void validCreate(OrderDTO orderDTO) throws Exception {
