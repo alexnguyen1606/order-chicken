@@ -10,10 +10,20 @@
                 template="/WEB-INF/layouts/admin/layout.jsp">
         <put-attribute name="head"
                        value="/WEB-INF/layouts/admin/layout/head.jsp"/>
-        <put-attribute name="menu"
-                       value="/WEB-INF/layouts/admin/layout/menu.jsp"/>
-        <put-attribute name="side"
+        <put-attribute name="footer"
                        value="/WEB-INF/layouts/admin/layout/footer.jsp"/>
+        <put-attribute name="body" value=""/>
+    </definition>
+
+    <!-- template customer -->
+    <definition name="customer.definition"
+                template="/WEB-INF/layouts/customer/layout.jsp">
+        <put-attribute name="header"
+                       value="/WEB-INF/layouts/customer/layout/header.jsp"/>
+        <put-attribute name="head"
+                       value="/WEB-INF/layouts/customer/layout/head.jsp"/>
+        <put-attribute name="footer"
+                       value="/WEB-INF/layouts/customer/layout/footer.jsp"/>
         <put-attribute name="body" value=""/>
     </definition>
 
