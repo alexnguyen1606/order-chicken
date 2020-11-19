@@ -53,5 +53,7 @@ public class Order {
     private String customerName;
     
     private Integer status;
+    
+    private Integer discount;
 
 }

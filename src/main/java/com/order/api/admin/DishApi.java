@@ -1,4 +1,4 @@
-package com.order.api;
+package com.order.api.admin;
 
 import com.order.dto.DishDTO;
 import com.order.dto.ServiceResult;

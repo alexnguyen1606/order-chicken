@@ -1,4 +1,4 @@
-package com.order.api;
+package com.order.api.admin;
 
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.RequestMapping;
