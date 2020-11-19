@@ -1,0 +1,30 @@
+.bg-header{
+    background-color: #FF922C !important;
+    height: 62px;;
+
+}
+.active{
+    background: #B3521F;
+}
+.title-header{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+    text-transform: capitalize;
+    color: #FFFFFF !important;
+
+}
+.title-header .nav-link{
+    color: #FFFFFF !important;
+}
+
+.nav-item{
+    height: 62px;
+    width: 139px;
+}
+.nav-item .nav-link{
+    text-align: center;
+    margin-top: 13px;
+}

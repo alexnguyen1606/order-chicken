@@ -8,52 +8,60 @@ import com.querydsl.core.BooleanBuilder;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Component
+@Service
 @AllArgsConstructor
 public class DishCategoryProcessor {
-    private DishCategoryService dishCategoryService;
-    private final QDishCategory qDishCategory = QDishCategory.dishCategory;
-    private DishCategoryMapper dishCategoryMapper;
+  private DishCategoryService dishCategoryService;
+  private final QDishCategory qDishCategory = QDishCategory.dishCategory;
+  private DishCategoryMapper dishCategoryMapper;
 
-    public void createDishCategory(DishCategoryDTO dishCategoryDTO) {
-        dishCategoryService.save(dishCategoryMapper.toEntity(dishCategoryDTO));
-    }
+  public void createDishCategory(DishCategoryDTO dishCategoryDTO) {
+    dishCategoryService.save(dishCategoryMapper.toEntity(dishCategoryDTO));
+  }
 
-    public void changeDishCategory(DishCategoryDTO dishCategoryDTO) {
-        dishCategoryService.save(dishCategoryMapper.toEntity(dishCategoryDTO));
-    }
+  public void changeDishCategory(DishCategoryDTO dishCategoryDTO) {
+    dishCategoryService.save(dishCategoryMapper.toEntity(dishCategoryDTO));
+  }
 
-    public DishCategoryDTO getCategoryDish(DishCategoryDTO dishCategoryDTO) {
-        return dishCategoryMapper.toDTO(dishCategoryService.findById(dishCategoryDTO.getId()).get());
-    }
+  public DishCategoryDTO getCategoryDish(DishCategoryDTO dishCategoryDTO) {
+    return dishCategoryMapper.toDTO(dishCategoryService.findById(dishCategoryDTO.getId()).get());
+  }
 
-    public DishCategoryDTO getCategoryDish(Long id) {
-        return dishCategoryMapper.toDTO(dishCategoryService.findById(id).get());
-    }
+  public DishCategoryDTO getCategoryDish(Long id) {
+    return dishCategoryMapper.toDTO(dishCategoryService.findById(id).get());
+  }
 
-    public List<DishCategoryDTO> getListDish(DishCategoryDTO dishCategoryDTO, Pageable pageable) {
-        BooleanBuilder builder = commonBuilder(dishCategoryDTO);
-        return dishCategoryService.findAll(builder, pageable).stream().map(dishCategoryMapper::toDTO).collect(Collectors.toList());
-    }
+  public List<DishCategoryDTO> getListDish(DishCategoryDTO dishCategoryDTO, Pageable pageable) {
+    BooleanBuilder builder = commonBuilder(dishCategoryDTO);
+    return dishCategoryService.findAll(builder, pageable).stream()
+        .map(dishCategoryMapper::toDTO)
+        .collect(Collectors.toList());
+  }
 
-    public Long countListDishCategory(DishCategoryDTO dishCategoryDTO) {
-        BooleanBuilder builder = commonBuilder(dishCategoryDTO);
-        return dishCategoryService.count(builder);
-    }
+  public Long countListDishCategory(DishCategoryDTO dishCategoryDTO) {
+    BooleanBuilder builder = commonBuilder(dishCategoryDTO);
+    return dishCategoryService.count(builder);
+  }
 
-    public void deleteDishCategory(Long dishCategoryId) {
-        dishCategoryService.deleteById(dishCategoryId);
-    }
+  public void deleteDishCategory(Long dishCategoryId) {
+    dishCategoryService.deleteById(dishCategoryId);
+  }
 
-    private BooleanBuilder commonBuilder(DishCategoryDTO dishCategoryDTO) {
-        BooleanBuilder result = new BooleanBuilder();
-        if (dishCategoryDTO.getName() != null)
-            result.and(qDishCategory.name.containsIgnoreCase(dishCategoryDTO.getName()));
-        return result;
-    }
+  private BooleanBuilder commonBuilder(DishCategoryDTO dishCategoryDTO) {
+    BooleanBuilder result = new BooleanBuilder();
+    if (dishCategoryDTO.getName() != null)
+      result.and(qDishCategory.name.containsIgnoreCase(dishCategoryDTO.getName()));
+    return result;
+  }
 
+  public List<DishCategoryDTO> findAll() {
+    return dishCategoryService.findAll().stream()
+        .map(dishCategoryMapper::toDTO)
+        .collect(Collectors.toList());
+  }
 }

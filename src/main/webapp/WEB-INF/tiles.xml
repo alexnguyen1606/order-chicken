@@ -49,7 +49,7 @@
 
     <definition name="customer/*" extends="customer">
         <put-attribute name="body"
-                       value="/WEB-INF/views/customer/{1}"/>
+                       value="/WEB-INF/views/customer/{1}.jsp"/>
     </definition>
 
 

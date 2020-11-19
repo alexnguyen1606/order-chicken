@@ -1,0 +1,61 @@
+.title-category {
+
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 33px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}
+
+.card {
+    box-shadow: none;
+}
+
+.btnAddToCard {
+    background-color: #FF922C;
+    color: white;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    /* identical to box height */
+
+    border-radius: 69px;
+    height: 48px;
+    width: 163px;
+    text-transform: capitalize
+}
+
+.card-footer {
+    background-color: white;
+}
+.title-product{
+
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #000000;
+
+}
+.card-header{
+    border: none;
+}
+.price {
+
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #B3521F;
+
+}
+.btnAddToCard:hover{
+    color: white;
+}

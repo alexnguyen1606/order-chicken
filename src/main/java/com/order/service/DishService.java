@@ -6,6 +6,8 @@ import com.order.repository.DishRepository;
 import com.querydsl.jpa.impl.JPAQuery;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class DishService extends CommonRepository<Dish, DishRepository> {
   public DishService(DishRepository repo) {
@@ -17,5 +19,9 @@ public class DishService extends CommonRepository<Dish, DishRepository> {
   public String getNameById(Long id) {
     JPAQuery<Dish> query = new JPAQuery<>(em);
     return query.select(Q.name).from(Q).where(Q.id.eq(id)).fetchFirst();
+  }
+
+  public List<Dish> findByCategoryAndStatus(Long categoryId, Integer status) {
+    return repo.findByIdCategoryAndStatus(categoryId, status);
   }
 }

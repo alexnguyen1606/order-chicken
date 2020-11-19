@@ -1,4 +1,4 @@
-package com.order.controller.admin.customer;
+package com.order.controller.customer;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,8 +15,11 @@ import org.springframework.web.servlet.ModelAndView;
 public class ProductController {
 
   @GetMapping("/list")
-  public ModelAndView listProduct() {
-    return new ModelAndView("customer/product-list");
+  public ModelAndView listProduct()
+  {
+    ModelAndView mav = new ModelAndView("customer/product-list");
+    mav.addObject("product","active");
+    return mav;
   }
 
   @GetMapping("/detail/{id}")
@@ -25,7 +28,4 @@ public class ProductController {
     mav.addObject("id", id);
     return mav;
   }
-  
-  
-  
 }
