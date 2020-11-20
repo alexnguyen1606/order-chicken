@@ -29,7 +29,7 @@ jQuery(function ($) {
             $.each(data, function (i, v) {
                 row += '<div class="col-md-12">';
                 row += '<div class="col-md-12 text-left title-category"><h3>' + v.name + '</h3></div>';
-                row += '<div class="col-md-12 mt-5 row item-category" data-id ="' + v.id + '" id="category_"' + v.id + '></div>';
+                row += '<div class="col-md-12 mt-5 row item-category" data-id ="' + v.id + '" id="category_' + v.id + '"></div>';
                 row += '</div>'
             });
             $('#list-product').empty();
@@ -74,10 +74,10 @@ jQuery(function ($) {
                 row+='</div>';
                 row+='<div class="card-body text-center">';
                 row+='<p class="card-text price">'+v.price+'</p>';
-                row+='</div';
+                row+='</div>';
                 row+='<div class="card-footer">';
                 row+='<button class="btn btnAddToCard">Thêm vào giỏ hàng</button>';
-                row+='</div';
+                row+='</div>';
 
                 row+='</div>';
                 row+='</div>';

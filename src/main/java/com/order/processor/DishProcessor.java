@@ -1,5 +1,6 @@
 package com.order.processor;
 
+import com.order.constant.EntityConstant;
 import com.order.constant.SystemConstant;
 import com.order.dto.DishDTO;
 import com.order.entities.QDish;
@@ -67,8 +68,9 @@ public class DishProcessor {
   }
 
   public List<DishDTO> findCategoryAndActive(Long category) {
-    return dishService.findByCategoryAndStatus(category, SystemConstant.ENABLE).stream()
-        .map(dishMapper::toDTO)
-        .collect(Collectors.toList());
+    List<DishDTO> result = dishService.findByCategoryAndStatus(category, EntityConstant.ACTIVE_STATUS_DISH).stream()
+                                   .map(dishMapper::toDTO)
+                                   .collect(Collectors.toList());
+    return result;
   }
 }
