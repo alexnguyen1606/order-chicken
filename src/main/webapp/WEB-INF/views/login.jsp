@@ -31,13 +31,13 @@
 <body>
 <div class="w-100 d-flex justify-content-center align-items-center" style="height: 100vh">
     <div class="col-sm-4 text-center py-4 px-5 my-card position-relative">
-        <form action="/j_spring_security_backendui" id="formLogin" method="post" class="text-center">
+        <form action="/j_spring_security" id="formLogin" method="post" class="text-center">
             <h3 class="mb-4">ADMIN E-LEARNING</h3>
             <div class="form-group">
                 <input type="text" class="form-control" id="userName" name="username" placeholder="Tên đăng nhập">
             </div>
             <div class="form-group">
-                <input type="password" class="form-control" pattern="[a-zA-Z0-9]+" title="Chỉ bao gồm chữ và số" id="password" name="password" placeholder="Mật khẩu">
+                <input type="password" class="form-control" pattern="[a-zA-Z0-9]+" title="Chỉ bao gồm chữ và số" id="password" name="password" placeholder="">
             </div>
             <div class="form-group justify-content-center align-items-center">
                 <label class="mb-0">Nhớ mật khẩu</label>
