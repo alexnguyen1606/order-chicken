@@ -12,13 +12,13 @@ public class Dish {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "ten_mon")
+    @Column(name = "ten_mon",columnDefinition = "nvarchar(500)")
     private String name;
 
     @Column(name = "don_gia")
     private Long price;
 
-    @Column(name = "don_vi_tinh")
+    @Column(name = "don_vi_tinh",columnDefinition = "nvarchar(255)")
     private String unit;
 
     @Column(name = "trang_thai")
@@ -27,7 +27,7 @@ public class Dish {
     @Column(columnDefinition = "nvarchar(500)")
     private String urlImg;
 
-    @Column(columnDefinition = "nvarchar(255)")
+    @Column(columnDefinition = "nvarchar(500)")
     private String content;
 
     @Column(name="id_danhmuc")

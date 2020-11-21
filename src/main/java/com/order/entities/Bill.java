@@ -24,10 +24,10 @@ public class Bill {
     @Column(name = "sdt_ch")
     private Long resPhone;
 
-    @Column(name = "dia_chi_ch")
+    @Column(name = "dia_chi_ch",columnDefinition = "nvarchar(500)")
     private String resAddress;
 
-    @Column(name = "ghi_chu")
+    @Column(name = "ghi_chu",columnDefinition = "nvarchar(MAX)")
     private String note;
 
     @Column(name = "tong_sp")
@@ -36,10 +36,10 @@ public class Bill {
     @Column(name = "tong_tien")
     private Long totalPrice;
 
-    @Column(name = "phuong_thuc_thanh_toan")
+    @Column(name = "phuong_thuc_thanh_toan",columnDefinition = "nvarchar(500)")
     private String payment;
 
-    @Column(name = "ten_kh")
+    @Column(name = "ten_kh",columnDefinition = "nvarchar(500)")
     private String customerName;
 
 }

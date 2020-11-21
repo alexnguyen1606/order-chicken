@@ -109,6 +109,7 @@ jQuery(function ($) {
             $('#name').val(data.name);
             $('#price').val(data.price);
             $('#unit').val(data.unit);
+            $('#id').val(data.id)
             if(data.urlImg) {
                 $('#urlImg').val(data.urlImg);
                 $('#imgExam').attr('src',data.urlImg);

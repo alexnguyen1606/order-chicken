@@ -32,7 +32,7 @@
                     <div class="portlet-body">
                         <div class="form-normal">
                             <form class="form-horizontal" id="formEdit">
-                                <input type="hidden" name="id">
+                                <input type="hidden" id="id" name="id">
 
                                 <div class="">
                                     <label for="" class="form-label">Tên danh mục <span class="required" style="color: #e02222;">*</span></label>
