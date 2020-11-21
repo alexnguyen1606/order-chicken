@@ -29,8 +29,8 @@ jQuery(function ($) {
             $.each(data, function (i, v) {
                 row += '<div class="col-md-12">';
                 row += '<div class="col-md-12 text-left title-category"><h3>' + v.name + '</h3></div>';
-                row += '<div class="col-md-12 mt-5 row item-category" data-id ="' + v.id + '" id="category_"' + v.id + '></div>';
-                row += '</div>'
+                row += '<div class="col-md-12 mt-5 row item-category" data-id ="' + v.id + '" id="category_' + v.id + '"></div>';
+                row += '</div>';
             });
             $('#list-product').empty();
             $('#list-product').append(row);
@@ -64,8 +64,9 @@ jQuery(function ($) {
             });
         }
         function bindingProduct(data,categoryId) {
-            var row = '<div class="col-md-12 mt-5 row">';
+            var row = '<div class="col-md-12  row">';
             $.each(data,function (i,v) {
+                var price = v.price.toLocaleString('it-IT', {style: 'currency', currency: 'VND'});
                 row+='<div class="col-md-3">';
                 row+='<div class="card item-product text-center">';
                 row+='<img class="card-img-top" src="/admin/image/product1.png" alt="">';
@@ -73,11 +74,11 @@ jQuery(function ($) {
                 row+='<p class="card-title title-product">'+v.name+'</p>';
                 row+='</div>';
                 row+='<div class="card-body text-center">';
-                row+='<p class="card-text price">'+v.price+'</p>';
-                row+='</div';
+                row+='<p class="card-text price">'+price+'</p>';
+                row+='</div>';
                 row+='<div class="card-footer">';
-                row+='<button class="btn btnAddToCard">Thêm vào giỏ hàng</button>';
-                row+='</div';
+                row+='<button class="btn btnAddToCard" data-id="'+v.id+'" data-name="'+v.name+'" data-price="'+v.price+'" data-url="'+v.urlImg+'">Thêm vào giỏ hàng</button>';
+                row+='</div>';
 
                 row+='</div>';
                 row+='</div>';

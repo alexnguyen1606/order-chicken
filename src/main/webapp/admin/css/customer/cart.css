@@ -1,0 +1,65 @@
+.continousOrder{
+    height: 48px;
+    width: 169px;
+    border-radius: 69px;
+    background: #331900;
+    box-shadow: 0px 20px 40px #F4E2D1;
+    color: white;
+    text-align: center;
+    align-items: flex-start;
+}
+.continousOrder:hover{
+    color: white;
+}
+.completedOrder{
+    height: 48px;
+    width: 169px;
+    left: 1361px;
+    top: 737px;
+    border-radius: 69px;
+    background: #FF922C;
+    box-shadow: 0px 20px 40px #F4E2D1;
+    color: white;
+}
+.completedOrder:hover{
+    color: white;
+}
+.removeItem{
+    font-style: normal;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+
+    display: flex;
+    align-items: flex-end;
+    text-decoration-line: underline !important;
+
+    color: #FF922C !important;
+    cursor: pointer;
+}
+.incrementProduct{
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    background: #B3521F;
+    color: white;
+}
+.btnMinusItem{
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    background: #B3521F;
+    color: white;
+}
+.incrementProduct .fa {
+    color: white;
+}
+.btnMinusItem .fa {
+    color: white;
+}
+.quantity{
+    width: 40px;
+    height: 40px;
+    border-top: 1px solid #B3521F;
+    border-bottom: 1px solid #B3521F;
+}

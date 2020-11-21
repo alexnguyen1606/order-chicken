@@ -8,5 +8,5 @@ import java.util.List;
 
 public interface DishRepository extends JpaRepository<Dish,Long>, QuerydslPredicateExecutor<Dish> {
     
-     List<Dish> findByIdCategoryAndStatus(Long categoryId,Integer status);
+     List<Dish> findByIdCategoryAndStatus(Long categoryId,String status);
 }

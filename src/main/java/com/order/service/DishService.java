@@ -21,7 +21,7 @@ public class DishService extends CommonRepository<Dish, DishRepository> {
     return query.select(Q.name).from(Q).where(Q.id.eq(id)).fetchFirst();
   }
 
-  public List<Dish> findByCategoryAndStatus(Long categoryId, Integer status) {
+  public List<Dish> findByCategoryAndStatus(Long categoryId, String status) {
     return repo.findByIdCategoryAndStatus(categoryId, status);
   }
 }
