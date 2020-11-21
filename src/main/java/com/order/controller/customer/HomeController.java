@@ -12,6 +12,6 @@ import org.springframework.web.servlet.ModelAndView;
 public class HomeController {
   @GetMapping("/")
   public ModelAndView home() {
-    return new ModelAndView("customer/home");
+    return new ModelAndView("customer-nomenu/home");
   }
 }

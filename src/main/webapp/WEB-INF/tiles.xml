@@ -52,5 +52,18 @@
                        value="/WEB-INF/views/customer/{1}.jsp"/>
     </definition>
 
+<!--    customer no menu-->
+    <definition name="customer-nomenu"
+                template="/WEB-INF/layouts/customer/layout-nomenu.jsp">
+        <put-attribute name="head"
+                       value="/WEB-INF/layouts/customer/layout/head.jsp"/>
+        <put-attribute name="footer"
+                       value="/WEB-INF/layouts/customer/layout/footer.jsp"/>
+        <put-attribute name="body" value=""/>
+    </definition>
+    <definition name="customer-nomenu/*" extends="customer-nomenu">
+        <put-attribute name="body"
+                       value="/WEB-INF/views/customer/{1}.jsp"/>
+    </definition>
 
 </tiles-definitions>
