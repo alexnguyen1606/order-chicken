@@ -112,12 +112,12 @@ jQuery(function ($) {
                 row += '<td class="text-center">' + v.name + '</td>';
                 row += '<td class="text-center">' + currentPrice + '</td>';
                 row += '<td class="text-center row justify-content-center">';
-                row += '<div class="incrementProduct" data-id=' + v.id + '><a class="" data-id=' + v.id + '><i class="fa fa-plus"></i></a></div>';
-                row += '<div class="quantity"><span class="pl-1 pr-1 items" >' + v.quantity + '</span></div>';
-                row += '<div class="btnMinusItem" data-id=' + v.id + '><a class="" data-id=' + v.id + '><i class="fa fa-minus"></i></a></div>';
+                row += '<div class="incrementProduct" data-id=' + v.id + '><i class="fa fa-plus "></i></div>';
+                row += '<div class="quantity"><div class="pl-1 pr-1 items mt-1" >' + v.quantity + '</div></div>';
+                row += '<div class="btnMinusItem" data-id=' + v.id + '><i class="fa fa-minus "></i></div>';
                 row += '</td>';
                 row += '<td class="text-center"><p class="totalPricePerProduct" >' + totalPrice + '</p></td>';
-                row += '<td class="text-center"><a class="removeItem" data-id="' + v.id + '">Xóa</a></td>';
+                row += '<td class="text-center"><a class="removeItem text-center" data-id="' + v.id + '">Xóa</a></td>';
                 row += '</tr>';
             });
             if (cartItems.length > 0) {

@@ -6,7 +6,7 @@
     <a href="/" class="brand-link">
         <%--    <img src="https://vnpost.vnpt.edu.vn/assets/global/img/logo/logo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"--%>
         <%--    style="opacity: .8">--%>
-        <span class="brand-text font-weight-light" style="font-size:18px;">VietNamPost E-LEARNING</span>
+        <span class="brand-text font-weight-light" style="font-size:18px;">Order Online</span>
     </a>
 
     <!-- Sidebar -->
