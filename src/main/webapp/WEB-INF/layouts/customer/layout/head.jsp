@@ -11,7 +11,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="/admin/template/hill/js/jquery-3.4.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
 
+<!-- jQuery Modal -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
 <%--  <link rel="SHORTCUT ICON" href="/public/image/logo_vnpost.png" type="image/x-icon">--%>
 <link rel="stylesheet" href="/admin/template/plugins/fontawesome-free/css/all.min.css">
 <!-- Ionicons -->
@@ -43,9 +47,10 @@
 <link rel="stylesheet" href="/admin/css/customer/header.css"/>
 <link rel="stylesheet" href="/customer/css/home.css"/>
 <link rel="stylesheet" href="/admin/css/customer/products.css"/>
-<script src="/admin/ckfinder/ckfinder.js"></script><%--bỏ đi vì footer có rồi,tốn dung lượng người dùng--%>
+<!-- Remember to include jQuery :) -->
 
-<script src="/admin/ckeditor/ckeditor.js"></script>
+
+
 
 
 

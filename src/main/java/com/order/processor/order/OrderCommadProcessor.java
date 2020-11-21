@@ -9,6 +9,7 @@ import com.order.security.MyUser;
 import com.order.service.*;
 import com.querydsl.jpa.impl.JPAUpdateClause;
 import lombok.AllArgsConstructor;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -138,17 +139,16 @@ public class OrderCommadProcessor {
   }
 
   private void validVoucher(OrderDTO order) throws Exception {
-    if (order.getVoucherCode() == null) {
+    if (StringUtils.isBlank(order.getVoucherCode())) {
       return;
     }
     Optional<Voucher> voucherOptional = voucherService.findByCode(order.getVoucherCode());
-    if (!voucherOptional.isPresent()) {
-      throw new Exception("Không tìm thấy mã giảm giá");
-    }
-    Voucher voucher = voucherOptional.get();
-    LocalDateTime current = LocalDateTime.now();
-    if (current.isBefore(voucher.getEndTime()) && current.isAfter(voucher.getStartTime())) {
-      order.setIdVoucher(voucher.getId());
+    if (voucherOptional.isPresent()) {
+      Voucher voucher = voucherOptional.get();
+      LocalDateTime current = LocalDateTime.now();
+      if (current.isBefore(voucher.getEndTime()) && current.isAfter(voucher.getStartTime())) {
+        order.setIdVoucher(voucher.getId());
+      }
     }
   }
 

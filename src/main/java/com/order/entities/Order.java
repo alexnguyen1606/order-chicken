@@ -49,7 +49,7 @@ public class Order {
     @Column(name = "phuong_thuc_thanh_toan",columnDefinition = "nvarchar(500)")
     private String payment;
     
-    @Column(name = "ten_kh")
+    @Column(name = "ten_kh",columnDefinition = "nvarchar(500)")
     private String customerName;
     
     private Integer status;

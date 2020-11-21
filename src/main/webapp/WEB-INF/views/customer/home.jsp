@@ -27,16 +27,16 @@
                 <div class="col-auto">
                     <div class="row">
                         <div class="col-auto">
-                            <a href="/" class="menu-item reverse">Thực Đơn </a>
+                            <a href="/product/list" class="menu-item reverse">Thực Đơn </a>
 
                         </div>
                         <div class="col-auto">
-                            <a href="/" class="menu-item reverse">Khuyến Mãi</a>
+                            <a href="/voucher/list" class="menu-item reverse">Khuyến Mãi</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-auto">
-                    <a href="/" class="btn btn-primary">
+                    <a href="/login" class="btn btn-primary">
                         Đăng nhập
                     </a>
                 </div>
@@ -54,7 +54,7 @@
                         Các thành phần gia vị được hoà trộn hoàn hảo với từng lớp bột phủ lên miếng gà rán được nhào nặn công phu bằng tay, cho ra đời những món ăn ngon miệng và đậm đà khó quên... Với tất cả mọi nỗ lực và tâm huyết này, chúng tôi hy vọng sẽ mang đến bạn một trải nghiệm ẩm thực thật phong phú và sự hài lòng tuyệt đối
                     </div>
                     <div>
-                        <a href="#" class="btn btn-primary box-shadow">
+                        <a href="/product/list" class="btn btn-primary box-shadow">
                             ĐẶT HÀNG NGAY
                         </a>
                     </div>

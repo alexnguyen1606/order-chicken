@@ -118,7 +118,7 @@
                                 </div>
                                 <div class="col-sm-12 mt-3 form-group">
                                     <label class="ward input-label col-md-4 text-right">Mã khuyến mại:</label>
-                                    <input type="text" class="form-control col-md-3 " required name="voucherCode" id="voucherCode">
+                                    <input type="text" class="form-control col-md-3 "  name="voucherCode" id="voucherCode">
                                     <div class="col-md-5 row">
                                         <div class="col-md-8">
                                             <span id="alertVoucher"></span>
@@ -144,12 +144,12 @@
                                 </div>
                                 <div class="col-sm-12 mt-3 form-group text-center" style="height: 46px">
                                     <div class="col-md-6 text-right">
-                                        <button type="submit" class=" btn"
+                                        <button type="submit" class="save btn"
                                                 style=" background: #00D380; color: #ffffff;width: 130px">Lưu
                                         </button>
                                     </div>
                                     <div class="col-md-6 text-right">
-                                        <button type="button" data-dismiss="modal" class=" btn" id="cancel"
+                                        <button type="button" data-dismiss="modal" class="cancel btn" id="cancel"
                                                 style="border:1px solid black;width: 130px">Hủy
                                         </button>
                                     </div>
