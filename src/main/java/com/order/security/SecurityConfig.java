@@ -39,7 +39,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     http.csrf().disable();
     http.authorizeRequests()
+            .antMatchers("/").permitAll();
+    http.authorizeRequests()
         .antMatchers("/**").authenticated();
+    http.authorizeRequests()
+            .antMatchers("/admin/**").hasAuthority("ADMIN");
 
     http.authorizeRequests()
         .and()
@@ -68,9 +72,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
   public void configure(WebSecurity web) throws Exception {
     web.ignoring()
         .antMatchers(
-            "/image/**",
-            "/template/**",
-            "/plugins/**",
-            "/css/**","/customer/**");
+            "/admin/image/**",
+            "/admin/template/**",
+            "/admin/plugins/**",
+            "/admin/css/**","/customer/**","/admin/js/**");
   }
 }

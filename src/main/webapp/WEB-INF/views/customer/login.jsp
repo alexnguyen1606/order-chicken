@@ -19,7 +19,7 @@
 <div class="container">
     <div class="col-md-12">
         <div class="form-menu col-md-5">
-            <form action="/j_spring_security_check" id="formLogin" method="POST" class="menu">
+            <form action="/j_spring_security" id="formLogin" method="POST" class="menu">
                 <div class="text-center pt-5 mb-5">
                     <h3>Đăng nhập</h3>
                 </div>
@@ -31,7 +31,7 @@
                    </div>
                     <div class="col-md-12  text-left">
                         <label class="col-md-6">Mật khẩu:</label>
-                        <input name="password" type="password" class="form-control col-md-12" placeholder="Mật khẩu"/>
+                        <input name="password" type="password" class="form-control col-md-12" placeholder=""/>
 
                     </div>
                     <div class="col-md-12">

@@ -7,6 +7,8 @@
 --%>
 <%@ page pageEncoding="utf-8" %>
 <meta charset="utf-8">
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <nav class="navbar navbar-expand-lg  bg-header title-header" style="">
     <div class="container" style="max-height:100%">
             <div class="col-auto position-relative">
@@ -34,12 +36,14 @@
                     </li>
                     <li class="nav-item" style="width: 100px">
                         <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">Alex</a>
+                        aria-haspopup="true" aria-expanded="false"><security:authentication property="principal.username" /> </a>
                         <div class="dropdown-menu" id="" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="/profile">Thông tin cá nhân</a>
+                          <sec:authorize access="hasAuthority('ADMIN')">
+                              <a class="dropdown-item" href="/admin">Quản trị</a>
+                          </sec:authorize>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
+                        <a class="dropdown-item" href="/logout">Đăng Xuất</a>
                         </div>
                     </li>
                 </ul>

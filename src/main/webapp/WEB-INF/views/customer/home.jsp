@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 <html>
 <head>
@@ -36,9 +37,12 @@
                     </div>
                 </div>
                 <div class="col-auto">
-                    <a href="/login" class="btn btn-primary">
-                        Đăng nhập
-                    </a>
+                    <sec:authorize access="!isAuthenticated()">
+                        <a href="/login" class="btn btn-primary">
+                            Đăng nhập
+                        </a>
+                    </sec:authorize>
+
                 </div>
             </div>
         </div>
