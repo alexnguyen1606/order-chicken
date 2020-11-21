@@ -41,6 +41,7 @@
 <link rel="stylesheet" href="/admin/template/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
 
 <link rel="stylesheet" href="/admin/css/customer/header.css"/>
+<link rel="stylesheet" href="/customer/css/home.css"/>
 <link rel="stylesheet" href="/admin/css/customer/products.css"/>
 <script src="/admin/ckfinder/ckfinder.js"></script><%--bỏ đi vì footer có rồi,tốn dung lượng người dùng--%>
 
