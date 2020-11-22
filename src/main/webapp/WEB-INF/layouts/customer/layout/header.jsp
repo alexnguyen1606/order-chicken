@@ -36,7 +36,12 @@
                     </li>
                     <li class="nav-item" style="width: 100px">
                         <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false"><security:authentication property="principal.username" /> </a>
+                        aria-haspopup="true" aria-expanded="false">
+                            <sec:authorize access="isAuthenticated()">
+                                <security:authentication property="principal.username" />
+
+                            </sec:authorize>
+                        </a>
                         <div class="dropdown-menu" id="" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="/profile">Thông tin cá nhân</a>
                           <sec:authorize access="hasAuthority('ADMIN')">

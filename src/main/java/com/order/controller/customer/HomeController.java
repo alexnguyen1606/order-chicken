@@ -17,6 +17,6 @@ public class HomeController {
   
   @GetMapping("/login")
   public ModelAndView login() {
-    return new ModelAndView("customer-nomenu/login");
+    return new ModelAndView("customer/login");
   }
 }
