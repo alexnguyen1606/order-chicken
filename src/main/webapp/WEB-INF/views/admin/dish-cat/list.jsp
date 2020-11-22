@@ -15,7 +15,7 @@
         </div>
         <div class="col-auto">
             <div class="row align-items-center">
-                <a class="btn btn-primary" style="color:#fff">Thêm mới</a>
+<%--                <a class="btn btn-primary" style="color:#fff">Thêm mới</a>--%>
                 <div class="col-auto">
                     <a id="delete-btn" ><i class="fas fa-trash-alt" style="font-size:20px;"></i></a>
 
