@@ -6,6 +6,11 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>Danh sách sản phẩm</title>
+</head>
+<body>
 <div class="container mt-5">
     <div class="row">
         <div class="col-md-12" id="list-product">
@@ -15,3 +20,5 @@
 </div>
 <script src="/admin/js/customer/product-list.js"></script>
 <script src="/admin/js/customer/cart-insert.js"></script>
+</body>
+</html>

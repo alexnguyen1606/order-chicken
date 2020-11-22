@@ -9,7 +9,7 @@ $('#formEdit').on('submit', function (e) {
     var idsDish = [];
     var listNumberItem = [];
     var cartItems = JSON.parse(sessionStorage.getItem("cartItems"));
-    $.each(cartItems,function (i,v) {
+    $.each(cartItems, function (i, v) {
         idsDish.push(v.id);
         listNumberItem.push(v.quantity);
     });
@@ -28,8 +28,8 @@ $('#formEdit').on('submit', function (e) {
         success: function (response) {
             alert(response.message);
             $('.loader').css("display", "none");
-            window.location.href = "/product/list"
-          resetStorage();
+            resetStorage();
+            window.location.href = "/product/list";
         }, error: function (response) {
             $('.loader').css("display", "none");
             alert(response.responseJSON.message);
@@ -37,11 +37,13 @@ $('#formEdit').on('submit', function (e) {
         }
     });
 });
-function resetStorage(){
-    sessionStorage.setItem("cartItems",JSON.stringify([]));
-    sessionStorage.setItem("totalProduct",JSON.stringify(0));
-    sessionStorage.setItem("totalPrice",JSON.stringify(0));
+
+function resetStorage() {
+    sessionStorage.setItem("cartItems", JSON.stringify([]));
+    sessionStorage.setItem("totalProduct", JSON.stringify(0));
+    sessionStorage.setItem("totalPrice", JSON.stringify(0));
 }
+
 $('#completedOrder').on('click', function () {
     $('#totalPrice2').val($('#totalPrice').text());
     var price = $('#totalPrice').attr("data-total-price");
@@ -74,7 +76,7 @@ $('#checkVoucher').on('click', function () {
         }
     });
 });
-$('#completedOrder').on('click',function () {
+$('#completedOrder').on('click', function () {
     $.ajax({
         type: "GET",
         url: "/api/profile/current",
@@ -86,10 +88,10 @@ $('#completedOrder').on('click',function () {
             $('.loader').css("display", "block");
         },
         success: function (response) {
-          var data = response.data;
-          $('#customerName').val(data.name);
-          $('#customerPhone').val(data.phone);
-          $('#customerAddress').val(data.address);
+            var data = response.data;
+            $('#customerName').val(data.name);
+            $('#customerPhone').val(data.phone);
+            $('#customerAddress').val(data.address);
         }, error: function (response) {
 
         }

@@ -45,18 +45,6 @@ public class OrderCommadProcessor {
         order.getId(), orderDTO.getIdsDish(), orderDTO.getListNumberItem());
     updateDiscount(order);
   }
-
-  @Transactional
-  public void updateDiscount(Long orderId, Long voucherId) {
-    Order order = orderService.findById(orderId).get();
-    Voucher voucher = voucherService.findById(voucherId).get();
-    JPAUpdateClause update = new JPAUpdateClause(voucherService.getEm(), Q);
-    update.set(Q.discount, voucher.getDiscount());
-    Long totalPriceAfterDiscount = order.getTotalPrice() * (voucher.getDiscount() / 100);
-    update.set(Q.totalPriceAfterDiscount, totalPriceAfterDiscount);
-    update.where(Q.id.eq(orderId)).execute();
-  }
-
   @Transactional
   public void updateDiscount(Order order) {
     if (order.getIdVoucher() != null) {
@@ -79,7 +67,7 @@ public class OrderCommadProcessor {
     }
     List<DetailOrder> list = new ArrayList<>(idsDish.size());
     long totalPrice = 0;
-    Integer totalItem = 0;
+    Integer totalItem = numsItem.stream().mapToInt(item -> item).sum();
     for (int i = 0; i < idsDish.size(); i++) {
       Optional<Dish> dishOptional = dishService.findById(idsDish.get(i));
       if (!dishOptional.isPresent()) {
@@ -93,9 +81,7 @@ public class OrderCommadProcessor {
       if (number <= 0) {
         throw new Exception("Số lượng sản phẩm không hợp lệ");
       }
-      totalItem += number;
-      DetailOrder detailOrder = setDetailOrder(dish, number);
-      detailOrder.setIdOrder(orderId);
+      DetailOrder detailOrder = setDetailOrder(dish, number,orderId);
       totalPrice += detailOrder.getTotalPrice();
       list.add(detailOrder);
     }
@@ -103,12 +89,13 @@ public class OrderCommadProcessor {
     orderService.updateTotalPriceAndTotalItem(orderId, totalPrice, totalItem);
   }
 
-  private DetailOrder setDetailOrder(Dish dish, Integer number) {
+  private DetailOrder setDetailOrder(Dish dish, Integer number,Long orderId) {
     DetailOrder detailOrder = new DetailOrder();
     detailOrder.setNumber(number);
     detailOrder.setIdDish(dish.getId());
     detailOrder.setPrice(dish.getPrice());
     detailOrder.setTotalPrice(number * dish.getPrice());
+    detailOrder.setIdOrder(orderId);
     return detailOrder;
   }
 
@@ -160,6 +147,9 @@ public class OrderCommadProcessor {
 
   @Transactional
   public void acceptOrder(List<Long> ids) throws Exception {
+    if (ids.size()==0){
+      throw new Exception("Chưa có đơn hàng được chọn");
+    }
     for (Long id : ids) {
       validAcceptOrder(id);
       orderService.updateStatusOrder(id, OrderStatus.ACCEPT);
@@ -186,7 +176,7 @@ public class OrderCommadProcessor {
   private void validCancelOrder(Long id) throws Exception {
     Optional<Order> optionalOrder = orderService.findById(id);
     Order order = optionalOrder.get();
-    if (order.getStatus().equals(OrderStatus.WAITING)) {
+    if (!order.getStatus().equals(OrderStatus.WAITING)) {
       throw new Exception("Trạng thái hiện tại đơn hàng không hợp lệ");
     }
   }
@@ -228,6 +218,9 @@ public class OrderCommadProcessor {
 
   @Transactional
   public void cancelOrder(List<Long> ids) throws Exception {
+    if (ids.size()<=0){
+      throw new Exception("Chưa có đơn hàng được chọn");
+    }
     for (Long id : ids) {
       validOrderExits(id);
       validCancelOrder(id);

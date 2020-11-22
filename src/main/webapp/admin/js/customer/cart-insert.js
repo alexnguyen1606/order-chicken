@@ -30,6 +30,7 @@ jQuery(function ($) {
             }
             sessionStorage.setItem("cartItems", JSON.stringify(cartItems));
             updateTotalProduct();
+            alert("Thêm sản phẩm vào giỏ hàng thành công")
         });
 
         function updateTotalProduct() {

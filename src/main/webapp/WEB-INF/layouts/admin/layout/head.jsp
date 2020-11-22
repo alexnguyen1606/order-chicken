@@ -2,7 +2,7 @@
 
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>VNPOST-E-LEARNING</title>
+<title>Quản trị</title>
 <!-- Tell the browser to be responsive to screen width -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Font Awesome -->
@@ -62,25 +62,3 @@
     }
 </style>
 
-<script>
-
-    function  onConfigTest(){
-        if($('.tag_action_job_menu').hasClass('show')) {$('.tag_action_job_menu').removeClass('show');}
-        else {$('.tag_action_job_menu').addClass('show');}
-
-        $('#list_option_action_cadicate').removeClass('show');
-    }
-
-    function  onTagAction() {
-        if($('#list_option_action_cadicate').hasClass('show')) {$('#list_option_action_cadicate').removeClass('show');}
-        else {$('#list_option_action_cadicate').addClass('show');}
-
-        $('.tag_action_job_menu').removeClass('show');
-    }
-
-    function downloadAction() {
-        if($('#dropdownDownload').hasClass('show')) {$('#dropdownDownload').removeClass('show');}
-        else {$('#dropdownDownload').addClass('show');}
-    }
-
-</script>
