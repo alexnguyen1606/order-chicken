@@ -77,7 +77,15 @@ jQuery(function ($) {
                 data[value.name] = value.value;
             });
             if (!data.name) {
-                alert("Tên danh mục không được để trống");
+                alert("Tên món ăn không được để trống");
+                return;
+            }
+            if (!data.price) {
+                alert("Giá món ăn không được để trống");
+                return;
+            }
+            if (!data.unit) {
+                alert("Đơn vị tính không được để trống");
                 return;
             }
             editDish(data);

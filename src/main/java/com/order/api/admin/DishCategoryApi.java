@@ -1,6 +1,7 @@
 package com.order.api.admin;
 
 import com.order.dto.DishCategoryDTO;
+import com.order.dto.DishDTO;
 import com.order.dto.ServiceResult;
 import com.order.processor.DishCategoryProcessor;
 import lombok.AllArgsConstructor;
@@ -40,7 +41,11 @@ public class DishCategoryApi {
     public ResponseEntity<ServiceResult> getDishCategory(@RequestParam(name = "id") Long id) {
         return new ResponseEntity<>(new ServiceResult(dishCategoryProcessor.getCategoryDish(id), "success", "200"), HttpStatus.OK);
     }
-
+    @PostMapping("/delete")
+    public ResponseEntity<ServiceResult> deleteDish(@RequestBody DishCategoryDTO dishCategoryDTO) {
+        dishCategoryProcessor.deleteListDish(dishCategoryDTO);
+        return new ResponseEntity<>(new ServiceResult("success", "200"), HttpStatus.OK);
+    }
     @PostMapping("/list")
     public ResponseEntity<ServiceResult> getListDishCategory(@RequestBody DishCategoryDTO dishCategoryDTO,
                                                      @RequestParam(name = "page", defaultValue = "1", required = false) Integer currentPage,

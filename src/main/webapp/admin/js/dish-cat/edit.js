@@ -33,6 +33,7 @@ jQuery(function ($) {
                 data: JSON.stringify(data),
                 dataType: 'json',
                 success: function (result) {
+                    alert("Thành công")
                     window.location.reload();
                     // console.log(result);
                 },
