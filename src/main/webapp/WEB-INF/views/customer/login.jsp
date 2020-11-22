@@ -31,7 +31,7 @@
                    </div>
                     <div class="col-md-12  text-left">
                         <label class="col-md-6">Mật khẩu:</label>
-                        <input name="password" type="password" class="form-control col-md-12" placeholder="Mật khẩu"/>
+                        <input name="password" type="password" class="form-control col-md-12" placeholder=""/>
 
                     </div>
                     <div class="col-md-12">

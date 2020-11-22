@@ -120,7 +120,7 @@ public class OrderCommadProcessor {
     order.setStatus(OrderStatus.WAITING);
     MyUser myUser = (MyUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
     order.setIdAccount(myUser.getId());
-    if (orderDTO.getUseCurrentInfo() == 0) {
+    if (orderDTO.getUseCurrentInfo() != null && orderDTO.getUseCurrentInfo() == 0) {
       User user = userService.findByAccountId(myUser.getId());
       order.setCustomerAddress(user.getAddress());
       order.setCustomerPhone(user.getPhone());

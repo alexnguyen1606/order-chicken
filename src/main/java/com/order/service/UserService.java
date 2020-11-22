@@ -16,4 +16,5 @@ public class UserService extends CommonRepository<User,UserRepository> {
     public User findByAccountId(Long accountId){
         return repo.findByIdAccount(accountId);
     }
+    
 }

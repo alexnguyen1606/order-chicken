@@ -14,4 +14,5 @@ public class Role {
 
     @Column(name = "ten_quyen",columnDefinition = "nvarchar(255)")
     private String name;
+    private String code;
 }

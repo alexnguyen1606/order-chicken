@@ -12,4 +12,8 @@ public class AccountService  extends CommonRepository<Account,AccountRepository>
     public AccountService(AccountRepository repo) {
         super(repo);
     }
+    
+    public Account findByUsernameAndStatus(String username,Integer status){
+        return repo.findByUserNameAndStatus(username,status);
+    }
 }

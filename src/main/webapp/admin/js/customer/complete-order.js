@@ -73,4 +73,26 @@ $('#checkVoucher').on('click', function () {
 
         }
     });
-})
+});
+$('#completedOrder').on('click',function () {
+    $.ajax({
+        type: "GET",
+        url: "/api/profile/current",
+        // headers: {"Authorization": "Bearer " + localStorage.getItem('eln_token')},
+        // data: JSON.stringify(data),
+        // dataType: "json",
+        contentType: "application/json",
+        beforeSend: function () {
+            $('.loader').css("display", "block");
+        },
+        success: function (response) {
+          var data = response.data;
+          $('#customerName').val(data.name);
+          $('#customerPhone').val(data.phone);
+          $('#customerAddress').val(data.address);
+        }, error: function (response) {
+
+        }
+    });
+
+});
