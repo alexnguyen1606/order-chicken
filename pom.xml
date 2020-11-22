@@ -175,6 +175,23 @@
 
 
     </dependencies>
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <env>dev</env>
+            </properties>
+        </profile>
+        <profile>
+            <id>uat</id>
+            <properties>
+                <env>uat</env>
+            </properties>
+        </profile>
+    </profiles>
     <build>
         <finalName>order</finalName>
         <resources>
@@ -183,6 +200,9 @@
                 <filtering>true</filtering>
             </resource>
         </resources>
+        <filters>
+            <filter>src/main/resources/env/${env}.properties</filter>
+        </filters>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

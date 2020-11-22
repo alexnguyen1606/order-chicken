@@ -29,12 +29,12 @@
             </div>
             <div class="col-auto">
                 <ul class="navbar-nav mr-auto title-header d-flex justify-content-end">
-                    <li class="nav-item " style="width: 100px">
+                    <li class="nav-item " style="display: table;width: fit-content">
                         <a class="nav-link title-header position-relative" href="/cart/list"><img src="/admin/image/shopping_card.png">
                           <div class="position-absolute" id="totalProduct" style="background: red ;width: 10px;border-radius: 50%"></div>
                         </a>
                     </li>
-                    <li class="nav-item" style="width: 100px">
+                    <li class="nav-item" style="display: table;width: fit-content">
                         <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
                             <sec:authorize access="isAuthenticated()">
