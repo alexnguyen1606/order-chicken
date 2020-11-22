@@ -42,7 +42,11 @@
                             Đăng nhập
                         </a>
                     </sec:authorize>
-
+                    <sec:authorize access="isAuthenticated()">
+                        <a href="/logout" class="btn btn-primary">
+                            Đăng xuất
+                        </a>
+                    </sec:authorize>
                 </div>
             </div>
         </div>

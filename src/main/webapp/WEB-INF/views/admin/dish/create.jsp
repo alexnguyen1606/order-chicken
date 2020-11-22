@@ -25,7 +25,7 @@
                         <input type="hidden" id="id" name="id">
 
                         <div class="">
-                            <label for="" class="form-label">Tên món săn <span class="required" style="color: #e02222;">*</span></label>
+                            <label for="" class="form-label">Tên món ăn <span class="required" style="color: #e02222;">*</span></label>
                             <input type="text" name="name" id="name" class="form-control">
                         </div>
                         <div class="row my-2">
@@ -45,7 +45,7 @@
                             <img src="" id="imgExam" class="d-none">
                         </div>
                         <div class="my-2">
-                            <label for="" class="form-label">Mô tả <span class="required" style="color: #e02222;">*</span></label>
+                            <label for="" class="form-label">Mô tả</label>
                             <textarea type="text" name="content" id="content" class="form-control"></textarea>
                         </div>
                         <div class="my-2">
@@ -58,9 +58,9 @@
                             <label class="form-label ml-3"><input type="radio" name="status" value="INACTIVE"> Dừng hoạt động </label>
                         </div>
                         <div class="d-flex justify-content-between mt-2">
-                            <button type="button" id="btnReset"  class="btn btn-default m-0">
+                            <a href="/api/dish/list" type="button" id="btnReset"  class="btn btn-default m-0">
                                 Hủy
-                            </button>
+                            </a>
                             <button type="button"  id="btnEdit" class="btn btn-primary m-0">
                                 Thêm
                             </button>

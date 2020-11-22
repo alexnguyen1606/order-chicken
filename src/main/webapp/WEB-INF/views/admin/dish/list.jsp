@@ -14,7 +14,7 @@
             <h4>Danh sách thực đơn</h4>
         </div>
         <div class="col-auto">
-            <div class="row">
+            <div class="row align-items-center">
                 <div class="col-auto">
                     <a href="/admin/dish/edit" class="btn btn-primary" style="color:#fff">Thêm mới</a>
                 </div>

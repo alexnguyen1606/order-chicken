@@ -14,7 +14,13 @@
             <h4>Danh mục thực đơn</h4>
         </div>
         <div class="col-auto">
-            <a class="btn btn-primary" style="color:#fff">Thêm mới</a>
+            <div class="row align-items-center">
+<%--                <a class="btn btn-primary" style="color:#fff">Thêm mới</a>--%>
+                <div class="col-auto">
+                    <a id="delete-btn" ><i class="fas fa-trash-alt" style="font-size:20px;"></i></a>
+
+                </div>
+            </div>
         </div>
     </div>
     <div class="row main-content">
@@ -62,8 +68,16 @@
                 </div>
                 <div class="portlet-body">
                     <table id="list" class="w-100">
+                        <col>
                         <col width="70%">
                         <col>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Tên danh mục</th>
+                                <th class="text-center">Hành động</th>
+                            </tr>
+                        </thead>
                         <tbody>
 
                         </tbody>

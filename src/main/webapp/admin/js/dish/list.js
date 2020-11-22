@@ -10,6 +10,8 @@ jQuery(function ($) {
             if (page) {
                 url += `?page=${page}`
             }
+            let search = curUrl.searchParams.get("search");
+            if (search) data.name=search;
             return $.ajax({
                 url: url,
                 type: 'POST',
@@ -64,7 +66,16 @@ jQuery(function ($) {
                 onPageClick: function (event, page) {
                     if (currentPage != page) {
                         var url = "/admin/dish/list";
-                        url += "?page=" + page;
+                        let urlString = window.location.href
+                        let curUrl = new URL(urlString);
+                        let search = curUrl.searchParams.get("search");
+                        if (search) {
+                            url += "?search=" + search;
+                            url += "&page=" + page;
+                        }
+                        else {
+                            url += "?page=" + page;
+                        }
                         window.location.href = url
                     }
                 }

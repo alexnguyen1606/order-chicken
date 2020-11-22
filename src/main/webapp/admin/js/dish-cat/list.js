@@ -7,10 +7,14 @@
  */
 jQuery(function ($) {
     $(document).ready(function () {
-        //load data
-        function loadListDishCatData(data,url) {
+        //ajax
+        function loadListDishCatData(data,param) {
             if (!data) data = {};
-            if (!url) url = "/api/dish-category/list";
+            let url = "/api/dish-category/list";
+            var url_string = window.location.href; //window.location.href
+            var curUrl = new URL(url_string);
+            var search = curUrl.searchParams.get("search");
+            if (search) data.name = search;
             return $.ajax({
                 url: url,
                 type: 'POST',
@@ -19,6 +23,30 @@ jQuery(function ($) {
                 dataType: 'json',
                 success: function (result) {
                     // console.log(result);
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
+        }
+        function deleteListDish() {
+            let ids = [];
+            $('input[name=ids]:checked').each((i,v) => {
+                ids.push(v.value);
+            })
+            let data = {};
+            data.ids =ids;
+            let url ="/api/dish-category/delete"
+            $.ajax({
+                url: url,
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(data),
+                dataType: 'json',
+                success: function (result) {
+                    // console.log(result);
+                    alert("Xóa thành công");
+                    window.location.reload();
                 },
                 error: function (error) {
                     console.log(error);
@@ -43,8 +71,11 @@ jQuery(function ($) {
             cats.forEach((v,i) => {
                 appendData +=
                 `<tr>
+                    <td>
+                        <input type="checkbox" name="ids" value="${v.id}">
+                    </td>
                     <td>${v.name}</td>
-                    <td class="text-right"><a data-id="${v.id}" class="edit-cat"><i class="far fa-edit"></i></a></td>
+                    <td class="text-center"><a data-id="${v.id}" class="edit-cat"><i class="far fa-edit"></i></a></td>
                  </tr>`
             })
             paging(data.totalPage,data.currentPage);
@@ -69,6 +100,11 @@ jQuery(function ($) {
                 }
             });
         }
+
+        //handler
+        $('#delete-btn').click(function () {
+            deleteListDish();
+        })
         //run function
         initListDishCat();
     })
