@@ -49,6 +49,8 @@ jQuery(function ($) {
                     window.location.reload();
                 },
                 error: function (error) {
+                    alert("Danh mục đã tồn tại sản phẩm, xóa thất bại!");
+                    window.location.reload();
                     console.log(error);
                 }
             });
