@@ -25,14 +25,14 @@ public class DetailOrderProcessor {
   private final QDetailOrder Q = QDetailOrder.detailOrder;
 
   public List<DetailOrderDTO> findByOrderId(Long orderId, Pageable pageable) {
-    BooleanBuilder builder = new BooleanBuilder().and(Q.id.eq(orderId));
+    BooleanBuilder builder = new BooleanBuilder().and(Q.idOrder.eq(orderId));
     return detailOrderService.findAll(builder, pageable).stream()
         .map(orderDetailMapper::toDTO)
         .collect(Collectors.toList());
   }
 
   public Long countByOrderId(Long orderId) {
-    BooleanBuilder builder = new BooleanBuilder().and(Q.id.eq(orderId));
+    BooleanBuilder builder = new BooleanBuilder().and(Q.idOrder.eq(orderId));
     return detailOrderService.count(builder);
   }
 }

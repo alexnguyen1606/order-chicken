@@ -75,7 +75,7 @@
         <span class="sr-only">Loading...</span>
     </div>
 </div>
-<div class="modal " id="modalSubmit" role="dialog" style="pointer-events: none">
+<div class="modal " id="modalSubmit" role="dialog" >
     <div class="modal-dialog modal-xl font-label " style="border-radius: 30px">
         <!-- Modal content-->
         <div class="modal-content">

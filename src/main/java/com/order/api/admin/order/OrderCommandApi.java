@@ -61,7 +61,7 @@ public class OrderCommandApi extends ExceptionHandlerApi {
     }
     
     @PutMapping("/cancel/{id}")
-    public ResponseEntity<ServiceResult> cencelOrder(@PathVariable Long id) {
+    public ResponseEntity<ServiceResult> cancelOrder(@PathVariable Long id) {
         ServiceResult serviceResult = new ServiceResult("Hủy đơn thành công");
         try {
             orderCommandProcessor.cancelOrder(id);

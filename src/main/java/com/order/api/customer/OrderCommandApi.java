@@ -26,7 +26,7 @@ public class OrderCommandApi extends ExceptionHandlerApi {
     
     @PostMapping
     public ResponseEntity<ServiceResult> create(@RequestBody OrderDTO orderDTO){
-        ServiceResult serviceResult = new ServiceResult();
+        ServiceResult serviceResult = new ServiceResult("Đặt hàng thành công");
         try {
             orderCommadProcessor.create(orderDTO);
         } catch (Exception e) {
