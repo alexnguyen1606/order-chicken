@@ -35,6 +35,7 @@
     </definition>
 
 
+
     <!-- template customer -->
     <definition name="customer"
                 template="/WEB-INF/layouts/customer/layout.jsp">
