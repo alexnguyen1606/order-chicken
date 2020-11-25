@@ -1,9 +1,11 @@
 package com.order.processor;
 
 import com.order.dto.DishCategoryDTO;
+import com.order.entities.QDish;
 import com.order.entities.QDishCategory;
 import com.order.mapper.DishCategoryMapper;
 import com.order.service.DishCategoryService;
+import com.order.service.DishService;
 import com.querydsl.core.BooleanBuilder;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Pageable;
@@ -16,7 +18,9 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 public class DishCategoryProcessor {
     private final QDishCategory qDishCategory = QDishCategory.dishCategory;
+    private final QDish qDish = QDish.dish;
     private DishCategoryService dishCategoryService;
+    private DishService dishService;
     private DishCategoryMapper dishCategoryMapper;
 
     public void createDishCategory(DishCategoryDTO dishCategoryDTO) {
@@ -58,8 +62,11 @@ public class DishCategoryProcessor {
         return result;
     }
 
-    public void deleteListDish(DishCategoryDTO dishCategoryDTO) {
+    public void deleteListDish(DishCategoryDTO dishCategoryDTO) throws Exception {
         if (dishCategoryDTO.getIds() == null) return;
+        BooleanBuilder builder = new BooleanBuilder();
+        builder.and(qDish.idCategory.in(dishCategoryDTO.getIds()));
+        if (dishService.exist(builder)) throw new Exception("Danh mục đã tồn tại sản phẩm");
         for (Long id : dishCategoryDTO.getIds()) {
             dishCategoryService.deleteById(id);
         }

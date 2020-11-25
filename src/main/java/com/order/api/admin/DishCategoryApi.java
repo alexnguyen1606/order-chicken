@@ -43,7 +43,11 @@ public class DishCategoryApi {
     }
     @PostMapping("/delete")
     public ResponseEntity<ServiceResult> deleteDish(@RequestBody DishCategoryDTO dishCategoryDTO) {
-        dishCategoryProcessor.deleteListDish(dishCategoryDTO);
+        try {
+            dishCategoryProcessor.deleteListDish(dishCategoryDTO);
+        } catch (Exception e) {
+            return new ResponseEntity<>(new ServiceResult(e.getMessage(), "400"), HttpStatus.BAD_REQUEST);
+        }
         return new ResponseEntity<>(new ServiceResult("success", "200"), HttpStatus.OK);
     }
     @PostMapping("/list")
