@@ -2,6 +2,7 @@ package com.order.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
@@ -40,6 +41,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     http.csrf().disable();
     http.authorizeRequests()
             .antMatchers("/").permitAll();
+    http.authorizeRequests().antMatchers(HttpMethod.POST,"/api/account").permitAll();
     http.authorizeRequests()
             .antMatchers("/admin/**").hasAuthority("ADMIN");
     http.authorizeRequests()

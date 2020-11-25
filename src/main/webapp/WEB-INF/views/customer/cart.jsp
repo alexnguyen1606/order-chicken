@@ -39,7 +39,7 @@
                             </div>
                             <div class="col-6 text-left row">
                                 <h5>Tổng tiền :</h5>
-                                <h5 id="totalPrice" data-total-price="0"></h5>
+                                <h5 id="totalPrice" data-total-price="0">0 đ</h5>
                             </div>
                         </div>
                         <div class="col-md-6 text-center">

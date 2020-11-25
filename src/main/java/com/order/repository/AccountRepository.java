@@ -9,4 +9,6 @@ public interface AccountRepository
 
   Account findByUserNameAndStatus(String username, Integer status);
   
+  Boolean existsByUserName(String userName);
+  
 }

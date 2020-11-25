@@ -29,10 +29,12 @@
             </div>
             <div class="col-auto">
                 <ul class="navbar-nav mr-auto title-header d-flex justify-content-end">
-                    <li class="nav-item " style="display: table;width: fit-content">
-                        <a class="nav-link title-header position-relative" href="/cart/list"><img src="/admin/image/shopping_card.png">
-                          <div class="position-absolute" id="totalProduct" style="background: red ;width: 10px;border-radius: 50%"></div>
-                        </a>
+                    <li class="nav-item position-relative " style="display: table;width: fit-content">
+                        <div>
+                            <a class="nav-link title-header position-relative" href="/cart/list"><img src="/admin/image/shopping_card.png">
+                            </a>
+                        </div>
+                        <div class="position-absolute totalItem text-center" id="totalProduct" >0</div>
                     </li>
                     <li class="nav-item" style="display: table;width: fit-content">
                         <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"

@@ -32,3 +32,17 @@
     font-size: 64px;
     line-height: 96px;
 }
+.nav-item .totalItem{
+
+    width: 15px;
+    left: 25px;
+    top: 15px;
+    border-radius: 50%;
+    background: red;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 18px;
+
+    color: #FFFFFF;
+}

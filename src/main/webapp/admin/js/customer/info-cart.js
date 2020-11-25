@@ -1,16 +1,18 @@
 jQuery(function ($) {
     $(document).ready(function () {
         function getTotal() {
-            var totalProduct = parseInt(sessionStorage.getItem("totalProduct"));
-            var totalPrice = parseInt(sessionStorage.getItem("totalPrice"));
+            var totalProduct = sessionStorage.getItem("totalProduct");
+            var totalPrice = sessionStorage.getItem("totalPrice");
             console.log(totalPrice);
             console.log(totalProduct);
-            if (totalProduct != NaN) {
-                $('.totalItem').text(totalProduct);
+            if (totalProduct == null) {
+                totalProduct = 0;
             }
-            if (totalPrice != NaN) {
-                $('#totalPrice').text(totalPrice.toLocaleString('it-IT', {style: 'currency', currency: 'VND'}));
+            $('.totalItem').text(parseInt(totalProduct));
+            if (totalPrice == null) {
+               totalPrice = 0;
             }
+            $('#totalPrice').text(parseInt(totalPrice).toLocaleString('it-IT', {style: 'currency', currency: 'VND'}));
 
         }
         getTotal();

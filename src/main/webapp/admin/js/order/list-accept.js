@@ -38,7 +38,7 @@ jQuery(function ($) {
         $('#formSearch').on('submit',function (e) {
             e.preventDefault();
             fetchOrder("");
-        })
+        });
         function paging(totalPage,currentPages){
             $('#pagination-test').twbsPagination({
                 totalPages: totalPage,
