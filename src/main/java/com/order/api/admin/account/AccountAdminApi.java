@@ -1,4 +1,4 @@
-package com.order.api.account;
+package com.order.api.admin.account;
 
 import com.order.dto.AccountDTO;
 import com.order.dto.ServiceResult;
@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/account")
+@RequestMapping("/api/admin/account")
 @AllArgsConstructor
-public class AccountApi {
+public class AccountAdminApi {
     private AccountProcessor accountProcessor;
 
     @PostMapping("/list")

@@ -2,7 +2,7 @@ jQuery(function ($) {
     $(document).ready(function () {
         //load data function
         function loadAccount() {
-            let url = '/api/account';
+            let url = '/api/admin/account';
             let urlString = window.location.href
             let curUrl = new URL(urlString);
             let id = curUrl.searchParams.get("id");
@@ -24,7 +24,7 @@ jQuery(function ($) {
             });
         }
         function ajaxCreateAcc(data){
-            let url = '/api/account';
+            let url = '/api/admin/account';
             let type= (data.id) ? 'PUT' : 'POST';
             $.ajax({
                 url: url,

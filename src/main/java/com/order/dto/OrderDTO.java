@@ -3,6 +3,7 @@ package com.order.dto;
 import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -26,7 +27,7 @@ public class OrderDTO {
   private String customerAddress;
 
   private LocalDateTime createdDate;
-
+  @NotBlank(message = "Thời gian giao không được bỏ trống")
   private String deliveryTime;
 
   private String note;

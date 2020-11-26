@@ -16,4 +16,8 @@ public class AccountService  extends CommonRepository<Account,AccountRepository>
     public Account findByUsernameAndStatus(String username,Integer status){
         return repo.findByUserNameAndStatus(username,status);
     }
+    
+    public boolean exitsByUserName(String userName){
+        return repo.existsByUserName(userName);
+    }
 }

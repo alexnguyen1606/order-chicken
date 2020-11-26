@@ -37,7 +37,7 @@
                     </div>
                 </div>
                 <div class="col-auto">
-                    <sec:authorize access="!isAuthenticated()">
+                    <sec:authorize access="isAnonymous()">
                         <a href="/login" class="btn btn-primary">
                             Đăng nhập
                         </a>

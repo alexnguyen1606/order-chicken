@@ -30,6 +30,7 @@ body {
     margin-left: 20px;
     margin-right: 20px;
 }
+
 body {
     background-color: #eee;
 }
@@ -50,16 +51,11 @@ body {
 }
 
 
-
-
-
-
-
-
 .has-error {
     color: red
 }
-#login{
+
+#login {
 
     width: 169px;
     height: 48px;
@@ -68,17 +64,53 @@ body {
     background: #FF922C;
     border-radius: 69px;
 }
-input{
+
+.register {
+    width: 169px;
+    height: 48px;
+    color: white;
+    background: #FF922C;
+    border-radius: 69px;
+
+}
+.register:hover {
+    color: white;
+
+}
+
+input {
     width: 362px;
     height: 48px;
     background: #FFD7B3;
     border-radius: 3px;
     margin-top: 5px;
 }
-label{
+
+label {
     margin-top: 5px;
 }
 
-input:focus{
+input:focus {
     background: #FFD7B3;
+}
+#formRegister input{
+    width: 362px;
+    height: 48px;
+    background: #FFD7B3;
+    border-radius: 3px;
+
+}
+#formRegister textarea{
+    width: 362px;
+    height: 48px;
+    background: #FFD7B3;
+    border-radius: 3px;
+
+}
+#formRegister input:focus{
+    width: 362px;
+    height: 48px;
+    background: #FFD7B3;
+    border-radius: 3px;
+
 }

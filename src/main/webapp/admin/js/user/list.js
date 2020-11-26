@@ -2,7 +2,7 @@ jQuery(function ($) {
     $(document).ready(function () {
         //load data function
         function loadAccount(page, data) {
-            let url = '/api/account/list';
+            let url = '/api/admin/account/list';
             if (!data) data = {};
             let urlString = window.location.href
             let curUrl = new URL(urlString);

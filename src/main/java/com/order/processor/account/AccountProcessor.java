@@ -35,7 +35,7 @@ public class AccountProcessor {
 
     private BooleanBuilder commonBuilder(AccountDTO accountDTO) {
         BooleanBuilder result = new BooleanBuilder();
-        result.and(qAccount.status.eq(1));
+//        result.and(qAccount.status.eq(1));
         if (accountDTO.getSearch() != null) {
             List<Long> idAccountContainFullName = userService.findAllAccountIdBySearch(accountDTO.getSearch());
             result.and(qAccount.userName.containsIgnoreCase(accountDTO.getSearch()).or(qAccount.id.in(idAccountContainFullName)));

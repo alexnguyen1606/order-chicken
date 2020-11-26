@@ -65,6 +65,15 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="/admin/report/sales" class="nav-link">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Báo cáo
+
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="/admin/dish/list" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
@@ -83,6 +92,15 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="/admin/account/list" class="nav-link">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Quản lý tài khoản
+
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="/admin/voucher/list" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
@@ -91,7 +109,15 @@
                         </p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="/admin/voucher/list" class="nav-link">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Quản lý khuyển mại
 
+                        </p>
+                    </a>
+                </li>
             </ul>
             </li>
 
