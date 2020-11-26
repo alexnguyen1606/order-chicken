@@ -8,6 +8,8 @@ import lombok.Data;
  */
 @Data
 public class UserDTO {
+  private Long id;
+
   private String name;
 
   private String phone;
@@ -15,4 +17,8 @@ public class UserDTO {
   private String email;
 
   private String address;
+
+  private String gender;
+
+  private Long idAccount;
 }
