@@ -67,7 +67,7 @@ jQuery(function ($) {
                 row += '<td class="text-center">' + v.name + '</td>';
                 row += '<td class="text-center">' + v.code + '</td>';
                 row += '<td class="text-center">' + startTime + ' - ' + endTime + '</td>';
-                row += '<td class="text-center">' + v.discount + '</td>';
+                row += '<td class="text-center">' + v.discount + ' %</td>';
                 row += '<td class="text-center">' + status + '</td>';
                 row += '<td class="text-center"><a href="/admin/voucher/edit/' + v.id + '" class="btn btn-primary"><i class="fa fa-edit"></i></a></td>';
                 row += '</tr>';

@@ -187,6 +187,17 @@ public class OrderCommadProcessor {
     validCancelOrder(id);
     orderService.updateStatusOrder(id, OrderStatus.CANCEL);
   }
+  
+  @Transactional
+  public void cancelOrderByUser(Long id) throws Exception {
+    validOrderExits(id);
+    MyUser myUser = (MyUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+    if (!orderService.findByIdAndIdAccount(id,myUser.getId()).isPresent()){
+      throw new Exception("Không tìm thấy đơn hàng");
+    }
+    validCancelOrder(id);
+    orderService.updateStatusOrder(id, OrderStatus.CANCEL);
+  }
 
   public Boolean exits(Long id) {
     return orderService.exitsById(id);

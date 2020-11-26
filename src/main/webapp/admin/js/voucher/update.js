@@ -20,6 +20,7 @@ jQuery(function ($) {
                         $('#content').text(response.content);
                         $('#urlImg').val(response.urlImg);
                         $('#imgExam').attr("src", response.urlImg);
+                        $('#imgExam').removeClass('d-none');
                         $('#code').val(response.code);
                         $('#discount').val(response.discount);
                         $('#startTime').val(response.startTimeString);
@@ -61,6 +62,10 @@ jQuery(function ($) {
                 data[v.name] = v.value;
             });
             data.content = CKEDITOR.instances.content.getData();
+            if (data.discount >100 || data.discount <0){
+                alert("Tỷ lệ giảm giá không hợp lệ");
+                throw "fail";
+            }
             if (data.id == "") {
                 create(data);
             } else {

@@ -18,6 +18,9 @@
         <div class="my-3">
             <a href="/voucher/${id}" >   <img id="imgVoucher" src=""></a>
         </div>
+        <div>
+            <h3 id="code">Mã khuyến mãi</h3>
+        </div>
         <div id="content">
 
         </div>

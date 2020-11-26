@@ -39,7 +39,7 @@ jQuery(function ($) {
             if ($('#img')[0].files[0]) {
                 let url = await uploadApi($('#img')[0].files[0])
                 $('#urlImg').val(url);
-                $('#imgExam').attr("src",url)
+                $('#imgExam').attr("src",url);
                 $('#imgExam').removeClass('d-none');
             }
             else {

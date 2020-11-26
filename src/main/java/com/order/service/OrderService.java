@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class OrderService extends CommonRepository<Order, OrderRepository> {
@@ -27,8 +28,8 @@ public class OrderService extends CommonRepository<Order, OrderRepository> {
     update.where(Q.id.eq(orderId));
     update.execute();
   }
-
-  public void updateStatusOrder(Long id, Integer status) {
+  
+  public synchronized void updateStatusOrder(Long id, Integer status) {
     JPAUpdateClause update = new JPAUpdateClause(em, Q);
     update.set(Q.status, status);
     update.where(Q.id.eq(id));
@@ -62,5 +63,9 @@ public class OrderService extends CommonRepository<Order, OrderRepository> {
   public List<Order> fetchBetweenDate(LocalDateTime startTime, LocalDateTime endTime,Integer status) {
     JPAQuery<Order> query = new JPAQuery<>(em);
     return query.from(Q).where(Q.createdDate.between(startTime, endTime).and(Q.status.eq(status))).fetch();
+  }
+  
+  public Optional<Order> findByIdAndIdAccount(Long id , Long idAccount){
+    return repo.findByIdAndIdAccount(id,idAccount);
   }
 }
