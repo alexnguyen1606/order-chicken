@@ -74,6 +74,15 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="/admin/dish/list" class="nav-link">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Danh sách thực đơn
+
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="/admin/dish-category/list" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
@@ -83,7 +92,17 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/admin/dish/list" class="nav-link">
+                    <a href="/admin/account/list" class="nav-link">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Quản lý tài khoản
+
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/admin/voucher/list" class="nav-link">
+
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Quản lú thực đơn

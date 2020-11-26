@@ -7,35 +7,38 @@ import java.time.LocalDateTime;
 
 /**
  * @author:Nguyen Anh Tuan
- *     <p>10:54 PM ,November 24,2020
+ * <p>10:54 PM ,November 24,2020
  */
 @Data
 public class AccountDTO {
-  private Long id;
+    private Long id;
 
-  @NotBlank(message = "Tên tài khoản không được bỏ trống")
-  private String userName;
+    @NotBlank(message = "Tên tài khoản không được bỏ trống")
+    private String userName;
 
-  @NotBlank(message = "Password không được bỏ trống")
-  private String password;
+    @NotBlank(message = "Password không được bỏ trống")
+    private String password;
 
-  @NotBlank(message = "Password lặp lại không được bỏ trống")
-  private String repeatPassword;
+    @NotBlank(message = "Password lặp lại không được bỏ trống")
+    private String repeatPassword;
 
-  private LocalDateTime createdDate;
+    private LocalDateTime createdDate;
 
-  private Integer status;
+    private Integer status;
 
-  @NotBlank(message = "Họ và tên không được bỏ trống")
-  private String name;
+    @NotBlank(message = "Họ và tên không được bỏ trống")
+    private String name;
 
-  @NotBlank(message = "Số điện thoại không được bỏ trống")
-  private String phone;
+    @NotBlank(message = "Số điện thoại không được bỏ trống")
+    private String phone;
 
-  private String email;
+    private String email;
 
-  @NotBlank(message = "Địa chỉ không được bỏ trống")
-  private String address;
+    @NotBlank(message = "Địa chỉ không được bỏ trống")
+    private String address;
 
-  private String gender;
+    private String gender;
+    private UserDTO user;
+
+    private String search;
 }
