@@ -5,8 +5,11 @@ import com.order.entities.QVoucher;
 import com.order.entities.Voucher;
 import com.order.mapper.VoucherMapper;
 import com.order.service.VoucherService;
+import com.querydsl.core.BooleanBuilder;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * @author:Nguyen Anh Tuan
@@ -23,7 +26,7 @@ public class VoucherCommandProcessor {
     if (voucherDTO.getId() != null) {
       throw new Exception("Voucher không hợp lệ");
     }
-    validTime(voucherDTO);
+    validVoucherCode(voucherDTO.getCode());
     Voucher voucher = voucherMapper.toEntity(voucherDTO);
     voucherService.save(voucher);
   }
@@ -37,9 +40,20 @@ public class VoucherCommandProcessor {
     voucherService.save(voucher);
   }
 
+  private void validVoucherCode(String code) throws Exception {
+    if (voucherService.exitsByCode(code)) {
+      throw new Exception("Mã đã tồn tại");
+    }
+  }
+
   private void validTime(VoucherDTO voucherDTO) throws Exception {
     if (voucherDTO.getStartTime().isAfter(voucherDTO.getEndTime())) {
       throw new Exception("Thời gian khuyến mại không hợp lệ");
     }
+  }
+
+  public void deleteIds(List<Long> ids) {
+    BooleanBuilder builder = new BooleanBuilder().and(Q.id.in(ids));
+    voucherService.delete(builder);
   }
 }

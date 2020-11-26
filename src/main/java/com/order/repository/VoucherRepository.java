@@ -8,4 +8,6 @@ import java.util.Optional;
 
 public interface VoucherRepository  extends JpaRepository<Voucher,Long>, QuerydslPredicateExecutor<Voucher> {
     Optional<Voucher> findByCode(String code);
+    
+    boolean existsByCode(String code);
 }

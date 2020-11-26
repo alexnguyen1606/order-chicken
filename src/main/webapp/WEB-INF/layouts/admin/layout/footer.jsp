@@ -83,10 +83,10 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/admin/voucher/list" class="nav-link">
+                    <a href="/admin/dish/list" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
-                            Quản lý khuyển mại
+                            Quản lú thực đơn
 
                         </p>
                     </a>
@@ -142,3 +142,6 @@
 <script src="/admin/template/dist/js/adminlte.js"></script>
 
 <script src="/admin/template/hill/js/common_unit.js"></script>
+<script src="/admin/ckfinder/ckfinder.js"></script><%--bỏ đi vì footer có rồi,tốn dung lượng người dùng--%>
+
+<script src="/admin/ckeditor/ckeditor.js"></script>

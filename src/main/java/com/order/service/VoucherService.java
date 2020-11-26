@@ -20,4 +20,7 @@ public class VoucherService extends CommonRepository<Voucher,VoucherRepository> 
     public Optional<Voucher> findByCode(String code){
         return repo.findByCode(code);
     }
+    public boolean exitsByCode(String code){
+        return repo.existsByCode(code);
+    }
 }

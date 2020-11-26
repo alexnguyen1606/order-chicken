@@ -5,6 +5,8 @@ import lombok.Data;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * @author:Nguyen Anh Tuan
@@ -26,7 +28,21 @@ public class VoucherDTO {
   @NotNull(message = "Thời gian kết thúc khuyến mại không hợp lệ")
   private LocalDateTime endTime;
 
+  @NotNull(message = "Discount không được bỏ trống")
   private Integer discount;
-  
+
   private String search;
+
+  private String urlImg;
+
+  private String content;
+
+  private String startTimeString;
+  
+  private String endTimeString;
+
+  @NotNull(message = "Trạng thái không được bỏ trống")
+  private Integer status;
+  
+  private List<Long> ids = new LinkedList<>();
 }

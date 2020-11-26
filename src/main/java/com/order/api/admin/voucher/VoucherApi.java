@@ -6,6 +6,7 @@ import com.order.processor.voucher.VoucherQueryProcessor;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -31,6 +32,18 @@ public class VoucherApi {
     Integer totalPage = (int) Math.ceil((double) totalItem / size);
     List<VoucherDTO> listData = voucherQueryProcessor.findAll(voucherDTO, pageable);
     ServiceResult serviceResult = new ServiceResult(listData, totalPage, currentPage);
+    return ResponseEntity.ok(serviceResult);
+  }
+
+  @GetMapping("/{id}")
+  public ResponseEntity<ServiceResult> findById(@PathVariable Long id) {
+    ServiceResult serviceResult = new ServiceResult();
+    try {
+      serviceResult.setData(voucherQueryProcessor.findById(id));
+    } catch (Exception e) {
+      serviceResult.setMessage(e.getMessage());
+      return new ResponseEntity<>(serviceResult, HttpStatus.BAD_REQUEST);
+    }
     return ResponseEntity.ok(serviceResult);
   }
 }

@@ -22,17 +22,11 @@
         <div class="color-primary text-meta">
             (*)Các mã khuyến mãi hấp dẫn chỉ áp dụng một lần cho một tài khoản
         </div>
-        <div class="my-3">
-            <img src="/customer/image/image 27.png">
-        </div>
-        <div class="my-3">
-            <img src="/customer/image/image 28.png">
-        </div>
-        <div class="my-3">
-            <img src="/customer/image/image 29.png">
-        </div>
+       <div class="" id="vouchers">
+
+       </div>
     </div>
 </div>
-
+<script src="/admin/js/customer/voucher-list.js"></script>
 </body>
 </html>

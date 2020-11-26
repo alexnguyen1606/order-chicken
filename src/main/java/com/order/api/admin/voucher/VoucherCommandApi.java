@@ -24,7 +24,7 @@ public class VoucherCommandApi extends ExceptionHandlerApi {
     
     @PostMapping
     public ResponseEntity<ServiceResult> create(@Valid @RequestBody VoucherDTO voucherDTO){
-       ServiceResult serviceResult = new ServiceResult();
+       ServiceResult serviceResult = new ServiceResult("Thêm Khuyến mại thành công");
         try {
             voucherCommandProcessor.create(voucherDTO);
         } catch (Exception e) {
@@ -36,9 +36,20 @@ public class VoucherCommandApi extends ExceptionHandlerApi {
     
     @PutMapping
     public ResponseEntity<ServiceResult> update(@Valid @RequestBody VoucherDTO voucherDTO){
-        ServiceResult serviceResult = new ServiceResult();
+        ServiceResult serviceResult = new ServiceResult("Cập nhật khuyến mại thành công");
         try {
             voucherCommandProcessor.update(voucherDTO);
+        } catch (Exception e) {
+            serviceResult.setMessage(e.getMessage());
+            return new ResponseEntity<>(serviceResult, HttpStatus.BAD_REQUEST);
+        }
+        return ResponseEntity.ok(serviceResult);
+    }
+    @DeleteMapping
+    public ResponseEntity<ServiceResult> delete( @RequestBody VoucherDTO voucherDTO){
+        ServiceResult serviceResult = new ServiceResult("Xóa khuyến mại thành công");
+        try {
+            voucherCommandProcessor.deleteIds(voucherDTO.getIds());
         } catch (Exception e) {
             serviceResult.setMessage(e.getMessage());
             return new ResponseEntity<>(serviceResult, HttpStatus.BAD_REQUEST);

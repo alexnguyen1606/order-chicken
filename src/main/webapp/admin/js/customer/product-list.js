@@ -72,12 +72,12 @@ jQuery(function ($) {
                 else urlImg = '/admin/image/product1.png';
                 row+='<div class="col-md-3">';
                 row+='<div class="card item-product text-center">';
-                row+='<img class="card-img-top" src="'+urlImg+'" alt="">';
+                row+='<img class="card-img-top" style="height: 170px" src="'+urlImg+'" alt="">';
                 row+='<div class="card-header">';
                 row+='<p class="card-title title-product mx-auto w-100">'+v.name+'</p>';
                 row+='</div>';
                 row+='<div class="">';
-                row+='<p class="card-text price">'+price+' vnđ</p>';
+                row+='<p class="card-text price">'+price+' '+v.unit+' </p>';
                 row+='</div>';
                 row+='<div class="card-footer">';
                 row+='<button class="btn btnAddToCard box-shadow" data-id="'+v.id+'" data-name="'+v.name+'" data-price="'+v.price+'" data-url="'+v.urlImg+'">ĐẶT HÀNG NGAY</button>';

@@ -41,6 +41,9 @@ public class VoucherQueryProcessor {
 
   private BooleanBuilder commonBuilder(VoucherDTO voucherDTO) {
     BooleanBuilder builder = new BooleanBuilder();
+    if (voucherDTO==null){
+      return builder;
+    }
     if (StringUtils.isNotBlank(voucherDTO.getSearch())) {
       String textSearch = voucherDTO.getSearch();
       builder.and(Q.code.contains(textSearch).or(Q.name.containsIgnoreCase(textSearch)));
@@ -70,5 +73,13 @@ public class VoucherQueryProcessor {
       throw new Exception("Mã đã hết hạn");
     }
     return voucherMapper.toDTO(voucher);
+  }
+
+  public VoucherDTO findById(Long id) throws Exception {
+    Optional<Voucher> voucherOptional = voucherService.findById(id);
+    if (!voucherOptional.isPresent()) {
+      throw new Exception("Không tìm thấy");
+    }
+    return voucherMapper.toDTO(voucherOptional.get());
   }
 }
