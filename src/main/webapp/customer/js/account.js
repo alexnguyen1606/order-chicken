@@ -1,15 +1,8 @@
 jQuery(function ($) {
     $(document).ready(function () {
-        //load data function
+        //ajax function
         function loadAccount() {
-            let url = '/api/admin/account';
-            let urlString = window.location.href
-            let curUrl = new URL(urlString);
-            let id = curUrl.searchParams.get("id");
-            if (!id) return ;
-            $('input[name=userName]').prop('disabled',true);
-            $('input[name=password]').prop('disabled',true);
-            url += `?id=${id}`
+            let url = '/api/account';
             return $.ajax({
                 url: url,
                 type: 'GET',
@@ -23,10 +16,9 @@ jQuery(function ($) {
                 }
             });
         }
-        function ajaxCreateAcc(data){
+        function ajaxEditAcc(data){
             let url = '/api/admin/account';
-            let type= (data.id) ? 'PUT' : 'POST';
-            console.log(type)
+            let type = 'PUT' ;
             $.ajax({
                 url: url,
                 type: type,
@@ -34,55 +26,66 @@ jQuery(function ($) {
                 data: JSON.stringify(data),
                 dataType: 'json',
                 success: function (result) {
-                    alert("Thành công")
+                    alert("Cập nhật thành công")
                     window.location.reload();
                     // console.log(result);
                 },
                 error: function (error) {
+                    alert("Cập nhật thất bại")
+                    console.log(error);
+                }
+            });
+        }
+        function updatePassword(data){
+            let url = '/api/account/password';
+            let type = 'PUT' ;
+            $.ajax({
+                url: url,
+                type: type,
+                contentType: 'application/json',
+                data: JSON.stringify(data),
+                dataType: 'json',
+                success: function (result) {
+                    alert("Cập nhật thành công")
+                    window.location.reload();
+                    // console.log(result);
+                },
+                error: function (error) {
+                    alert("Cập nhật thất bại")
+
                     console.log(error);
                 }
             });
         }
 
-        //function init
+
+        //init function
         async function initLoadAccount() {
             let accData = await loadAccount();
             mapDataToForm(accData.data)
         }
 
-
-
         //map data function
         function mapDataToForm(data) {
-            console.log(data)
+            // console.log(data)
             let appendData = '';
-            $('input[name=userName]').val(data.userName)
-
             if (data.user) {
+
                 $('#userName').val(data.user.name)
                 $('#userAddress').val(data.user.address)
                 $('#userPhone').val(data.user.phone)
                 $('#userEmail').val(data.user.email)
+
                 $('.gender').prop('checked',false);
                 $('.gender[value='+data.user.gender+']').prop('checked',true)
-                $('#userId').val(data.user.id)
                 $('#userIdAccount').val(data.id)
-
-
+                $('#userId').val(data.user.id)
             }
-
-            $('.status').prop('checked',false)
-            $('.status[value='+data.status+']').prop('checked',true)
             $('#id').val(data.id)
 
         }
-
-        //call function
-        initLoadAccount();
-
-        //get data to edit
-        function editData() {
-            var formData = $('#edit-form').serializeArray();
+        function editData(target) {
+            var formData = $(target).serializeArray();
             var data = {};
             data['user'] = {};
 
@@ -94,15 +97,31 @@ jQuery(function ($) {
                     data[value.name] = value.value;
                 }
             });
-            // console.log(data)
             return data;
         }
-        
-        //handler
-        $('#edit-btn').on('click',function () {
-            let data = editData();
-            ajaxCreateAcc(data);
-            // console.log(data)
+
+        //handler function
+        $('#detail-form').on('submit',function (e) {
+            e.preventDefault();
+            let data = editData('#detail-form');
+            ajaxEditAcc(data);
         })
+        $('#password-form').on('submit',function (e) {
+            e.preventDefault();
+            let data = editData('#password-form');
+            if (!data.password) {
+                alert('Mật khẩu không đc để trống');
+                return;
+            }
+            if (data.password != data.repeatPassword) {
+                alert('Mật khẩu và nhập lại mật khẩu không giống nhau');
+                return;
+            }
+            updatePassword(data);
+        })
+
+
+        //call function
+        initLoadAccount()
     })
 })

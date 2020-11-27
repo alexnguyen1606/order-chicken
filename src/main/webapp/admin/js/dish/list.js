@@ -37,9 +37,11 @@ jQuery(function ($) {
                 dataType: 'json',
                 success: function (result) {
                     // console.log(result);
+                    alert("Xóa thành công")
                     window.location.reload();
                 },
                 error: function (error) {
+                    alert("Xóa thất bại")
                     console.log(error);
                 }
             });

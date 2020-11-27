@@ -1,5 +1,6 @@
 package com.order.service;
 
+import com.order.constant.OrderStatus;
 import com.order.entities.Order;
 import com.order.entities.QOrder;
 import com.order.repository.OrderRepository;
@@ -67,5 +68,9 @@ public class OrderService extends CommonRepository<Order, OrderRepository> {
   
   public Optional<Order> findByIdAndIdAccount(Long id , Long idAccount){
     return repo.findByIdAndIdAccount(id,idAccount);
+  }
+  public Long sumPriceByIdAccount(Long idAccount) {
+    JPAQuery<Order> query = new JPAQuery<>(em);
+    return query.select(Q.totalPriceAfterDiscount.sum()).from(Q).where(Q.idAccount.eq(idAccount).and(Q.status.eq(OrderStatus.COMPLETED))).fetchFirst();
   }
 }

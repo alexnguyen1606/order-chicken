@@ -57,11 +57,17 @@ jQuery(function ($) {
             data.forEach((v, i) => {
                 let name = v.user ? (v.user.name ? v.user.name : v.userName) : v.userName;
                 let phone = v.user ?(v.user.phone ? v.user.phone : '') :'';
+                let totalPaid = 0;
+                if(v.totalPaid) totalPaid = v.totalPaid;
+                totalPaid = (totalPaid).toLocaleString('vi-Vi', {
+                    style: 'currency',
+                    currency: 'VND',
+                });
                 appendData += `
                 <tr>
                     <td>${name}</td>
                     <td>${phone}</td>
-                    <td></td>
+                    <td>${totalPaid}</td>
                     <td><a href="/admin/account/edit?id=${v.id}"><i class="far fa-edit"></i></a></td>
                 </tr>
                 `;

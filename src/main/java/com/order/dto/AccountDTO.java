@@ -41,4 +41,7 @@ public class AccountDTO {
     private UserDTO user;
 
     private String search;
+
+    private String oldPassword;
+    private Long totalPaid;
 }
