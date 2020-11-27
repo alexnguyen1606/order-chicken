@@ -49,12 +49,14 @@
                     </table>
                     <div class="row">
                         <div class="col-md-6">
-                            <p style="color: red;font-size: 14px; margin: 0px"> Lưu ý:</p>
-                            <p style="color: red;font-size: 14px; margin: 0px">1. Cửa hàng chỉ bán ship (quý khách có
-                                thể tự lấy đồ tại cửa hàng)</p>
-                            <p style="color: red;font-size: 14px; margin: 0px">2. Đơn đặt hàng chỉ có thể hủy khi cửa
-                                hàng chưa nhận đơn</p>
-                            <p style="color: red;font-size: 14px; margin: 0px">3. Liên hệ 0339673626 để được hỗ trợ</p>
+                            <div class="col-6 text-left row">
+                                <h5>Tổng sản phẩm : </h5>
+                                <h5 id="totalItemDetail" class="totalItem" data-total-item="0">0</h5>
+                            </div>
+                            <div class="col-6 text-left row">
+                                <h5>Tổng tiền :</h5>
+                                <h5 id="totalPriceDetail" data-total-price="0">0 đ</h5>
+                            </div>
                         </div>
                         <div class="col-md-6 text-center">
                             <button onclick="window.location.href='/product/list'"
@@ -64,6 +66,15 @@
                                     data-target="#modalSubmit" style="display: none">Hủy đơn
                             </button>
                         </div>
+                        <div class="col-md-6">
+                            <p style="color: red;font-size: 14px; margin: 0px"> Lưu ý:</p>
+                            <p style="color: red;font-size: 14px; margin: 0px">1. Cửa hàng chỉ bán ship (quý khách có
+                                thể tự lấy đồ tại cửa hàng)</p>
+                            <p style="color: red;font-size: 14px; margin: 0px">2. Đơn đặt hàng chỉ có thể hủy khi cửa
+                                hàng chưa nhận đơn</p>
+                            <p style="color: red;font-size: 14px; margin: 0px">3. Liên hệ 0339673626 để được hỗ trợ</p>
+                        </div>
+
                     </div>
 
                 </div>

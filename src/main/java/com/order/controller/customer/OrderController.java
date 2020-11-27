@@ -19,7 +19,7 @@ public class OrderController {
         return new ModelAndView("customer/order-list");
     }
     
-    @GetMapping("/{id}")
+    @GetMapping("/detail/{id}")
     public ModelAndView detail(@PathVariable Long id){
         ModelAndView mav = new ModelAndView("customer/order-detail");
         mav.addObject("id",id);

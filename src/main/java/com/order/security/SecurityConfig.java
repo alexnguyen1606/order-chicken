@@ -80,6 +80,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             "/admin/image/**",
             "/admin/template/**",
             "/admin/plugins/**",
-            "/admin/css/**","/customer/**","/admin/js/**","/admin/ckfinder/**","/admin/ckeditor/**");
+            "/admin/css/**","/customer/**","/admin/js/**");
   }
 }

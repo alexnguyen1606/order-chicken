@@ -1,7 +1,6 @@
 package com.order.processor;
 
 import com.order.constant.EntityConstant;
-import com.order.constant.SystemConstant;
 import com.order.dto.DishDTO;
 import com.order.entities.QDish;
 import com.order.mapper.DishMapper;
@@ -10,6 +9,7 @@ import com.querydsl.core.BooleanBuilder;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -30,7 +30,7 @@ public class DishProcessor {
   }
 
   public void deleteDish(Long dishId) {
-    dishService.deleteById(dishId);
+    dishService.updateStatus(dishId, EntityConstant.INACTIVE_STATUS_DISH);
   }
 
   public DishDTO getDish(DishDTO dishDTO) {
@@ -61,16 +61,16 @@ public class DishProcessor {
     return result;
   }
 
+  @Transactional
   public void deleteDishes(List<Long> ids) {
-    for (Long id : ids) {
-      dishService.deleteById(id);
-    }
+    dishService.updateAllStatus(ids, EntityConstant.INACTIVE_STATUS_DISH);
   }
 
   public List<DishDTO> findCategoryAndActive(Long category) {
-    List<DishDTO> result = dishService.findByCategoryAndStatus(category, EntityConstant.ACTIVE_STATUS_DISH).stream()
-                                   .map(dishMapper::toDTO)
-                                   .collect(Collectors.toList());
+    List<DishDTO> result =
+        dishService.findByCategoryAndStatus(category, EntityConstant.ACTIVE_STATUS_DISH).stream()
+            .map(dishMapper::toDTO)
+            .collect(Collectors.toList());
     return result;
   }
 }

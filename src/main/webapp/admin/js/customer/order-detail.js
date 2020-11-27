@@ -69,7 +69,11 @@ jQuery(function ($) {
             } else {
                 $('#payment').text('Hình thức thanh toán: Thanh toán khi nhận hàng');
             }
-            $('#status').text('Trạng thái: '+data.statusString)
+            $('#status').text('Trạng thái: '+data.statusString);
+            $('#totalItemDetail').text(data.totalNumber);
+            var totalPrice = data.totalPrice.toLocaleString('it-IT', {style: 'currency', currency: 'VND'});
+            $('#totalPriceDetail').text(totalPrice);
+
         }
         orderDetail();
         orderInfo();
