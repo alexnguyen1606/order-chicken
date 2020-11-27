@@ -12,7 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
  * 10:24 PM ,November 26,2020
  */
 @Controller("orderCustomCtrl")
-@RequestMapping("/oder")
+@RequestMapping("/order")
 public class OrderController {
     @GetMapping("/list")
     public ModelAndView list(){

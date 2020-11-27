@@ -13,7 +13,6 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/product")
 @Controller
 public class ProductController {
-
   @GetMapping("/list")
   public ModelAndView listProduct()
   {
