@@ -10,9 +10,9 @@
 
 
 <link rel="stylesheet" href="/customer/css/login.css">
-<div class="my-5 py-5 container-fluid" style="background:#000">
+<div class=" py-5 container-fluid" style="background:#000">
     <div class="container ">
-        <div class="row justify-content-end">
+        <div class="row mt-5 mb-5 justify-content-end">
             <div class="col">
                 <img src="/customer/image/background-login.png"/>
             </div>
@@ -24,12 +24,12 @@
                     <div class=" mt-5 col-md-12">
                         <div class="col-md-12 text-left">
                             <label class="">Tên tài khoản:</label>
-                            <input name="username" type="text" class="form-control col-md-12" placeholder=""
+                            <input name="username" type="text" style="background: #FFD7B3;border-radius: 3px;height: 48px;" class="form-control col-md-12" placeholder=""
                                    autofocus="true"/>
                         </div>
                         <div class="col-md-12 my-2  text-left">
                             <label class="">Mật khẩu:</label>
-                            <input name="password" type="password" class="form-control col-md-12" placeholder=""/>
+                            <input name="password" style="background: #FFD7B3;border-radius: 3px;height: 48px;" type="password" class="form-control col-md-12" placeholder=""/>
 
                         </div>
                         <div class="col-md-12 my-4">
@@ -39,7 +39,7 @@
                             </div>
                             <div class="text-center my-3 text-meta">
                                 Bạn chưa có tài khoản?
-                                <a href="#" data-toggle="modal"
+                                <a href="#" data-toggle="modal" style="text-decoration-line: underline;"
                                    data-target="#register" class="color-primary">
                                     Đăng ký ngay
                                 </a>
@@ -118,7 +118,7 @@
                                             </div>
                                             <div class="text-center my-3 text-meta">
                                                 Bạn đã có tài khoản?
-                                                <a href="#" data-dismiss="modal" class="color-primary">
+                                                <a href="#" data-dismiss="modal" style="text-decoration-line: underline;" class="color-primary">
                                                     Đăng nhập ngay
                                                 </a>
                                             </div>
