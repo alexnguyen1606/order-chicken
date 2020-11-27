@@ -36,6 +36,9 @@
 <link rel="stylesheet" href="/admin/template/plugins/summernote/summernote-bs4.css">
 <!-- Google Font: Source Sans Pro -->
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <link
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet">
 <%--  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">--%>
 <link rel="stylesheet" href="/admin/template/plugins/font-awesome-4.7.0/css/font-awesome.css">
 <link rel="stylesheet" href="/admin/css/admin/spin.css">

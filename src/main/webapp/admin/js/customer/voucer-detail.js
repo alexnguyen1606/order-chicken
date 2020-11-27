@@ -26,6 +26,7 @@ jQuery(function ($) {
             $('#imgVoucher').attr("src",data.urlImg);
             $('#content').html(data.content);
             $('#code').html("Mã khuyến mãi:"+data.code);
+            
         }
 
         getDetail();
