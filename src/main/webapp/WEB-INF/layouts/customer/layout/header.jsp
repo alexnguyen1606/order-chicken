@@ -46,7 +46,7 @@
                         </a>
                         <div class="dropdown-menu" id="" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="/order/list">Đơn hàng</a>
-                            <a class="dropdown-item" href="/profile">Thông tin cá nhân</a>
+                            <a class="dropdown-item" href="/account/detail">Thông tin cá nhân</a>
                           <sec:authorize access="hasAuthority('ADMIN')">
                               <a class="dropdown-item" href="/admin">Quản trị</a>
                           </sec:authorize>
