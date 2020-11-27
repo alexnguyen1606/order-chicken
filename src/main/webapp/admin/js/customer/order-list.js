@@ -30,7 +30,7 @@ jQuery(function ($) {
                 row+='<td>'+v.totalNumber+'</td>';
                 row+='<td>'+v.deliveryTime+'</td>';
                 row+='<td>'+v.statusString+'</td>';
-                row+='<td><a href="/order/'+v.id+'"><button class="btn btn-primary" style="background: #B3521F;">Chi tiết</button></a></td>';
+                row+='<td><a href="/order/detail/'+v.id+'"><button class="btn btn-primary" style="background: #B3521F;">Chi tiết</button></a></td>';
                 row+='</tr>';
             })
             $('#orderedList').empty();
