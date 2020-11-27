@@ -105,7 +105,7 @@
 
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
-                            Quản lú thực đơn
+                            Quản lý thực đơn
 
                         </p>
                     </a>
@@ -114,7 +114,7 @@
                     <a href="/admin/voucher/list" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
-                            khuyển mại
+                            Khuyển mại
 
                         </p>
                     </a>
