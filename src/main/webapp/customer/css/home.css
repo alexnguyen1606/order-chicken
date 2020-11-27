@@ -49,3 +49,7 @@ html,body {
 img:not(.position-absolute) {
     max-width: 100%;
 }
+.form-control {
+    background: rgb(255, 215, 179);
+    border-radius: 3px;
+}
