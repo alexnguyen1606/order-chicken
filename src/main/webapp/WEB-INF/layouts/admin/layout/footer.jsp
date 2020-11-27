@@ -68,7 +68,7 @@
                     <a href="/admin/report/sales" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
-                            Báo cáo
+                            Báo cáo doanh thu
 
                         </p>
                     </a>
@@ -114,7 +114,7 @@
                     <a href="/admin/voucher/list" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
-                            Quản lý khuyển mại
+                            khuyển mại
 
                         </p>
                     </a>

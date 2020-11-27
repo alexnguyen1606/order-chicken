@@ -2,6 +2,7 @@ package com.order.processor.order;
 
 import com.order.constant.EntityConstant;
 import com.order.constant.OrderStatus;
+import com.order.constant.SystemConstant;
 import com.order.dto.OrderDTO;
 import com.order.entities.*;
 import com.order.mapper.OrderMapper;
@@ -133,7 +134,8 @@ public class OrderCommadProcessor {
     if (voucherOptional.isPresent()) {
       Voucher voucher = voucherOptional.get();
       LocalDateTime current = LocalDateTime.now();
-      if (current.isBefore(voucher.getEndTime()) && current.isAfter(voucher.getStartTime())) {
+      boolean checkTime = current.isBefore(voucher.getEndTime()) && current.isAfter(voucher.getStartTime());
+      if (checkTime && voucher.getStatus().equals(SystemConstant.ENABLE)) {
         order.setIdVoucher(voucher.getId());
       }
     }

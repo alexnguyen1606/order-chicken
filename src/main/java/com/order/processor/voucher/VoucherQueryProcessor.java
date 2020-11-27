@@ -1,5 +1,6 @@
 package com.order.processor.voucher;
 
+import com.order.constant.SystemConstant;
 import com.order.dto.VoucherDTO;
 import com.order.entities.QVoucher;
 import com.order.entities.Voucher;
@@ -69,7 +70,7 @@ public class VoucherQueryProcessor {
     LocalDateTime current = LocalDateTime.now();
     boolean check =
         current.isBefore(voucher.getEndTime()) && current.isAfter(voucher.getStartTime());
-    if (!check) {
+    if (!check && voucher.getStatus().equals(SystemConstant.DISABLE)) {
       throw new Exception("Mã đã hết hạn");
     }
     return voucherMapper.toDTO(voucher);
