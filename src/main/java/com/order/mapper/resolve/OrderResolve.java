@@ -17,16 +17,16 @@ public class OrderResolve {
     OrderDTO orderDTO = new OrderDTO();
     switch (order.getStatus()) {
       case 1:
-        orderDTO.setStatusString("Hoàn thành");
+        orderDTO.setStatusString("Đã nhận đơn");
         break;
       case 0:
-        orderDTO.setStatusString("Xác nhận đơn");
+        orderDTO.setStatusString("Chờ xác nhận đơn");
         break;
       case 3:
-        orderDTO.setStatusString("Hoàn thành");
+        orderDTO.setStatusString("Đã hoàn thành");
         break;
       case 2:
-        orderDTO.setStatusString("Đã hủy");
+        orderDTO.setStatusString("Đã bị hủy");
         break;
     }
     return orderDTO;

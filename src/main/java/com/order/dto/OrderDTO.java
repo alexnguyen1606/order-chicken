@@ -58,5 +58,6 @@ public class OrderDTO {
   private List<DetailOrderDTO> orderDetails = new ArrayList<>();
 
   private Integer discount;
+  
   private Long totalPriceAfterDiscount;
 }

@@ -38,7 +38,7 @@
         <li class="nav-item dropdown">
 
         <a href="/admin/order/create" class="btn btn-primary float-left" >Tạo đơn </a>
-        <a href="/admin/logout" class="delete btn btn-danger float-left" data-confirm="Bạn có muốn đăng xuất khỏi hệ
+        <a href="/logout" class="delete btn btn-danger float-left" data-confirm="Bạn có muốn đăng xuất khỏi hệ
         thống ? ">Đăng Xuất </a>
 
         </li>
