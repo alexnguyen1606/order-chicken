@@ -19,7 +19,7 @@
             <a href="/voucher/${id}" >   <img id="imgVoucher" src=""></a>
         </div>
         <div>
-            <h3 id="code">Mã khuyến mãi</h3>
+            <h3 id="code" class="font-weight-bold">Mã khuyến mãi</h3>
         </div>
         <div id="content">
 

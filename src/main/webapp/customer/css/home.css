@@ -3,6 +3,9 @@
     font-family: Pacifico;
     src: url('/customer/font/Pacifico-Regular.ttf');
 }
+html,body {
+    font-family: Nunito;
+}
 .height-100 {
     height:100%;
 }
@@ -42,4 +45,7 @@
 }
 .color-primary {
     color: #D00000;
+}
+img:not(.position-absolute) {
+    max-width: 100%;
 }
