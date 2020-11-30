@@ -26,7 +26,7 @@ public class OrderDTO {
   @NotBlank(message = "Địa chỉ giao hàng không được bỏ trống")
   private String customerAddress;
 
-  private LocalDateTime createdDate;
+  private String createdDate;
   @NotBlank(message = "Thời gian giao không được bỏ trống")
   private String deliveryTime;
 

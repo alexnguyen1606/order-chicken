@@ -49,6 +49,9 @@ public class VoucherQueryProcessor {
       String textSearch = voucherDTO.getSearch();
       builder.and(Q.code.contains(textSearch).or(Q.name.containsIgnoreCase(textSearch)));
     }
+    if (voucherDTO.getStatus()!=null){
+      builder.and(Q.status.eq(voucherDTO.getStatus()));
+    }
     return builder;
   }
 

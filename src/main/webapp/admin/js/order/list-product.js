@@ -4,11 +4,14 @@ jQuery(function ($) {
             if (url == "" || url == null) {
                 url = "/api/dish/list";
             }
+            var data = {};
+            data.status = "ACTIVE";
+            data.search = $('#search').val();
             $.ajax({
                 type: "POST",
                 url: url,
                 // headers: {"Authorization": "Bearer " + localStorage.getItem('eln_token')},
-                data: JSON.stringify({'status':"ACTIVE"}),
+                data: JSON.stringify(data),
                 dataType: "json",
                 contentType: "application/json",
                 beforeSend: function () {
@@ -61,6 +64,10 @@ jQuery(function ($) {
                 }
             });
         }
-        getListProduct("")
+        getListProduct("");
+        $('#formSearch').on('submit',function (e) {
+            e.preventDefault();
+            getListProduct("");
+        });
     })
 })

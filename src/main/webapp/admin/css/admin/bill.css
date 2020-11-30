@@ -1,0 +1,15 @@
+.top-bill{
+    border: black 1px solid;
+    min-height: 500px;
+    background-color: white;
+}
+.bottom-bill{
+    border: black 1px solid;
+    min-height: 400px;
+    background-color: white;
+    border-top: none;
+}
+.title{
+    text-align: center;
+    text-transform: uppercase!important;
+}

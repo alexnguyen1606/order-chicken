@@ -1,5 +1,6 @@
 package com.order.api.customer;
 
+import com.order.constant.SystemConstant;
 import com.order.dto.ServiceResult;
 import com.order.dto.VoucherDTO;
 import com.order.processor.voucher.VoucherQueryProcessor;
@@ -51,9 +52,11 @@ public class VoucherApi {
       @RequestParam(name = "page", defaultValue = "1", required = false) Integer currentPage,
       @RequestParam(name = "size", defaultValue = "10", required = false) Integer size) {
     Pageable pageable = PageRequest.of(currentPage > 0 ? currentPage - 1 : currentPage, size);
-    Long totalItem = voucherQueryProcessor.count(null);
+    VoucherDTO voucherDTO = new VoucherDTO();
+    voucherDTO.setStatus(SystemConstant.ENABLE);
+    Long totalItem = voucherQueryProcessor.count(voucherDTO);
     Integer totalPage = (int) Math.ceil((double) totalItem / size);
-    List<VoucherDTO> listData = voucherQueryProcessor.findAll(null, pageable);
+    List<VoucherDTO> listData = voucherQueryProcessor.findAll(voucherDTO, pageable);
     ServiceResult serviceResult = new ServiceResult(listData, totalPage, currentPage);
     return ResponseEntity.ok(serviceResult);
   }

@@ -7,6 +7,7 @@ import com.order.mapper.DishMapper;
 import com.order.service.DishService;
 import com.querydsl.core.BooleanBuilder;
 import lombok.AllArgsConstructor;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -58,6 +59,9 @@ public class DishProcessor {
     if (dishDTO.getName() != null) result.and(qDish.name.containsIgnoreCase(dishDTO.getName()));
     if (dishDTO.getIdCategory() != null) result.and(qDish.idCategory.eq(dishDTO.getIdCategory()));
     if (dishDTO.getStatus() != null) result.and(qDish.status.eq(dishDTO.getStatus()));
+    if (StringUtils.isNotBlank(dishDTO.getSearch())){
+      result.and(qDish.name.containsIgnoreCase(dishDTO.getSearch()));
+    }
     return result;
   }
 

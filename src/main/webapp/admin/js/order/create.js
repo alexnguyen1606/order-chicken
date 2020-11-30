@@ -174,7 +174,7 @@ jQuery(function ($) {
                 $('#alertVoucher').text(response.data.discount + " % ");
                 var totalPrice = parseInt($('#totalPrice').attr("data-total-price"));
                 var discount = response.data.discount / 100;
-                var totalPriceAfter = totalPrice * discount;
+                var totalPriceAfter = totalPrice - totalPrice * discount;
                 $('#totalPricePaid').val(totalPriceAfter.toLocaleString('it-IT', {style: 'currency', currency: 'VND'}));
             }, error: function (response) {
                 $('.loader').css("display", "none");

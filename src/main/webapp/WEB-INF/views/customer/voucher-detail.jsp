@@ -21,6 +21,9 @@
         <div>
             <h3 id="code" class="font-weight-bold">Mã khuyến mãi</h3>
         </div>
+        <div>
+            <h5  class="apply">Thời gian áp dụng</h5>
+        </div>
         <div id="content">
 
         </div>
