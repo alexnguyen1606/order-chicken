@@ -101,7 +101,7 @@
                         <div class="col-sm-12 mt-3 form-group">
                             <label class="ward input-label col-md-6 text-right">Phương thức thanh toán:</label>
                             <select class="form-control col-md-6" name="payment" disabled id="payment">
-                                <option value="COD" selected>Thanh toán khi nhận hàng</option>
+                                <option value="COD" selected>Tiền mặt</option>
                                 <option value="TRANSFER">Chuyển khoản</option>
                             </select>
                         </div>
@@ -110,6 +110,11 @@
                             <textarea class="form-control col-md-6 " disabled  name="note" id="note"></textarea>
                         </div>
                         <div class="col-sm-12 mt-3 form-group text-center" style="height: 46px">
+                            <div class="col-md-6 text-right">
+                                <a href="#" type="button" id="printBill" class=" btn"
+                                        style=" background: #00D380; color: #ffffff;width: 130px">Xuất hóa đơn
+                                </a>
+                            </div>
                             <div class="col-md-6 text-right">
                                 <button type="button" data-dismiss="modal" class=" btn" id="cancel"
                                         style="border:1px solid black;width: 130px">Đóng

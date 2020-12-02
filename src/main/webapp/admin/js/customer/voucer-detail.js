@@ -26,7 +26,14 @@ jQuery(function ($) {
             $('#imgVoucher').attr("src",data.urlImg);
             $('#content').html(data.content);
             $('#code').html("Mã khuyến mãi:"+data.code);
-            
+            var endTime = getDate(data.endTimeString);
+            var startTime = getDate(data.startTimeString);
+            $('.apply').text("Thời gian áp dụng khuyến mại : "+startTime+" - "+endTime);
+        }
+        function getDate(data) {
+            var time = new Date(data);
+            var time = time.getDate() +"/"+(time.getMonth()+1)+"/"+time.getFullYear();
+            return time;
         }
 
         getDetail();

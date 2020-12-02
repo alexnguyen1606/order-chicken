@@ -20,7 +20,7 @@
             <div class="col-auto">
                 <ul class="navbar-nav mr-auto title-header d-flex">
                     <li class="nav-item ${product}">
-                        <a class="nav-link title-header" href="/product/list">Sản phẩm<span class="sr-only"></span></a>
+                        <a class="nav-link title-header" href="/product/list">Thực đơn<span class="sr-only"></span></a>
                     </li>
                     <li class="nav-item ${voucher}">
                         <a class="nav-link" href="/voucher/list">Khuyến mãi</a>
@@ -29,13 +29,15 @@
             </div>
             <div class="col-auto">
                 <ul class="navbar-nav mr-auto title-header d-flex justify-content-end">
-                    <li class="nav-item position-relative " style="display: table;width: fit-content">
-                        <div>
-                            <a class="nav-link title-header position-relative" href="/cart/list"><img src="/admin/image/shopping_card.png">
-                            </a>
-                        </div>
-                        <div class="position-absolute totalItem text-center" id="totalProduct" >0</div>
-                    </li>
+                    <sec:authorize access="isAuthenticated()">
+                        <li class="nav-item position-relative " style="display: table;width: fit-content">
+                            <div>
+                                <a class="nav-link title-header position-relative" href="/cart/list"><img src="/admin/image/shopping_card.png">
+                                </a>
+                            </div>
+                            <div class="position-absolute totalItem text-center" id="totalProduct" >0</div>
+                        </li>
+                    </sec:authorize>
                     <li class="nav-item" style="display: table;width: fit-content">
                         <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">

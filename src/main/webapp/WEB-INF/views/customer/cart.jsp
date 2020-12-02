@@ -97,7 +97,7 @@
                                     <div class="col-sm-12 mt-3 row">
                                         <label class="ward input-label col-md-4 text-right">Phương thức thanh toán:</label>
                                         <select class="form-control col-md-8" name="payment" id="payment">
-                                            <option value="COD" selected>Thanh toán khi nhận hàng</option>
+                                            <option value="COD" selected>Tiền mặt</option>
                                             <option value="TRANSFER">Chuyển khoản</option>
                                         </select>
                                     </div>

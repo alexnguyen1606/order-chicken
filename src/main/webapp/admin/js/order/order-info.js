@@ -5,6 +5,7 @@ jQuery(function ($) {
             getOrderDetails(orderId);
             getOrderInfo(orderId);
             $('#id').val(orderId);
+            $('#printBill').attr("href","/admin/bill/"+orderId);
         })
     });
     function getOrderDetails(orderId) {

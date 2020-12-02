@@ -7,25 +7,26 @@ import java.util.List;
 
 @Data
 public class DishDTO {
-    private Long id;
+  private Long id;
 
-    private String name;
+  private String name;
 
-    private Long price;
+  private Long price;
 
-    private String unit;
+  private String unit;
 
-    private String status;
+  private String status;
 
-    private String urlImg;
+  private String urlImg;
 
-    private String content;
+  private String content;
 
-    private Long idCategory;
+  private Long idCategory;
 
-    private String priceString;
+  private String priceString;
 
-    private DishCategory dishCategory;
+  private DishCategory dishCategory;
 
-    private List<Long> ids;
+  private List<Long> ids;
+  private String search;
 }

@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
-
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <html>
 <head>
     <title>Title</title>
@@ -42,11 +42,27 @@
                             Đăng nhập
                         </a>
                     </sec:authorize>
-                    <sec:authorize access="isAuthenticated()">
-                        <a href="/logout" class="btn btn-primary">
-                            Đăng xuất
+                    <%--<sec:authorize access="isAuthenticated()">--%>
+                        <%--<a href="/logout" class="btn btn-primary">--%>
+                            <%--Đăng xuất--%>
+                        <%--</a>--%>
+                    <%--</sec:authorize>--%>
+                        <a class="nav-link" href="#" id="navbarDropdown" style="color: white" role="button" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false">
+                            <sec:authorize access="isAuthenticated()">
+                                <security:authentication property="principal.username" />
+
+                            </sec:authorize>
                         </a>
-                    </sec:authorize>
+                        <div class="dropdown-menu" id="" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/order/list">Đơn hàng</a>
+                            <a class="dropdown-item" href="/account/detail">Thông tin cá nhân</a>
+                            <sec:authorize access="hasAuthority('ADMIN')">
+                                <a class="dropdown-item" href="/admin">Quản trị</a>
+                            </sec:authorize>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="/logout">Đăng Xuất</a>
+                        </div>
                 </div>
             </div>
         </div>

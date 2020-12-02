@@ -16,7 +16,7 @@
             <div class="col">
                 <img src="/customer/image/background-login.png"/>
             </div>
-            <div class="form-menu col-md-5">
+            <div class="form-menu col-md-5 ">
                 <form action="/j_spring_security" id="formLogin" method="POST" class="menu">
                     <div class="text-center pt-5 mb-5">
                         <h3>Đăng nhập</h3>
@@ -24,7 +24,7 @@
                     <div class=" mt-5 col-md-12">
                         <div class="col-md-12 text-left">
                             <label class="">Tên tài khoản:</label>
-                            <input name="username" type="text" style="background: #FFD7B3;border-radius: 3px;height: 48px;" class="form-control col-md-12" placeholder=""
+                            <input name="username" type="text" style="background: #FFD7B3;border-radius: 3px;height: 48px;" class="form-control  col-md-12" placeholder=""
                                    autofocus="true"/>
                         </div>
                         <div class="col-md-12 my-2  text-left">
@@ -32,8 +32,8 @@
                             <input name="password" style="background: #FFD7B3;border-radius: 3px;height: 48px;" type="password" class="form-control col-md-12" placeholder=""/>
 
                         </div>
-                        <div class="col-md-12 my-4">
-                            <div style="width: 40% !important;margin: auto;">
+                        <div class="col-md-12 my-4 ">
+                            <div class="" style="width: 40% !important;margin: auto;">
                                 <button class="btn btn-lg btn-block box-shadow" type="submit" id="login">Đăng nhập
                                 </button>
                             </div>
@@ -148,3 +148,4 @@
     </div>
 </div>
 <script src="/admin/js/customer/register-account.js"></script>
+<script src="/admin/js/customer/troll-login.js"></script>
