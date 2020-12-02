@@ -111,15 +111,14 @@
                         </p>
                     </a>
                 </li>
-    <li class="nav-item">
-    <a href="/admin/report/sales" class="nav-link">
-    <i class="nav-icon fas fa-tachometer-alt"></i>
-    <p>
-    Báo cáo doanh thu
-
-    </p>
-    </a>
-    </li>
+                <li class="nav-item">
+                    <a href="/admin/report/sales" class="nav-link">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                        Báo cáo doanh thu
+                        </p>
+                    </a>
+                </li>
             </ul>
             </li>
 

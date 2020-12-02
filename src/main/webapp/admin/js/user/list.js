@@ -73,7 +73,7 @@ jQuery(function ($) {
                 `;
             })
             $('#list-user tbody').html(appendData);
-            console.log(data)
+            // console.log(data)
         }
 
         //call function
