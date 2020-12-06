@@ -11,10 +11,6 @@ import javax.persistence.PersistenceContext;
 import java.util.List;
 import java.util.Optional;
 
-/**
- * @author:Nguyen Anh Tuan
- *     <p>May 24,2020
- */
 public abstract class CommonRepository<
     T, R extends JpaRepository<T, Long> & QuerydslPredicateExecutor<T>> {
   public CommonRepository(R repo) {

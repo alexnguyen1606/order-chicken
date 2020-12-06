@@ -8,10 +8,6 @@ import lombok.AllArgsConstructor;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
-/**
- * @author:Nguyen Anh Tuan
- *     <p>1:30 AM ,November 22,2020
- */
 @Service
 @AllArgsConstructor
 public class UserProcessor {

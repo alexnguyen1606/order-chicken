@@ -12,11 +12,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
-/**
- * @author:Nguyen Anh Tuan
- * <p>
- * 10:53 PM ,November 24,2020
- */
 @RestController
 @RequestMapping("/api/account")
 @AllArgsConstructor

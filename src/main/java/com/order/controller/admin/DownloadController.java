@@ -12,10 +12,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 
-/**
- * @author:Nguyen Anh Tuan
- *     <p>9:53 AM ,November 25,2020
- */
 @Controller
 @RequestMapping("/admin/download")
 public class DownloadController {

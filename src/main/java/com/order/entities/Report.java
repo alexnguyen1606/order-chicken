@@ -5,11 +5,6 @@ import lombok.Data;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-/**
- * @author:Nguyen Anh Tuan
- * <p>
- * 11:33 AM ,November 16,2020
- */
 @Table
 @Entity
 @Data

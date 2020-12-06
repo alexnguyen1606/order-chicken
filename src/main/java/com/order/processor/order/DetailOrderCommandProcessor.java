@@ -17,10 +17,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-/**
- * @author:Nguyen Anh Tuan
- *     <p>9:27 AM ,November 16,2020
- */
 @Service
 @AllArgsConstructor
 public class DetailOrderCommandProcessor {

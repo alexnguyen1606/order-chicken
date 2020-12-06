@@ -8,10 +8,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-/**
- * @author:Nguyen Anh Tuan
- *     <p>1:07 AM ,November 22,2020
- */
 @Component
 public class AccountRoleMappingService
     extends CommonRepository<AccountRoleMapping, AccountRoleMappingRepository> {

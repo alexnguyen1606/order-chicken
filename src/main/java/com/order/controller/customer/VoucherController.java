@@ -6,11 +6,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-/**
- * @author:Nguyen Anh Tuan
- * <p>
- * 2:58 PM ,November 19,2020
- */
 @RequestMapping("/voucher")
 @Controller(value = "voucherCustomer")
 public class VoucherController {

@@ -10,11 +10,6 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
 
-/**
- * @author:Nguyen Anh Tuan
- * <p>
- * 9:49 AM ,November 25,2020
- */
 @AllArgsConstructor
 @Service
 public class ReportProcessor {

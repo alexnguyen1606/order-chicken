@@ -16,10 +16,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
 
-/**
- * @author:Nguyen Anh Tuan
- *     <p>9:26 AM ,November 25,2020
- */
 @Service
 public class ReportExport implements IExport<Order> {
   @Override

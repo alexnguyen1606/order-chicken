@@ -8,10 +8,6 @@ import java.time.LocalDateTime;
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * @author:Nguyen Anh Tuan
- *     <p>2:06 PM ,November 17,2020
- */
 @Data
 public class VoucherDTO {
 

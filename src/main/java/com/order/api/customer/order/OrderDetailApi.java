@@ -8,10 +8,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-/**
- * @author:Nguyen Anh Tuan
- *     <p>10:29 PM ,November 26,2020
- */
 @RestController("orderDetailCustomer")
 @RequestMapping("/api/order-detail")
 @AllArgsConstructor

@@ -6,11 +6,6 @@ import org.mapstruct.ObjectFactory;
 import org.mapstruct.TargetType;
 import org.springframework.stereotype.Component;
 
-/**
- * @author:Nguyen Anh Tuan
- * <p>
- * 9:54 AM ,November 26,2020
- */
 @Component
 public class VoucherResolve {
     @ObjectFactory

@@ -11,10 +11,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-/**
- * @author:Nguyen Anh Tuan
- *     <p>2:05 PM ,November 17,2020
- */
 @AllArgsConstructor
 @Service
 public class VoucherCommandProcessor {

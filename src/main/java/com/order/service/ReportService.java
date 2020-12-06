@@ -6,10 +6,6 @@ import com.order.repository.ReportRepository;
 import com.querydsl.jpa.impl.JPAQuery;
 import org.springframework.stereotype.Component;
 
-/**
- * @author:Nguyen Anh Tuan
- *     <p>9:06 AM ,November 25,2020
- */
 @Component
 public class ReportService extends CommonRepository<Report, ReportRepository> {
   public ReportService(ReportRepository repo) {

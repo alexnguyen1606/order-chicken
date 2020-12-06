@@ -6,10 +6,6 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author:Nguyen Anh Tuan
- *     <p>November 10,2020
- */
 @Data
 public class DetailOrderDTO {
   private Long id;

@@ -4,10 +4,6 @@ import lombok.Data;
 
 import javax.persistence.*;
 
-/**
- * @author:Nguyen Anh Tuan
- *     <p>1:01 AM ,November 22,2020
- */
 @Table
 @Entity
 @Data

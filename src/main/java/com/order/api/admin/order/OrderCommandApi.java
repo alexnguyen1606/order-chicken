@@ -11,11 +11,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
-/**
- * @author:Nguyen Anh Tuan
- * <p>
- * 10:07 AM ,November 13,2020
- */
 @RestController
 @AllArgsConstructor
 @RequestMapping("/api/admin/order")
