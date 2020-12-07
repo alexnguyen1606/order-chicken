@@ -17,10 +17,6 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-/**
- * @author:Nguyen Anh Tuan
- *     <p>2:08 PM ,November 17,2020
- */
 @AllArgsConstructor
 @Service
 public class VoucherQueryProcessor {

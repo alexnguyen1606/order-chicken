@@ -8,11 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * @author:Nguyen Anh Tuan
- * <p>
- * 4:48 PM ,November 19,2020
- */
 @AllArgsConstructor
 @RestController(value = "categoryCustomerApi")
 @RequestMapping("/api/category")

@@ -7,10 +7,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @author:Nguyen Anh Tuan
- *     <p>9:27 AM ,November 25,2020
- */
 @Service
 public class ExportFactory {
   private static final Map<String, IExport> factory = new HashMap<>();

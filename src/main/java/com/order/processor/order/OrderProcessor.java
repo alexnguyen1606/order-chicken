@@ -19,10 +19,6 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-/**
- * @author:Nguyen Anh Tuan
- *     <p>November 10,2020
- */
 @Service
 @AllArgsConstructor
 public class OrderProcessor {

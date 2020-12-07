@@ -12,10 +12,6 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.io.IOException;
 
-/**
- * @author:Nguyen Anh Tuan
- *     <p>9:03 AM ,November 25,2020
- */
 @AllArgsConstructor
 @RestController
 @RequestMapping("/api/admin/report")

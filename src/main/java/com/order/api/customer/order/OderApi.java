@@ -12,10 +12,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-/**
- * @author:Nguyen Anh Tuan
- *     <p>10:24 PM ,November 26,2020
- */
 @RequestMapping("/api/order")
 @RestController(value = "orderQueryCustomerApi")
 @AllArgsConstructor

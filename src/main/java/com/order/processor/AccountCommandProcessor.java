@@ -13,10 +13,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-/**
- * @author:Nguyen Anh Tuan
- *     <p>10:57 PM ,November 24,2020
- */
 @Service
 @AllArgsConstructor
 public class AccountCommandProcessor {

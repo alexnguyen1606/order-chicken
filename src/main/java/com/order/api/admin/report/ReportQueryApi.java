@@ -14,10 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-/**
- * @author:Nguyen Anh Tuan
- *     <p>9:46 AM ,November 25,2020
- */
 @AllArgsConstructor
 @RestController
 @RequestMapping("/api/admin/report")

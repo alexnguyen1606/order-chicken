@@ -20,10 +20,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-/**
- * @author:Nguyen Anh Tuan
- *     <p>10:26 AM ,November 13,2020
- */
 @AllArgsConstructor
 @Service
 public class OrderCommadProcessor {

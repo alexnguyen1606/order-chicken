@@ -9,9 +9,6 @@ import org.mapstruct.ObjectFactory;
 import org.mapstruct.TargetType;
 import org.springframework.stereotype.Component;
 
-/**
- * @author:DAO QUANG BINH
- */
 @Component
 @AllArgsConstructor
 public class DishResolve {

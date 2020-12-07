@@ -8,10 +8,6 @@ import org.mapstruct.ObjectFactory;
 import org.mapstruct.TargetType;
 import org.springframework.stereotype.Component;
 
-/**
- * @author:Nguyen Anh Tuan
- *     <p>10:09 AM ,November 16,2020
- */
 @Component
 @AllArgsConstructor
 public class OrderDetailResolve {

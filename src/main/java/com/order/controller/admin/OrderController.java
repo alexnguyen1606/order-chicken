@@ -5,11 +5,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-/**
- * @author:Nguyen Anh Tuan
- * <p>
- * November 11,2020
- */
 @Controller("orderAdminController")
 @RequestMapping("/admin/order")
 public class OrderController {

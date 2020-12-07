@@ -27,10 +27,6 @@ import java.time.ZoneId;
 import java.util.List;
 import java.util.UUID;
 
-/**
- * @author:Nguyen Anh Tuan
- *     <p>9:09 AM ,November 25,2020
- */
 @Service
 public class ReportCMDProcessor {
   private final QReport Q = QReport.report;

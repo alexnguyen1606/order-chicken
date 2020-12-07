@@ -6,11 +6,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-/**
- * @author:Nguyen Anh Tuan
- * <p>
- * 10:24 PM ,November 26,2020
- */
 @Controller("orderCustomCtrl")
 @RequestMapping("/order")
 public class OrderController {

@@ -5,10 +5,6 @@ import lombok.Data;
 import javax.validation.constraints.NotBlank;
 import java.time.LocalDateTime;
 
-/**
- * @author:Nguyen Anh Tuan
- * <p>10:54 PM ,November 24,2020
- */
 @Data
 public class AccountDTO {
     private Long id;

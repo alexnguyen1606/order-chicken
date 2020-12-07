@@ -2,10 +2,6 @@ package com.order.dto;
 
 import lombok.Data;
 
-/**
- * @author:Nguyen Anh Tuan
- *     <p>November 10,2020
- */
 @Data
 public class ServiceResult {
   private String message;

@@ -13,10 +13,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-/**
- * @author:Nguyen Anh Tuan
- *     <p>8:44 AM ,November 19,2020
- */
 @RestController(value = "voucherCustomerApi")
 @AllArgsConstructor
 @RequestMapping("/api/voucher")

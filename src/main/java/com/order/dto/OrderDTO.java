@@ -9,10 +9,6 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * @author:Nguyen Anh Tuan
- *     <p>November 10,2020
- */
 @Data
 public class OrderDTO {
   private Long id;

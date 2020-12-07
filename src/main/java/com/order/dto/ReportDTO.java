@@ -7,10 +7,6 @@ import java.time.LocalDateTime;
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * @author:Nguyen Anh Tuan
- *     <p>9:01 AM ,November 25,2020
- */
 @Data
 public class ReportDTO {
   private Long id;

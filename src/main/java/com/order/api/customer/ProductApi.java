@@ -9,10 +9,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * @author:Nguyen Anh Tuan
- *     <p>4:54 PM ,November 19,2020
- */
 @RestController
 @RequestMapping("/api/product")
 @AllArgsConstructor
