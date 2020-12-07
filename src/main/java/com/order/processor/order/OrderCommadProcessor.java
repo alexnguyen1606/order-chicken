@@ -42,8 +42,9 @@ public class OrderCommadProcessor {
     Order order = orderMapper.toEntity(orderDTO);
     order.setStatus(OrderStatus.ACCEPT);
     orderService.save(order);
-    processDetailOrderAndUpdateOrder(
+    Long totalPrice = processDetailOrderAndUpdateOrder(
         order.getId(), orderDTO.getIdsDish(), orderDTO.getListNumberItem());
+    order.setTotalPrice(totalPrice);
     updateDiscount(order);
   }
   @Transactional
@@ -58,7 +59,7 @@ public class OrderCommadProcessor {
     }
   }
 
-  private void processDetailOrderAndUpdateOrder(
+  private Long processDetailOrderAndUpdateOrder(
       Long orderId, List<Long> idsDish, List<Integer> numsItem) throws Exception {
     if (idsDish.size() != numsItem.size()) {
       throw new Exception("Đơn hàng không hợp lệ");
@@ -88,6 +89,7 @@ public class OrderCommadProcessor {
     }
     detailOrderService.saveAll(list);
     orderService.updateTotalPriceAndTotalItem(orderId, totalPrice, totalItem);
+    return totalPrice;
   }
 
   private DetailOrder setDetailOrder(Dish dish, Integer number,Long orderId) {
@@ -115,8 +117,9 @@ public class OrderCommadProcessor {
       order.setCustomerName(user.getName());
     }
     orderService.save(order);
-    processDetailOrderAndUpdateOrder(
+    Long totalPrice = processDetailOrderAndUpdateOrder(
         order.getId(), orderDTO.getIdsDish(), orderDTO.getListNumberItem());
+    order.setTotalPrice(totalPrice);
     updateDiscount(order);
   }
 

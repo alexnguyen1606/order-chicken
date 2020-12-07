@@ -19,10 +19,13 @@ public class ReportDTO {
 
   @NotNull(message = "Thời gian bắt đầu không được bỏ trống")
   private LocalDateTime startTime;
-
+  
+  private String startTimeString;
+  
   @NotNull(message = "Thời gian cuối không được bỏ trống")
   private LocalDateTime endTime;
-
+  private String endTimeString;
+  
   private String sourceReport;
 
   private Long totalPriceTake;

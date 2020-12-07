@@ -71,7 +71,9 @@ $('#checkVoucher').on('click', function () {
             $('#totalPricePaid').val(totalPriceAfter.toLocaleString('it-IT', {style: 'currency', currency: 'VND'}));
         }, error: function (response) {
             $('.loader').css("display", "none");
+            var totalPrice = parseInt(sessionStorage.getItem("totalPrice"));
             $('#alertVoucher').text(response.responseJSON.message);
+            $('#totalPricePaid').val(totalPrice.toLocaleString('it-IT', {style: 'currency', currency: 'VND'}));
 
         }
     });

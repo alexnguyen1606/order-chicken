@@ -179,7 +179,8 @@ jQuery(function ($) {
             }, error: function (response) {
                 $('.loader').css("display", "none");
                 $('#alertVoucher').text(response.responseJSON.message);
-
+                var totalPrice = parseInt($('#totalPrice').attr("data-total-price"));
+                $('#totalPricePaid').val(totalPrice.toLocaleString('it-IT', {style: 'currency', currency: 'VND'}));
             }
         });
     })

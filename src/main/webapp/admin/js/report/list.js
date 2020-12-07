@@ -33,20 +33,28 @@ jQuery(function ($) {
         function bindingReport(data) {
             var row = "";
             $.each(data, function (i, v) {
+                var startTime = getDate(v.startTimeString);
+                var endTime = getDate(v.endTimeString);
                 row += '<tr>';
                 row += '<td class="text-center"><input type="checkbox" id="checkbox_' + v.id + '" value="' + v.id + '"></td>';
-                row += '<td>' + (i + 1) + '</td>';
-                row += '<td>' + v.id + '</td>';
-                row += '<td>' + v.startTime + '</td>';
-                row += '<td>' + v.endTime + '</td>';
-                row += '<td>' + v.totalCharge + '</td>';
-                row += '<td>' + v.totalPriceTake + '</td>';
-                row += '<td><a href="/admin/download/report?name=' + v.fileName + '"><i class="fa fa-download"></i></a></td>';
+                row += '<td class="text-center">' + (i + 1) + '</td>';
+                row += '<td class="text-center">' + v.id + '</td>';
+                row += '<td class="text-center">' + startTime + '</td>';
+                row += '<td class="text-center">' + endTime + '</td>';
+                row += '<td class="text-center">' + v.totalCharge + '</td>';
+                row += '<td class="text-center">' + v.totalPriceTake + '</td>';
+                row += '<td class="text-center"><a href="/admin/download/report?name=' + v.fileName + '"><i class="fa fa-download"></i></a></td>';
                 row += '</tr>';
             });
 
             $('#reports').empty();
             $('#reports').append(row)
+        }
+
+        function getDate(data){
+            var date = new Date(data);
+            var time = date.getDate() +"/"+(date.getMonth()+1)+"/"+date.getFullYear();
+            return time;
         }
 
         function getIdsChecked() {
