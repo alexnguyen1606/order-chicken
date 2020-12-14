@@ -7,6 +7,8 @@ import com.order.service.AccountService;
 import com.order.service.RoleService;
 import com.order.service.UserService;
 import lombok.AllArgsConstructor;
+import org.springframework.security.authentication.AuthenticationServiceException;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -27,10 +29,10 @@ public class CustomUserDetailService implements UserDetailsService {
   private AccountRoleMappingService accountRoleMappingService;
 
   @Override
-  public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+  public UserDetails loadUserByUsername(String username)  {
     Account account = accountService.findByUsernameAndStatus(username, 1);
     if (account == null) {
-      throw new UsernameNotFoundException("Thông tin tài khoản không đúng");
+      throw new AuthenticationServiceException("Thông tin tài khoản không đúng");
     }
     List<GrantedAuthority> authorities = fetchRole(account.getId());
 

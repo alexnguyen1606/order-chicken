@@ -15,6 +15,7 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
   @Autowired private CustomSuccessHandler customSuccessHandler;
   @Autowired private CustomUserDetailService customUserDetailsService;
+  @Autowired private CustomFailHandler customFailHandler;
 
   //  @Bean
   //  public HttpSessionEventPublisher httpSessionEventPublisher() {
@@ -58,7 +59,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         .passwordParameter("password")
         .loginProcessingUrl("/j_spring_security")
         .successHandler(customSuccessHandler)
-        .failureUrl("/login?accessDenied=true")
+        .failureHandler(customFailHandler)
         .permitAll();
     http.authorizeRequests()
         .and()
@@ -66,9 +67,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         .logoutUrl("/logout")
         .logoutSuccessUrl("/login")
         .invalidateHttpSession(true)
-        .and()
-        .exceptionHandling()
-        .accessDeniedPage("/login");
+        .and();
 
   }
 
