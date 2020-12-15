@@ -25,5 +25,7 @@ public class Account {
     private LocalDateTime createdDate;
     
     private Integer status;
+    
+    private String salt;
 
 }
