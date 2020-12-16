@@ -22,38 +22,14 @@ import java.util.List;
 
 @Service
 @AllArgsConstructor
-public class CustomUserDetailService implements AuthenticationProvider {
+public class CustomAuthenticationProvider implements AuthenticationProvider {
 
   private AccountService accountService;
   private UserService userService;
   private RoleService roleService;
   private AccountRoleMappingService accountRoleMappingService;
   private PasswordEncoder passwordEncoder;
-
-  //  @Override
-  //  public UserDetails loadUserByUsername(String username)  {
-  //    Account account = accountService.findByUsernameAndStatus(username, 1);
-  //    if (account == null) {
-  //      throw new AuthenticationServiceException("Thông tin tài khoản không đúng");
-  //    }
-  //    String password = (String)
-  // SecurityContextHolder.getContext().getAuthentication().getCredentials();
-  //    String salt = account.getSalt();
-  //    if (!passwordEncoder.matches(password+salt,account.getPassword())){
-  //      throw new AuthenticationServiceException("Tài khoản hoặc mật khẩu không chính xác");
-  //    }
-  //    List<GrantedAuthority> authorities = fetchRole(account.getId());
-  //    MyUser myUser =
-  //        new MyUser(
-  //            account.getUserName(), account.getPassword(), true, true, true, true, authorities);
-  //    myUser.setId(account.getId());
-  //    User user = userService.findByAccountId(account.getId());
-  //    if (user != null) {
-  //      myUser.setFullName(user.getName());
-  //    }
-  //    return myUser;
-  //  }
-
+  
   private List<GrantedAuthority> fetchRole(Long accountId) {
     List<Long> roleIds = accountRoleMappingService.fetchRoleIdByAccount(accountId);
     List<String> roles = roleService.fetchRoleCodeByIds(roleIds);

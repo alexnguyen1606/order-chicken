@@ -4,26 +4,26 @@ import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpMethod;
+import org.springframework.security.access.AccessDecisionManager;
+import org.springframework.security.authentication.AuthenticationProvider;
+import org.springframework.security.config.annotation.ObjectPostProcessor;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.access.intercept.FilterInvocationSecurityMetadataSource;
+import org.springframework.security.web.access.intercept.FilterSecurityInterceptor;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 @EnableWebSecurity
 @AllArgsConstructor
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
   private CustomSuccessHandler customSuccessHandler;
-  private CustomUserDetailService customUserDetailsService;
+  private AuthenticationProvider authenticationProvider;
   private CustomFailHandler customFailHandler;
-  private PasswordEncoder passwordEncoder;
-
-  //  @Bean
-  //  public HttpSessionEventPublisher httpSessionEventPublisher() {
-  //    return new HttpSessionEventPublisher();
-  //  }
+  private AccessDecisionManager accessDecisionManager;
+  private FilterInvocationSecurityMetadataSource newSource;
 
   @Bean
   public AuthenticationSuccessHandler myAuthenticationSuccessHandler() {
@@ -32,7 +32,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
   @Autowired
   public void configureGlobal(AuthenticationManagerBuilder managerBuilder) throws Exception {
-    managerBuilder.authenticationProvider(customUserDetailsService);
+    managerBuilder.authenticationProvider(authenticationProvider);
   }
 
   protected void configure(HttpSecurity http) throws Exception {
@@ -42,7 +42,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/account").permitAll();
     http.authorizeRequests().antMatchers("/api/**").permitAll();
     http.authorizeRequests().antMatchers("/admin/**").hasAuthority("ADMIN");
-    http.authorizeRequests().antMatchers("/**").authenticated();
+    http.authorizeRequests()
+        .antMatchers("/api/admin/**")
+        .authenticated()
+        .withObjectPostProcessor(new FilterPostProcessorSecurity(accessDecisionManager,newSource))
+        .anyRequest()
+        .authenticated();
 
     http.authorizeRequests()
         .and()
