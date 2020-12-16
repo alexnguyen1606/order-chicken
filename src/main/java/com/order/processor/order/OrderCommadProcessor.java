@@ -37,6 +37,7 @@ public class OrderCommadProcessor {
     validVoucher(orderDTO);
     Order order = orderMapper.toEntity(orderDTO);
     order.setStatus(OrderStatus.ACCEPT);
+    order.setTotalNumber(orderDTO.getListNumberItem().stream().mapToInt(i->i).sum());
     orderService.save(order);
     Long totalPrice = processDetailOrderAndUpdateOrder(
         order.getId(), orderDTO.getIdsDish(), orderDTO.getListNumberItem());
@@ -54,8 +55,8 @@ public class OrderCommadProcessor {
       update.where(Q.id.eq(order.getId())).execute();
     }
   }
-
-  private Long processDetailOrderAndUpdateOrder(
+  @Transactional
+  public Long processDetailOrderAndUpdateOrder(
       Long orderId, List<Long> idsDish, List<Integer> numsItem) throws Exception {
     if (idsDish.size() != numsItem.size()) {
       throw new Exception("Đơn hàng không hợp lệ");
@@ -104,6 +105,7 @@ public class OrderCommadProcessor {
     validVoucher(orderDTO);
     Order order = orderMapper.toEntity(orderDTO);
     order.setStatus(OrderStatus.WAITING);
+    order.setTotalNumber(orderDTO.getListNumberItem().stream().mapToInt(i->i).sum());
     MyUser myUser = (MyUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
     order.setIdAccount(myUser.getId());
     if (orderDTO.getUseCurrentInfo() != null && orderDTO.getUseCurrentInfo() == 0) {

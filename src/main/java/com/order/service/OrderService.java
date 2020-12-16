@@ -8,6 +8,7 @@ import com.querydsl.core.Tuple;
 import com.querydsl.jpa.impl.JPAQuery;
 import com.querydsl.jpa.impl.JPAUpdateClause;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -20,7 +21,7 @@ public class OrderService extends CommonRepository<Order, OrderRepository> {
   public OrderService(OrderRepository repo) {
     super(repo);
   }
-
+  @Transactional
   public void updateTotalPriceAndTotalItem(Long orderId, Long totalPrice, Integer totalItem) {
     JPAUpdateClause update = new JPAUpdateClause(em, Q);
     update.set(Q.totalPrice, totalPrice);
