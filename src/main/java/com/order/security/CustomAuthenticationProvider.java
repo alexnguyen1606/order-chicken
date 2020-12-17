@@ -27,13 +27,18 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
   private AccountRoleMappingService accountRoleMappingService;
   private PasswordEncoder passwordEncoder;
   private PermissionService permissionService;
-  
+
   private List<GrantedAuthority> fetchRole(Long accountId) {
     List<Long> roleIds = accountRoleMappingService.fetchRoleIdByAccount(accountId);
     List<String> roles = roleService.fetchRoleCodeByIds(roleIds);
-    List<GrantedAuthority> authorities = new ArrayList<>(roleIds.size());
+    List<String> links = permissionService.getLink(roleIds);
+    List<GrantedAuthority> authorities = new ArrayList<>(roleIds.size() + links.size());
     for (String role : roles) {
       GrantedAuthority grantedAuthority = new SimpleGrantedAuthority(role);
+      authorities.add(grantedAuthority);
+    }
+    for (String link : links) {
+      GrantedAuthority grantedAuthority = new SimpleGrantedAuthority(link);
       authorities.add(grantedAuthority);
     }
     return authorities;
@@ -60,7 +65,8 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
     if (user != null) {
       myUser.setFullName(user.getName());
     }
-    return new UsernamePasswordAuthenticationToken(myUser,passwordEncoder.encode(password+salt), authorities);
+    return new UsernamePasswordAuthenticationToken(
+        myUser, passwordEncoder.encode(password + salt), authorities);
   }
 
   @Override

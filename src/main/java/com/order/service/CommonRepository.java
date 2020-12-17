@@ -5,14 +5,15 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.querydsl.QuerydslPredicateExecutor;
+import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityManager;
-import javax.persistence.Id;
 import javax.persistence.PersistenceContext;
 import java.util.List;
 import java.util.Optional;
 
-public abstract class CommonRepository<T,ID, R extends JpaRepository<T, ID> & QuerydslPredicateExecutor<T>> {
+public abstract class CommonRepository<
+    T, ID, R extends JpaRepository<T, ID> & QuerydslPredicateExecutor<T>> {
   public CommonRepository(R repo) {
 
     this.repo = repo;

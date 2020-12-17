@@ -29,7 +29,6 @@ public class AccessDecisionManagerImpl implements AccessDecisionManager {
     }
     for (ConfigAttribute configAttribute : collection) {
       String functionId = configAttribute.getAttribute();
-      
       int i = 0;
       GrantedAuthority[] grantedAuthorities = (GrantedAuthority[]) authentication.getAuthorities().toArray();
       int j = grantedAuthorities.length - 1;

@@ -24,4 +24,6 @@ public class Permission {
   private String link;
 
   private Integer status;
+  
+  private String method;
 }

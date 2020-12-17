@@ -1,8 +1,11 @@
 package com.order.security;
 
+import com.order.entities.Permission;
+import com.order.service.PermissionService;
 import com.order.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.ConfigAttribute;
+import org.springframework.security.access.SecurityConfig;
 import org.springframework.security.web.FilterInvocation;
 import org.springframework.security.web.access.intercept.FilterInvocationSecurityMetadataSource;
 import org.springframework.stereotype.Component;
@@ -17,16 +20,15 @@ import java.util.*;
  */
 @Component
 public class CustomMetadataSource implements FilterInvocationSecurityMetadataSource {
-  @Autowired private RoleService roleService;
-
-  private Map<String, List<ConfigAttribute>> resourceMap = new HashMap<>();
+  @Autowired private PermissionService permissionService;
+  
   private PathMatcher pathMatcher = new AntPathMatcher();
 
   @Override
   public Collection<ConfigAttribute> getAttributes(Object object) throws IllegalArgumentException {
     String url = ((FilterInvocation) object).getRequestUrl();
     String method = ((FilterInvocation) object).getRequest().getMethod();
-    resourceMap = loadResourceMatchAuthority(url, method);
+    Map<String, List<ConfigAttribute>> resourceMap = loadResourceMatchAuthority(url, method);
     for (Map.Entry<String, List<ConfigAttribute>> resURL : resourceMap.entrySet()) {
       if (pathMatcher.match(resURL.getKey(), url)) {
         return resURL.getValue();
@@ -37,7 +39,13 @@ public class CustomMetadataSource implements FilterInvocationSecurityMetadataSou
 
   private Map<String, List<ConfigAttribute>> loadResourceMatchAuthority(String url, String method) {
     Map<String, List<ConfigAttribute>> resourceMap = new HashMap<>();
-
+    List<Permission> permissions = permissionService.findByLinkAndMetod(url,method);
+    for (Permission permission : permissions){
+      List<ConfigAttribute> configAttributes = new ArrayList<>();
+      ConfigAttribute configAttribute = new SecurityConfig(permission.getLink());
+      configAttributes.add(configAttribute);
+      resourceMap.put(permission.getLink(),configAttributes);
+    }
     return resourceMap;
   }
 
