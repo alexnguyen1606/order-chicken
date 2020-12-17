@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class DishService extends CommonRepository<Dish, DishRepository> {
+public class DishService extends CommonRepository<Dish,Long, DishRepository> {
   public DishService(DishRepository repo) {
     super(repo);
   }

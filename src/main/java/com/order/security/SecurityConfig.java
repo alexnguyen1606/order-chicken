@@ -6,14 +6,12 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.access.AccessDecisionManager;
 import org.springframework.security.authentication.AuthenticationProvider;
-import org.springframework.security.config.annotation.ObjectPostProcessor;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.web.access.intercept.FilterInvocationSecurityMetadataSource;
-import org.springframework.security.web.access.intercept.FilterSecurityInterceptor;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 @EnableWebSecurity
@@ -38,20 +36,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
   protected void configure(HttpSecurity http) throws Exception {
 
     http.csrf().disable();
-    http.authorizeRequests().antMatchers("/").permitAll();
+    http.authorizeRequests().antMatchers("/","/api/**").permitAll();
     http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/account").permitAll();
-    http.authorizeRequests().antMatchers("/api/**").permitAll();
     http.authorizeRequests().antMatchers("/admin/**").hasAuthority("ADMIN");
+    http.authorizeRequests().antMatchers("/**").authenticated();
     http.authorizeRequests()
-        .antMatchers("/api/admin/**")
+        .antMatchers("/api/admin/**", "/admin/**", "/**")
         .authenticated()
-        .withObjectPostProcessor(new FilterPostProcessorSecurity(accessDecisionManager,newSource))
+        .withObjectPostProcessor(new FilterPostProcessorSecurity(accessDecisionManager, newSource))
         .anyRequest()
         .authenticated();
 
-    http.authorizeRequests()
-        .and()
-        .formLogin()
+    http.formLogin()
         .loginPage("/login")
         .usernameParameter("username")
         .passwordParameter("password")

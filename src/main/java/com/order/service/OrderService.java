@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class OrderService extends CommonRepository<Order, OrderRepository> {
+public class OrderService extends CommonRepository<Order,Long, OrderRepository> {
   private final QOrder Q = QOrder.order;
 
   public OrderService(OrderRepository repo) {

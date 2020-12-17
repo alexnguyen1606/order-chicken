@@ -2,10 +2,7 @@ package com.order.security;
 
 import com.order.entities.Account;
 import com.order.entities.User;
-import com.order.service.AccountRoleMappingService;
-import com.order.service.AccountService;
-import com.order.service.RoleService;
-import com.order.service.UserService;
+import com.order.service.*;
 import lombok.AllArgsConstructor;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.AuthenticationServiceException;
@@ -29,6 +26,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
   private RoleService roleService;
   private AccountRoleMappingService accountRoleMappingService;
   private PasswordEncoder passwordEncoder;
+  private PermissionService permissionService;
   
   private List<GrantedAuthority> fetchRole(Long accountId) {
     List<Long> roleIds = accountRoleMappingService.fetchRoleIdByAccount(accountId);

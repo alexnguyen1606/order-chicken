@@ -4,6 +4,7 @@ import com.order.service.RoleService;
 import org.springframework.security.access.AccessDecisionManager;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.access.ConfigAttribute;
+import org.springframework.security.authentication.AuthenticationServiceException;
 import org.springframework.security.authentication.InsufficientAuthenticationException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
@@ -28,6 +29,7 @@ public class AccessDecisionManagerImpl implements AccessDecisionManager {
     }
     for (ConfigAttribute configAttribute : collection) {
       String functionId = configAttribute.getAttribute();
+      
       int i = 0;
       GrantedAuthority[] grantedAuthorities = (GrantedAuthority[]) authentication.getAuthorities().toArray();
       int j = grantedAuthorities.length - 1;
@@ -42,7 +44,7 @@ public class AccessDecisionManagerImpl implements AccessDecisionManager {
         j--;
       }
     }
-    throw new AccessDeniedException("Không có quyền đăng nhập");
+    throw new AuthenticationServiceException("Không có quyền đăng nhập");
   }
 
   @Override

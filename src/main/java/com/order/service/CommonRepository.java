@@ -7,12 +7,12 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 
 import javax.persistence.EntityManager;
+import javax.persistence.Id;
 import javax.persistence.PersistenceContext;
 import java.util.List;
 import java.util.Optional;
 
-public abstract class CommonRepository<
-    T, R extends JpaRepository<T, Long> & QuerydslPredicateExecutor<T>> {
+public abstract class CommonRepository<T,ID, R extends JpaRepository<T, ID> & QuerydslPredicateExecutor<T>> {
   public CommonRepository(R repo) {
 
     this.repo = repo;
@@ -45,7 +45,7 @@ public abstract class CommonRepository<
     return repo.count(predicate);
   }
 
-  public Optional<T> findById(Long id) {
+  public Optional<T> findById(ID id) {
     return repo.findById(id);
   }
 
@@ -61,7 +61,7 @@ public abstract class CommonRepository<
     repo.delete(t);
   }
 
-  public void deleteById(Long id) {
+  public void deleteById(ID id) {
     repo.deleteById(id);
   }
 
@@ -87,11 +87,8 @@ public abstract class CommonRepository<
   public void deleteAll(List<T> list) {
     repo.deleteAll(list);
   }
-  
-  
-  public Boolean exitsById(Long id){
+
+  public Boolean exitsById(ID id) {
     return repo.existsById(id);
   }
-  
-  
 }

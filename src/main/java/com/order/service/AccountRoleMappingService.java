@@ -10,7 +10,7 @@ import java.util.List;
 
 @Component
 public class AccountRoleMappingService
-    extends CommonRepository<AccountRoleMapping, AccountRoleMappingRepository> {
+    extends CommonRepository<AccountRoleMapping,Long, AccountRoleMappingRepository> {
   private final QAccountRoleMapping Q = QAccountRoleMapping.accountRoleMapping;
 
   public AccountRoleMappingService(AccountRoleMappingRepository repo) {

@@ -1,12 +1,15 @@
 package com.order.entities;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name="khachhang")
-@Data
+@Getter
+@Setter
 public class User {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
