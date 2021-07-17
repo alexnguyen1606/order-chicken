@@ -6,12 +6,14 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.access.AccessDecisionManager;
 import org.springframework.security.authentication.AuthenticationProvider;
+import org.springframework.security.config.annotation.ObjectPostProcessor;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.web.access.intercept.FilterInvocationSecurityMetadataSource;
+import org.springframework.security.web.access.intercept.FilterSecurityInterceptor;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 @EnableWebSecurity
@@ -20,7 +22,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
   private final CustomSuccessHandler customSuccessHandler;
   private final AuthenticationProvider authenticationProvider;
   private final CustomFailHandler customFailHandler;
-  private final FilterPostProcessorSecurity filterPostProcessorSecurity;
+  private final ObjectPostProcessor<FilterSecurityInterceptor> filterPostProcessorSecurity;
 
   @Bean
   public AuthenticationSuccessHandler myAuthenticationSuccessHandler() {
