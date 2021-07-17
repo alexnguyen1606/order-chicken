@@ -21,12 +21,12 @@ import java.util.List;
 @AllArgsConstructor
 public class CustomAuthenticationProvider implements AuthenticationProvider {
 
-  private AccountService accountService;
-  private UserService userService;
-  private RoleService roleService;
-  private AccountRoleMappingService accountRoleMappingService;
-  private PasswordEncoder passwordEncoder;
-  private PermissionService permissionService;
+  private final AccountService accountService;
+  private final UserService userService;
+  private final RoleService roleService;
+  private final AccountRoleMappingService accountRoleMappingService;
+  private final PasswordEncoder passwordEncoder;
+  private final PermissionService permissionService;
 
   private List<GrantedAuthority> fetchRole(Long accountId) {
     List<Long> roleIds = accountRoleMappingService.fetchRoleIdByAccount(accountId);

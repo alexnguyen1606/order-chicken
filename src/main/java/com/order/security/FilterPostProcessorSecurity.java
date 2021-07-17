@@ -11,14 +11,11 @@ import org.springframework.stereotype.Component;
  * @author:Nguyen Anh Tuan
  *     <p>8:37 AM ,December 16,2020
  */
-
+@AllArgsConstructor
+@Component
 public class FilterPostProcessorSecurity implements ObjectPostProcessor<FilterSecurityInterceptor> {
-  public FilterPostProcessorSecurity(AccessDecisionManager accessDecisionManager, FilterInvocationSecurityMetadataSource newSource) {
-    this.accessDecisionManager = accessDecisionManager;
-    this.newSource = newSource;
-  }
-  private AccessDecisionManager accessDecisionManager;
-  private FilterInvocationSecurityMetadataSource newSource;
+  private final AccessDecisionManager accessDecisionManager;
+  private final FilterInvocationSecurityMetadataSource newSource;
 
   @Override
   public <O extends FilterSecurityInterceptor> O postProcess(O fsi) {

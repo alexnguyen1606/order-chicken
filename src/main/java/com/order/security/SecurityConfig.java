@@ -17,11 +17,10 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 @EnableWebSecurity
 @AllArgsConstructor
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-  private CustomSuccessHandler customSuccessHandler;
-  private AuthenticationProvider authenticationProvider;
-  private CustomFailHandler customFailHandler;
-  private AccessDecisionManager accessDecisionManager;
-  private FilterInvocationSecurityMetadataSource newSource;
+  private final CustomSuccessHandler customSuccessHandler;
+  private final AuthenticationProvider authenticationProvider;
+  private final CustomFailHandler customFailHandler;
+  private final FilterPostProcessorSecurity filterPostProcessorSecurity;
 
   @Bean
   public AuthenticationSuccessHandler myAuthenticationSuccessHandler() {
@@ -41,7 +40,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     http.authorizeRequests()
         .antMatchers("/api/admin/**", "/admin/**", "/**")
         .authenticated()
-        .withObjectPostProcessor(new FilterPostProcessorSecurity(accessDecisionManager, newSource))
+        .withObjectPostProcessor(filterPostProcessorSecurity)
         .anyRequest()
         .authenticated();
 

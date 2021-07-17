@@ -22,7 +22,7 @@ import java.util.*;
 public class CustomMetadataSource implements FilterInvocationSecurityMetadataSource {
   @Autowired private PermissionService permissionService;
   
-  private PathMatcher pathMatcher = new AntPathMatcher();
+  private final PathMatcher pathMatcher = new AntPathMatcher();
 
   @Override
   public Collection<ConfigAttribute> getAttributes(Object object) throws IllegalArgumentException {
@@ -58,4 +58,5 @@ public class CustomMetadataSource implements FilterInvocationSecurityMetadataSou
   public boolean supports(Class<?> aClass) {
     return FilterInvocation.class.isAssignableFrom(aClass);
   }
+
 }
