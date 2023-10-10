@@ -1,6 +1,6 @@
 package com.order.entities;
 
-import lombok.Data;
+
 import lombok.Getter;
 import lombok.Setter;
 

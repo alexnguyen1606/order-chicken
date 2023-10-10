@@ -2,7 +2,6 @@ package com.order.security;
 
 import com.order.entities.Permission;
 import com.order.service.PermissionService;
-import com.order.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.ConfigAttribute;
 import org.springframework.security.access.SecurityConfig;
@@ -39,7 +38,7 @@ public class CustomMetadataSource implements FilterInvocationSecurityMetadataSou
 
   private Map<String, List<ConfigAttribute>> loadResourceMatchAuthority(String url, String method) {
     Map<String, List<ConfigAttribute>> resourceMap = new HashMap<>();
-    List<Permission> permissions = permissionService.findByLinkAndMetod(url,method);
+    List<Permission> permissions = permissionService.getByLinkAndMethod(url,method);
     for (Permission permission : permissions){
       List<ConfigAttribute> configAttributes = new ArrayList<>();
       ConfigAttribute configAttribute = new SecurityConfig(permission.getLink());

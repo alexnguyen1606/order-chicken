@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class DishCategoryService extends CommonRepository<DishCategory,Long,DishCategoryRepository> {
 
-
     public DishCategoryService(DishCategoryRepository repo) {
         super(repo);
     }

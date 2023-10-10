@@ -39,7 +39,7 @@ public class PermissionService extends CommonRepository<Permission, Long, Permis
         .fetch();
   }
   
-  public List<Permission> findByLinkAndMetod(String link,String method){
+  public List<Permission> getByLinkAndMethod(String link, String method){
     JPAQuery<Permission> query = new JPAQuery<>(em);
     return query.from(Q).where(Q.link.eq(link).and(Q.method.eq(method))).fetch();
   }

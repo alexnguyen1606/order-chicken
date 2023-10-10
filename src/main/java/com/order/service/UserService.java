@@ -19,7 +19,13 @@ public class UserService extends CommonRepository<User,Long, UserRepository> {
     }
 
     public User findByAccountId(Long accountId) {
-        return repo.findByIdAccount(accountId);
+        return repo.findByIdAccount(accountId)
+                .orElse(null);
+    }
+
+    public User findByAccountIdOrElseThrow(Long accountId) {
+        return repo.findByIdAccount(accountId)
+                .orElseThrow(RuntimeException::new);
     }
 
     public List<Long> findAllAccountIdBySearch(String search) {

@@ -1,16 +1,15 @@
 package com.order.service;
 
 import com.order.entities.DetailOrder;
-import com.order.repository.DetailOrderRespository;
-import lombok.AllArgsConstructor;
+import com.order.repository.DetailOrderRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class DetailOrderService extends CommonRepository<DetailOrder,Long,DetailOrderRespository> {
+public class DetailOrderService extends CommonRepository<DetailOrder,Long, DetailOrderRepository> {
     
-    public DetailOrderService(DetailOrderRespository repo) {
+    public DetailOrderService(DetailOrderRepository repo) {
         super(repo);
     }
     

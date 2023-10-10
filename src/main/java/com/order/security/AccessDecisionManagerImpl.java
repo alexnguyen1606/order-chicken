@@ -13,6 +13,8 @@ import org.springframework.stereotype.Component;
 
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * @author:Nguyen Anh Tuan
@@ -20,6 +22,7 @@ import java.util.Iterator;
  */
 @Component
 public class AccessDecisionManagerImpl implements AccessDecisionManager {
+
   @Override
   public void decide(
       Authentication authentication, Object o, Collection<ConfigAttribute> collection)
@@ -27,20 +30,12 @@ public class AccessDecisionManagerImpl implements AccessDecisionManager {
     if (collection==null){
       return;
     }
+
+    Set<String> grantedAuthorities = authentication.getAuthorities().stream().map(GrantedAuthority::getAuthority).collect(Collectors.toSet());
     for (ConfigAttribute configAttribute : collection) {
       String functionId = configAttribute.getAttribute();
-      int i = 0;
-      GrantedAuthority[] grantedAuthorities = (GrantedAuthority[]) authentication.getAuthorities().toArray();
-      int j = grantedAuthorities.length - 1;
-      while (i <= j) {
-        if (grantedAuthorities[i].getAuthority().equals(functionId)) {
-          return;
-        }
-        if (grantedAuthorities[j].getAuthority().equals(functionId)) {
-          return;
-        }
-        i++;
-        j--;
+      if (grantedAuthorities.contains(functionId)) {
+        return;
       }
     }
     throw new AuthenticationServiceException("Không có quyền đăng nhập");

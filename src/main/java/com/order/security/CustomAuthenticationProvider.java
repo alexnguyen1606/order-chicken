@@ -57,14 +57,14 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
       throw new AuthenticationServiceException("Tài khoản hoặc mật khẩu không chính xác");
     }
     List<GrantedAuthority> authorities = fetchRole(account.getId());
-    MyUser myUser =
-        new MyUser(
-            account.getUserName(), account.getPassword(), true, true, true, true, authorities);
-    myUser.setId(account.getId());
-    User user = userService.findByAccountId(account.getId());
-    if (user != null) {
-      myUser.setFullName(user.getName());
-    }
+    User user = userService.findByAccountIdOrElseThrow(account.getId());
+
+    MyUser myUser = MyUser.userBuilder()
+            .setId(account.getId())
+            .setFullName(user.getName())
+            .setPassword(account.getPassword())
+            .setAuthorities(authorities)
+            .build();
     return new UsernamePasswordAuthenticationToken(
         myUser, passwordEncoder.encode(password + salt), authorities);
   }
