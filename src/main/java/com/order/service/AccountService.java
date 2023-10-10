@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
-public class AccountService  extends CommonRepository<Account,AccountRepository>{
+public class AccountService  extends CommonRepository<Account,Long,AccountRepository>{
     
     public AccountService(AccountRepository repo) {
         super(repo);

@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class DetailOrderService extends CommonRepository<DetailOrder,DetailOrderRespository> {
+public class DetailOrderService extends CommonRepository<DetailOrder,Long,DetailOrderRespository> {
     
     public DetailOrderService(DetailOrderRespository repo) {
         super(repo);

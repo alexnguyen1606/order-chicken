@@ -11,7 +11,7 @@ import java.util.List;
 
 @Service
 
-public class UserService extends CommonRepository<User, UserRepository> {
+public class UserService extends CommonRepository<User,Long, UserRepository> {
     private QUser Q = QUser.user;
 
     public UserService(UserRepository repo) {

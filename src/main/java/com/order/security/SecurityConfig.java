@@ -1,59 +1,52 @@
 package com.order.security;
 
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpMethod;
+import org.springframework.security.access.AccessDecisionManager;
+import org.springframework.security.authentication.AuthenticationProvider;
+import org.springframework.security.config.annotation.ObjectPostProcessor;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.access.intercept.FilterInvocationSecurityMetadataSource;
+import org.springframework.security.web.access.intercept.FilterSecurityInterceptor;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 @EnableWebSecurity
+@AllArgsConstructor
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-  @Autowired private CustomSuccessHandler customSuccessHandler;
-  @Autowired private CustomUserDetailService customUserDetailsService;
-  @Autowired private CustomFailHandler customFailHandler;
-
-  //  @Bean
-  //  public HttpSessionEventPublisher httpSessionEventPublisher() {
-  //    return new HttpSessionEventPublisher();
-  //  }
+  private final CustomSuccessHandler customSuccessHandler;
+  private final AuthenticationProvider authenticationProvider;
+  private final CustomFailHandler customFailHandler;
+  private final ObjectPostProcessor<FilterSecurityInterceptor> filterPostProcessorSecurity;
 
   @Bean
   public AuthenticationSuccessHandler myAuthenticationSuccessHandler() {
     return customSuccessHandler;
   }
 
-  @Bean
-  public BCryptPasswordEncoder passwordEncoder() {
-    return new BCryptPasswordEncoder();
-  }
-
   @Autowired
   public void configureGlobal(AuthenticationManagerBuilder managerBuilder) throws Exception {
-    managerBuilder.userDetailsService(customUserDetailsService).passwordEncoder(passwordEncoder());
+    managerBuilder.authenticationProvider(authenticationProvider);
   }
 
   protected void configure(HttpSecurity http) throws Exception {
 
     http.csrf().disable();
+    http.authorizeRequests().antMatchers("/","/api/**").permitAll();
+    http.authorizeRequests().antMatchers(HttpMethod.POST, "/api/account").permitAll();
     http.authorizeRequests()
-            .antMatchers("/").permitAll();
-    http.authorizeRequests().antMatchers(HttpMethod.POST,"/api/account").permitAll();
-    http.authorizeRequests()
-            .antMatchers("/api/**").permitAll();
-    http.authorizeRequests()
-            .antMatchers("/admin/**").hasAuthority("ADMIN");
-    http.authorizeRequests()
-        .antMatchers("/**").authenticated();
+        .antMatchers("/api/admin/**", "/admin/**", "/**")
+        .authenticated()
+        .withObjectPostProcessor(filterPostProcessorSecurity)
+        .anyRequest()
+        .authenticated();
 
-
-    http.authorizeRequests()
-        .and()
-        .formLogin()
+    http.formLogin()
         .loginPage("/login")
         .usernameParameter("username")
         .passwordParameter("password")
@@ -68,9 +61,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         .logoutSuccessUrl("/login")
         .invalidateHttpSession(true)
         .and();
-
   }
-
 
   @Override
   public void configure(WebSecurity web) throws Exception {
@@ -79,6 +70,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             "/admin/image/**",
             "/admin/template/**",
             "/admin/plugins/**",
-            "/admin/css/**","/customer/**","/admin/js/**");
+            "/admin/css/**",
+            "/customer/**",
+            "/admin/js/**");
   }
 }

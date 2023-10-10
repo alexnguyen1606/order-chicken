@@ -7,7 +7,7 @@ import com.querydsl.jpa.impl.JPAQuery;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ReportService extends CommonRepository<Report, ReportRepository> {
+public class ReportService extends CommonRepository<Report,Long, ReportRepository> {
   public ReportService(ReportRepository repo) {
     super(repo);
   }

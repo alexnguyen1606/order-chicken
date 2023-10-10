@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class RoleService extends CommonRepository<Role, RoleRepository> {
+public class RoleService extends CommonRepository<Role,Long, RoleRepository> {
   private final QRole Q = QRole.role;
 
   public RoleService(RoleRepository repo) {

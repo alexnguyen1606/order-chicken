@@ -13,6 +13,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.UUID;
+
 @Service
 @AllArgsConstructor
 public class AccountCommandProcessor {
@@ -34,7 +36,9 @@ public class AccountCommandProcessor {
         throw new Exception("Tài khoản đã tồn tại trong hệ thống");
     }
     Account account = accountMapper.toEntity(accountDTO);
-    account.setPassword(passwordEncoder.encode(accountDTO.getPassword()));
+    String randomSalt = UUID.randomUUID().toString();
+    account.setSalt(randomSalt);
+    account.setPassword(passwordEncoder.encode(accountDTO.getPassword()+randomSalt));
     account.setStatus(SystemConstant.ENABLE);
     accountService.save(account);
     User user = new User();
