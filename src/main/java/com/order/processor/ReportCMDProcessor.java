@@ -11,8 +11,10 @@ import com.order.service.OrderService;
 import com.order.service.ReportService;
 import com.order.utils.export.ExportFactory;
 import com.order.utils.export.IExport;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -28,14 +30,22 @@ import java.util.List;
 import java.util.UUID;
 
 @Service
+@RequiredArgsConstructor
 public class ReportCMDProcessor {
   private final QReport Q = QReport.report;
-  @Autowired private ReportMapper reportMapper;
-  @Autowired private ReportService reportService;
-  @Autowired private OrderService orderService;
+  private final ReportMapper reportMapper;
+  private final ReportService reportService;
+  private final OrderService orderService;
+  private final String uploadFolder;
 
-  @Value("${uploadImg}")
-  private String uploadFolder;
+
+  public ReportCMDProcessor(ReportMapper reportMapper, ReportService reportService, OrderService orderService, Environment env) {
+    this.reportMapper = reportMapper;
+    this.reportService = reportService;
+    this.orderService = orderService;
+    this.uploadFolder = env.getRequiredProperty("uploadImg");
+  }
+
   @Transactional
   public void create(ReportDTO reportDTO) throws Exception {
     Report report = reportMapper.toEntity(reportDTO);
@@ -48,9 +58,9 @@ public class ReportCMDProcessor {
     if (orders.size() ==0){
       throw new Exception("Không có thông tin báo cáo");
     }
-    Long totalPriceAfterDiscount =
-        orderService.sumPriceAfterDiscountBetweenDate(
+    Long totalPriceAfterDiscount = orderService.sumPriceAfterDiscountBetweenDate(
             reportDTO.getStartTime(), report.getEndTime(), OrderStatus.COMPLETED);
+
     report.setTotalPriceTake(totalPriceAfterDiscount);
     report.setTotalCharge(totalPrice);
    

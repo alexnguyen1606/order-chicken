@@ -35,15 +35,18 @@ public class DishProcessor {
   }
 
   public DishDTO getDish(DishDTO dishDTO) {
-    return dishMapper.toDTO(dishService.findById(dishDTO.getId()).get());
+    return getDish(dishDTO.getId());
   }
 
   public DishDTO getDish(Long id) {
-    return dishMapper.toDTO(dishService.findById(id).get());
+    return dishService.findById(id)
+            .map(dishMapper::toDTO)
+            .orElseGet(null);
   }
 
   public List<DishDTO> getListDish(DishDTO dishDTO, Pageable pageable) {
     BooleanBuilder builder = commonBuilder(dishDTO);
+
     return dishService.findAll(builder, pageable).stream()
         .map(dishMapper::toDTO)
         .collect(Collectors.toList());
@@ -56,9 +59,16 @@ public class DishProcessor {
 
   private BooleanBuilder commonBuilder(DishDTO dishDTO) {
     BooleanBuilder result = new BooleanBuilder();
-    if (dishDTO.getName() != null) result.and(qDish.name.containsIgnoreCase(dishDTO.getName()));
-    if (dishDTO.getIdCategory() != null) result.and(qDish.idCategory.eq(dishDTO.getIdCategory()));
-    if (dishDTO.getStatus() != null) result.and(qDish.status.eq(dishDTO.getStatus()));
+
+    if (dishDTO.getName() != null) {
+      result.and(qDish.name.containsIgnoreCase(dishDTO.getName()));
+    }
+    if (dishDTO.getIdCategory() != null) {
+      result.and(qDish.idCategory.eq(dishDTO.getIdCategory()));
+    }
+    if (dishDTO.getStatus() != null) {
+      result.and(qDish.status.eq(dishDTO.getStatus()));
+    }
     if (StringUtils.isNotBlank(dishDTO.getSearch())){
       result.and(qDish.name.containsIgnoreCase(dishDTO.getSearch()));
     }
@@ -71,10 +81,8 @@ public class DishProcessor {
   }
 
   public List<DishDTO> findCategoryAndActive(Long category) {
-    List<DishDTO> result =
-        dishService.findByCategoryAndStatus(category, EntityConstant.ACTIVE_STATUS_DISH).stream()
-            .map(dishMapper::toDTO)
-            .collect(Collectors.toList());
-    return result;
+    return dishService.findByCategoryAndStatus(category, EntityConstant.ACTIVE_STATUS_DISH).stream()
+        .map(dishMapper::toDTO)
+        .collect(Collectors.toList());
   }
 }

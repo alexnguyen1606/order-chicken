@@ -1,5 +1,7 @@
 package com.order.entities;
 
+import com.order.constant.EntityConstant;
+import com.order.constant.SystemConstant;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.CreatedDate;
@@ -29,4 +31,19 @@ public class Account {
   private Integer status;
 
   private String salt;
+
+  public Account(String userName) {
+    this.userName = userName;
+  }
+
+  public Account() {
+  }
+
+  public static Account createAccount(String userName, String password, String salt) {
+    Account account = new Account(userName);
+    account.status = SystemConstant.ENABLE;
+    account.password = password;
+    account.salt = salt;
+    return account;
+  }
 }

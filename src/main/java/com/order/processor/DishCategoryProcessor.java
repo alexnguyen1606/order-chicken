@@ -41,6 +41,7 @@ public class DishCategoryProcessor {
 
     public List<DishCategoryDTO> getListDish(DishCategoryDTO dishCategoryDTO, Pageable pageable) {
         BooleanBuilder builder = commonBuilder(dishCategoryDTO);
+
         return dishCategoryService.findAll(builder, pageable).stream()
                 .map(dishCategoryMapper::toDTO)
                 .collect(Collectors.toList());
@@ -66,7 +67,9 @@ public class DishCategoryProcessor {
         if (dishCategoryDTO.getIds() == null) return;
         BooleanBuilder builder = new BooleanBuilder();
         builder.and(qDish.idCategory.in(dishCategoryDTO.getIds()));
-        if (dishService.exist(builder)) throw new Exception("Danh mục đã tồn tại sản phẩm");
+        if (dishService.exist(builder)) {
+            throw new Exception("Danh mục đã tồn tại sản phẩm");
+        }
         for (Long id : dishCategoryDTO.getIds()) {
             dishCategoryService.deleteById(id);
         }

@@ -1,5 +1,6 @@
 package com.order.entities;
 
+import com.order.constant.SystemConstant;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -37,5 +38,10 @@ public class Voucher {
   private String content;
   
   private Integer status;
+
+  public boolean isValid(LocalDateTime current) {
+    boolean validDate = current.isBefore(this.getEndTime()) && current.isAfter(this.getStartTime());
+    return validDate && getStatus().equals(SystemConstant.ENABLE);
+  }
   
 }

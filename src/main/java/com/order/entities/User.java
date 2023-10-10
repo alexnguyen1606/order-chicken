@@ -32,4 +32,17 @@ public class User {
 
     @Column(name = "gioi_tinh",columnDefinition = "nvarchar(255)")
     private String gender;
+
+    public User() {
+    }
+
+    public static User createUser(Account account, String address, String email, String name) {
+        User user = new User();
+        user.idAccount = account.getId();
+        user.address = address;
+        user.email = email;
+        user.name = name;
+        return user;
+    }
+
 }

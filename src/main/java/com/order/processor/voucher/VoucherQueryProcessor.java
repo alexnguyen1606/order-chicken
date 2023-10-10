@@ -66,20 +66,15 @@ public class VoucherQueryProcessor {
       throw new Exception("Không tìm thấy voucher");
     }
     Voucher voucher = voucherOptional.get();
-    LocalDateTime current = LocalDateTime.now();
-    boolean check =
-        current.isBefore(voucher.getEndTime()) && current.isAfter(voucher.getStartTime());
-    if (!check && voucher.getStatus().equals(SystemConstant.DISABLE)) {
+    if (!voucher.isValid(LocalDateTime.now())) {
       throw new Exception("Mã đã hết hạn");
     }
     return voucherMapper.toDTO(voucher);
   }
 
   public VoucherDTO findById(Long id) throws Exception {
-    Optional<Voucher> voucherOptional = voucherService.findById(id);
-    if (!voucherOptional.isPresent()) {
-      throw new Exception("Không tìm thấy");
-    }
-    return voucherMapper.toDTO(voucherOptional.get());
+    return voucherService.findById(id)
+            .map(voucherMapper::toDTO)
+            .orElseThrow(() -> new Exception("Không tìm thấy"));
   }
 }
