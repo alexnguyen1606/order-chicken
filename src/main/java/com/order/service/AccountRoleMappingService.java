@@ -11,14 +11,12 @@ import java.util.List;
 @Component
 public class AccountRoleMappingService
     extends CommonRepository<AccountRoleMapping,Long, AccountRoleMappingRepository> {
-  private final QAccountRoleMapping Q = QAccountRoleMapping.accountRoleMapping;
 
   public AccountRoleMappingService(AccountRoleMappingRepository repo) {
     super(repo);
   }
 
   public List<Long> fetchRoleIdByAccount(Long accountId) {
-    JPAQuery<AccountRoleMapping> query = new JPAQuery<>(em);
-    return query.select(Q.roleId).from(Q).where(Q.accountId.eq(accountId)).fetch();
+    return repo.fetchRoleIdByAccount(accountId);
   }
 }

@@ -20,27 +20,13 @@ public class PermissionService extends CommonRepository<Permission, Long, Permis
     super(repo);
   }
 
-  private final QPermission Q = QPermission.permission;
-  private final QRolePermissionMapping qRolePermissionMapping =
-      QRolePermissionMapping.rolePermissionMapping;
+
 
   public List<String> getLink(List<Long> roleIds) {
-    JPAQuery<Permission> query = new JPAQuery<>(em);
-    JPAQuery<RolePermissionMapping> query1 = new JPAQuery<>(em);
-    return query
-        .select(Q.link)
-        .from(Q)
-        .where(
-            Q.id.in(
-                query1
-                    .select(qRolePermissionMapping.permisstionId)
-                    .from(qRolePermissionMapping)
-                    .where(qRolePermissionMapping.id.in(roleIds))))
-        .fetch();
+    return repo.getLink(roleIds);
   }
   
-  public List<Permission> getByLinkAndMethod(String link, String method){
-    JPAQuery<Permission> query = new JPAQuery<>(em);
-    return query.from(Q).where(Q.link.eq(link).and(Q.method.eq(method))).fetch();
+  public List<Permission> getByLinkAndMethod(String link, String method) {
+    return repo.getByLinkAndMethod(link, method);
   }
 }

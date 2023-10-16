@@ -108,7 +108,6 @@ jQuery(function ($) {
             $.each(cartItems, function (i, v) {
                 var totalPrice = v.totalPrice.toLocaleString('it-IT', {style: 'currency', currency: 'VND'});
                 var currentPrice = v.price.toLocaleString('it-IT', {style: 'currency', currency: 'VND'});
-                ;
                 row += '<tr id="row_' + v.id + '">';
                 row += '<td class="text-center">' + v.name + '</td>';
                 row += '<td class="text-center">' + currentPrice + '</td>';

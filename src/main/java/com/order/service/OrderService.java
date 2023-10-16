@@ -70,7 +70,7 @@ public class OrderService extends CommonRepository<Order,Long, OrderRepository> 
   public Optional<Order> findByIdAndIdAccount(Long id , Long idAccount){
     return repo.findByIdAndIdAccount(id,idAccount);
   }
-  public Long sumPriceByIdAccount(Long idAccount) {
+  public Long totalPaidSuccess(Long idAccount) {
     JPAQuery<Order> query = new JPAQuery<>(em);
     return query.select(Q.totalPriceAfterDiscount.sum()).from(Q).where(Q.idAccount.eq(idAccount).and(Q.status.eq(OrderStatus.COMPLETED))).fetchFirst();
   }

@@ -4,7 +4,6 @@ import com.order.constant.ExportContant;
 import com.order.constant.OrderStatus;
 import com.order.dto.ReportDTO;
 import com.order.entities.Order;
-import com.order.entities.QReport;
 import com.order.entities.Report;
 import com.order.mapper.ReportMapper;
 import com.order.service.OrderService;
@@ -12,18 +11,13 @@ import com.order.service.ReportService;
 import com.order.utils.export.ExportFactory;
 import com.order.utils.export.IExport;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.FileSystem;
-import java.nio.file.FileSystems;
-import java.nio.file.Files;
-import java.nio.file.Path;
+import java.nio.file.*;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.List;
@@ -32,7 +26,6 @@ import java.util.UUID;
 @Service
 @RequiredArgsConstructor
 public class ReportCMDProcessor {
-  private final QReport Q = QReport.report;
   private final ReportMapper reportMapper;
   private final ReportService reportService;
   private final OrderService orderService;
@@ -89,13 +82,11 @@ public class ReportCMDProcessor {
     return new File(path);
   }
 
-  public void deleteByIds(List<Long> ids) {
+  public void deleteByIds(List<Long> ids) throws IOException {
     for (Long id : ids) {
       String source = reportService.getSourceReportById(id);
-      File file = new File(source);
-      if (file.exists()) {
-        file.delete();
-      }
+      Path fileToDeletePath = Paths.get(source);
+      Files.deleteIfExists(fileToDeletePath);
       reportService.deleteById(id);
     }
   }

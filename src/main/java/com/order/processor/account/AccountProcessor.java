@@ -4,7 +4,6 @@ import com.order.dto.AccountDTO;
 import com.order.dto.UserDTO;
 import com.order.entities.Account;
 import com.order.entities.QAccount;
-import com.order.entities.QUser;
 import com.order.entities.User;
 import com.order.mapper.AccountMapper;
 import com.order.mapper.UserMapper;
@@ -19,23 +18,26 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
-import java.util.Optional;
-import java.util.UUID;
+import java.beans.Transient;
+import java.util.*;
+import java.util.concurrent.*;
 import java.util.stream.Collectors;
 
 @Component
 @AllArgsConstructor
 public class AccountProcessor {
-  private final QAccount qAccount = QAccount.account;
-  private final QUser qUser = QUser.user;
+  private static final QAccount qAccount = QAccount.account;
+  private static final ExecutorService threadPool = Executors.newFixedThreadPool(5);
+
   private AccountService accountService;
   private UserService userService;
   private AccountMapper accountMapper;
   private UserMapper userMapper;
   private PasswordEncoder passwordEncoder;
   private OrderService orderService;
+
 
   private BooleanBuilder commonBuilder(AccountDTO accountDTO) {
     BooleanBuilder result = new BooleanBuilder();
@@ -57,25 +59,27 @@ public class AccountProcessor {
     return accountService.count(builder);
   }
 
-  public List<AccountDTO> findAll(AccountDTO accountDTO, Pageable pageable) {
+  public List<AccountDTO> findAll(AccountDTO accountDTO, Pageable pageable) throws InterruptedException, ExecutionException {
     BooleanBuilder builder = commonBuilder(accountDTO);
     List<AccountDTO> result =
         accountService.findAll(builder, pageable).stream()
             .map(accountMapper::toDTO)
             .collect(Collectors.toList());
     if (!result.isEmpty()) {
-      for (AccountDTO account : result) {
-        account.setTotalPaid(orderService.sumPriceByIdAccount(account.getId()));
+      CompletableFuture.allOf(
+              result.stream()
+                      .map(account -> (Runnable)() -> account.setTotalPaid(orderService.totalPaidSuccess(account.getId())))
+                      .map(runnable -> CompletableFuture.runAsync(runnable, threadPool))
+                      .toArray(CompletableFuture[]::new))
+              .get();
       }
-    }
     return result;
   }
 
+  @Transactional
   public void createAccount(AccountDTO accountDTO) {
-    Account account = accountMapper.toEntity(accountDTO);
     String randomSalt = UUID.randomUUID().toString();
-    account.setSalt(randomSalt);
-    account.setPassword(passwordEncoder.encode(account.getPassword() + randomSalt));
+    Account account = Account.createAccount(accountDTO.getUserName(), passwordEncoder.encode(accountDTO.getPassword() + randomSalt), randomSalt);
     account = accountService.save(account);
 
     User user = userMapper.toEntity(accountDTO.getUser());
@@ -133,9 +137,8 @@ public class AccountProcessor {
         !passwordEncoder.matches(
             accountDTO.getOldPassword() + account.getSalt(), account.getPassword());
     if (check) throw new Exception("Mật khẩu xác nhận k chính xác");
-    String randomSalt = UUID.randomUUID().toString();
-    account.setSalt(randomSalt);
-    account.setPassword(passwordEncoder.encode(accountDTO.getPassword()+randomSalt));
+
+    account.setPassword(passwordEncoder.encode(accountDTO.getPassword()+account.getSalt()));
     accountService.save(account);
   }
 }
